@@ -18,9 +18,7 @@ body {
   overflow: auto;
 }
 
-.gray-1 {
-  background-color: #F1F2F2;
-}
+
 
 .ptf-acc-table {
   i {
@@ -48,6 +46,19 @@ body {
     border-bottom: 1px solid #000000;
   }
 
+  .bg-gray-1 {
+    background-color: #F1F2F2;
+  }
+
+  .hover-bg-gray-1:hover {
+    background: #F1F2F2;
+    transition: background-color 0.25s ease-out;
+  }
+
+  .bg-gray-2 {
+    background-color: #E6E7E8;
+  }
+
   .border-top-grey-3 {
     border-top: 1px solid #DADADA;
   }
@@ -55,7 +66,6 @@ body {
   .border-bottom-grey-3 {
     border-bottom: 1px solid #DADADA !important;
   }
-
 
 }
 
