@@ -12,14 +12,28 @@
         <table class="table bg-white mt-4 d-flex flex-column ptf-acc-table">
           <thead class="d-flex w-100">
             <tr class="w-100 d-flex row no-gutters border-bottom-black">
-              <th class="p-2 col-2 border-0 border-bottom-grey-3">
+              <th class="p-2 col-md-3 col-lg-2 border-0 border-bottom-grey-3">
                 Description
               </th>
-              <th class="p-2 col-2 border-0">Account number</th>
-              <th class="p-2 col-2 border-0">Account type</th>
-              <th class="p-2 col-2 border-0">Holder</th>
-              <th class="p-2 col-2 border-0 text-right">YTD Performance</th>
-              <th class="p-2 pr-5 col-2 text-right border-0">Amount</th>
+              <th class="p-2 col-md-3 col-lg-2 border-0">Account number</th>
+              <th
+                class="p-2 col-lg-2 border-0 d-none d-md-none d-lg-block d-xl-block"
+              >
+                Account type
+              </th>
+              <th
+                class="p-2 col-lg-2 border-0 d-none d-md-none d-lg-block d-xl-block"
+              >
+                Holder
+              </th>
+              <th class="p-2 col-md-3 col-lg-2 border-0 text-right">
+                YTD Performance
+              </th>
+              <th
+                class="p-2 col-md-3 pr-md-5 pr-lg-5 col-lg-2 text-right border-0"
+              >
+                Amount
+              </th>
             </tr>
           </thead>
           <tbody
@@ -35,26 +49,28 @@
               [class.hover-bg-gray-1]="!ptfandAccountsDatas[i]['isExpanded']"
               [class.bg-gray-2]="ptfandAccountsDatas[i]['isExpanded']"
             >
-              <td class="py-3 px-2 col-2 border-0 d-flex align-items-baseline">
+              <td
+                class="py-3 px-2 col-lg-2 border-0 d-flex align-items-baseline"
+              >
                 {{ ptfandAccountsData.description }}
                 <i
                   class="fa fa-chevron-down ml-2"
                   [class.is-expanded]="ptfandAccountsDatas[i]['isExpanded']"
                 ></i>
               </td>
-              <td class="py-3 px-2 col-2 border-0">
+              <td class="py-3 px-2 col-lg-2 border-0">
                 {{ ptfandAccountsData.additions.portfolioId }}
               </td>
-              <td class="py-3 px-2 col-2 border-0">
+              <td class="py-3 px-2 col-lg-2 border-0">
                 {{ ptfandAccountsData.account }}
               </td>
-              <td class="py-3 px-2 col-2 border-0">
+              <td class="py-3 px-2 col-lg-2 border-0">
                 {{ ptfandAccountsData.holder }}
               </td>
-              <td class="py-3 px-2 col-2 border-0 text-right">
+              <td class="py-3 px-2 col-lg-2 border-0 text-right">
                 {{ ptfandAccountsData.performanceYTDpct }}%
               </td>
-              <td class="py-3 p-2 pr-5 col-2 text-right border-0">
+              <td class="py-3 p-2 pr-5 col-lg-2 text-right border-0">
                 {{ ptfandAccountsData.valuation.currencyCode }}
               </td>
             </tr>
@@ -64,19 +80,19 @@
               class="outer w-100 d-flex row no-gutters expanded-tr bg-gray-1"
               [class.border-top-grey-3]="ptfandAccountsDatas[i]['isExpanded']"
             >
-              <td class="py-3 px-2 col-2 border-0"></td>
-              <td class="py-3 px-2 col-2 border-0">
+              <td class="py-3 px-2 col-lg-2 border-0"></td>
+              <td class="py-3 px-2 col-lg-2 border-0">
                 {{ item.additions.IBAN }}
               </td>
-              <td class="py-3 px-2 col-2 border-0">
+              <td class="py-3 px-2 col-lg-2 border-0">
                 Cassh account ({{ item.additions.accountCurrency }})
               </td>
-              <td class="py-3 px-2 col-2 border-0">
+              <td class="py-3 px-2 col-lg-2 border-0">
                 {{ item.additions.description }}
               </td>
-              <td class="py-3 px-2 col-2 border-0">-</td>
+              <td class="py-3 px-2 col-lg-2 border-0">-</td>
               <td
-                class="py-3 px-2 col-2 d-flex flex-column text-right border-0 pr-5"
+                class="py-3 px-2 col-lg-2 d-flex flex-column text-right border-0 pr-5"
               >
                 {{ item.additions.accountCurrency }}
                 {{ item.additions.balance }}
