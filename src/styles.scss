@@ -1,1 +1,74 @@
 /* You can add global styles to this file, and also import other style files */
+
+$theme-colors: ("primary": #0074d9,
+  "danger": #ff4136);
+
+$grid-breakpoints: (xs:0,
+  sm:575px,
+  md:768px,
+  lg:1024px,
+  xl:1280px);
+
+
+
+@import "node_modules/bootstrap/scss/bootstrap";
+@import '@fortawesome/fontawesome-free/css/all.css';
+
+body {
+  overflow: auto;
+}
+
+.gray-1 {
+  background-color: #F1F2F2;
+}
+
+.ptf-acc-table {
+  i {
+    transition: all 0.25s;
+
+    &.is-expanded {
+      transform: rotate(-180deg);
+    }
+  }
+
+  .outer {
+    height: 0px;
+    overflow: hidden;
+  }
+
+
+  td {
+    word-wrap: break-word;
+    min-width: 0;
+    flex: 1;
+  }
+
+  .border-bottom-black {
+    border-bottom: 1px solid #000000;
+  }
+
+  .border-top-grey-3 {
+    border-top: 1px solid #DADADA;
+  }
+
+  .border-bottom-grey-3 {
+    border-bottom: 1px solid #DADADA !important;
+  }
+
+
+}
+
+
+.ptf-acc-section {
+  overflow: scroll;
+  overflow-x: hidden;
+
+
+}
+
+.ptf-acc-section::-webkit-scrollbar {
+  width: 0px;
+  /* Remove scrollbar space */
+  background: transparent;
+  /* Optional: just make scrollbar invisible */
+}

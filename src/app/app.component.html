@@ -1,20 +1,89 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<div class="bg-white">
+  <div
+    style="width: 1160px; height: 100vh"
+    class="offset-1 gray-1 p-3 ptf-acc-section"
+  >
+    <div class="" style="width: 1080px">
+      <div class="border-bottom pb-4">
+        <h4>Portfolios and accounts</h4>
+      </div>
+      <div>
+        <table class="table bg-white mt-4 d-flex flex-column ptf-acc-table">
+          <thead class="d-flex w-100">
+            <tr class="w-100 d-flex row no-gutters border-bottom-black">
+              <th class="p-2 col-2 border-0 border-bottom-grey-3">
+                Description
+              </th>
+              <th class="p-2 col-2 border-0">Account number</th>
+              <th class="p-2 col-2 border-0">Account type</th>
+              <th class="p-2 col-2 border-0">Holder</th>
+              <th class="p-2 col-2 border-0 text-right">YTD Performance</th>
+              <th class="p-2 pr-5 col-2 text-right border-0">Amount</th>
+            </tr>
+          </thead>
+          <tbody
+            class="d-flex flex-column border-bottom-grey-3 border-top-0"
+            *ngFor="
+              let ptfandAccountsData of ptfandAccountsDatas;
+              let i = index
+            "
+          >
+            <tr (click)="collapsse(i)" class="w-100 d-flex row no-gutters">
+              <td class="py-3 px-2 col-2 border-0">
+                {{ ptfandAccountsData.description }}
+                <i
+                  class="fa fa-chevron-down"
+                  [class.is-expanded]="ptfandAccountsDatas[i]['isExpanded']"
+                ></i>
+              </td>
+              <td class="py-3 px-2 col-2 border-0">
+                {{ ptfandAccountsData.additions.portfolioId }}
+              </td>
+              <td class="py-3 px-2 col-2 border-0">
+                {{ ptfandAccountsData.account }}
+              </td>
+              <td class="py-3 px-2 col-2 border-0">
+                {{ ptfandAccountsData.holder }}
+              </td>
+              <td class="py-3 px-2 col-2 border-0 text-right">
+                {{ ptfandAccountsData.performanceYTDpct }}%
+              </td>
+              <td class="py-3 p-2 pr-5 col-2 text-right border-0">
+                {{ ptfandAccountsData.valuation.currencyCode }}
+              </td>
+            </tr>
+            <tr
+              *ngFor="let item of ptfandAccountsData.cashAccounts"
+              [@animationCollapse]="ptfandAccountsDatas[i]['state']"
+              class="outer w-100 d-flex row no-gutters expanded-tr"
+              [class.border-top-grey-3]="ptfandAccountsDatas[i]['isExpanded']"
+            >
+              <td class="py-3 px-2 col-2 border-0"></td>
+              <td class="py-3 px-2 col-2 border-0">
+                {{ item.additions.IBAN }}
+              </td>
+              <td class="py-3 px-2 col-2 border-0">
+                Cassh account ({{ item.additions.accountCurrency }})
+              </td>
+              <td class="py-3 px-2 col-2 border-0">
+                {{ item.additions.description }}
+              </td>
+              <td class="py-3 px-2 col-2 border-0">-</td>
+              <td
+                class="py-3 px-2 col-2 d-flex flex-column text-right border-0 pr-5"
+              >
+                {{ item.additions.accountCurrency }}
+                {{ item.additions.balance }}
+                <i
+                  class="fas fa-arrow-right position-absolute"
+                  style="right: 16px"
+                ></i>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
-
