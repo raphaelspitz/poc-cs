@@ -17,10 +17,49 @@ $grid-breakpoints: (xs:0,
 body {
   overflow: auto;
 }
+//helpers
+.border-bottom-black {
+  border-bottom: 1px solid #000000;
+}
 
+.ptf-acc-section {
+  overflow: scroll;
+  overflow-x: hidden;
+  padding: 0 40px;
+}
 
+.bg-gray-1 {
+  background-color: #F1F2F2;
+}
+
+.hover-bg-gray-1:hover {
+  background: #F1F2F2;
+  transition: background-color 0.25s ease-out;
+}
+
+.bg-gray-2 {
+  background-color: #E6E7E8;
+}
+
+.border-top-grey-3 {
+  border-top: 1px solid #DADADA;
+}
+
+.border-bottom-grey-3 {
+  border-bottom: 1px solid #DADADA !important;
+}
+
+//helpers
+
+.ptf-acc-section::-webkit-scrollbar {
+  width: 0px;
+  /* Remove scrollbar space */
+  background: transparent;
+  /* Optional: just make scrollbar invisible */
+}
 
 .ptf-acc-table {
+
   i {
     transition: all 0.25s;
 
@@ -42,44 +81,7 @@ body {
     cursor: pointer;
   }
 
-  .border-bottom-black {
-    border-bottom: 1px solid #000000;
-  }
-
-  .bg-gray-1 {
-    background-color: #F1F2F2;
-  }
-
-  .hover-bg-gray-1:hover {
-    background: #F1F2F2;
-    transition: background-color 0.25s ease-out;
-  }
-
-  .bg-gray-2 {
-    background-color: #E6E7E8;
-  }
-
-  .border-top-grey-3 {
-    border-top: 1px solid #DADADA;
-  }
-
-  .border-bottom-grey-3 {
-    border-bottom: 1px solid #DADADA !important;
-  }
-
-}
 
 
-.ptf-acc-section {
-  overflow: scroll;
-  overflow-x: hidden;
 
-
-}
-
-.ptf-acc-section::-webkit-scrollbar {
-  width: 0px;
-  /* Remove scrollbar space */
-  background: transparent;
-  /* Optional: just make scrollbar invisible */
 }
