@@ -12,25 +12,33 @@
         <table class="table bg-white mt-4 d-flex flex-column ptf-acc-table">
           <thead class="d-flex w-100">
             <tr class="w-100 d-flex row no-gutters border-bottom-black">
-              <th class="p-2 col-md-3 col-lg-2 border-0 border-bottom-grey-3">
+              <th
+                class="p-2 col-6 col-md-3 col-lg-2 border-0 border-bottom-grey-3"
+              >
                 Description
               </th>
-              <th class="p-2 col-md-3 col-lg-2 border-0">Account number</th>
               <th
-                class="p-2 col-lg-2 border-0 d-none d-md-none d-lg-block d-xl-block"
+                class="p-2 col-md-2 offset-md-1 offset-lg-0 col-lg-2 border-0 d-none d-sm-none d-md-block d-lg-block d-xl-block"
+              >
+                Account number
+              </th>
+              <th
+                class="p-2 col-lg-2 border-0 d-none d-sm-none d-md-none d-lg-block d-xl-block"
               >
                 Account type
               </th>
               <th
-                class="p-2 col-lg-2 border-0 d-none d-md-none d-lg-block d-xl-block"
+                class="p-2 col-lg-2 border-0 d-none d-sm-none d-md-none d-lg-block d-xl-block"
               >
                 Holder
               </th>
-              <th class="p-2 col-md-3 col-lg-2 border-0 text-right">
+              <th
+                class="p-2 col-md-3 col-lg-2 border-0 text-right d-none d-sm-none d-md-block d-lg-block d-xl-block"
+              >
                 YTD Performance
               </th>
               <th
-                class="p-2 col-md-3 pr-md-5 pr-lg-5 col-lg-2 text-right border-0"
+                class="p-2 col-6 col-md-3 pr-5 pr-md-5 pr-lg-5 col-lg-2 text-right border-0"
               >
                 Amount
               </th>
@@ -50,7 +58,7 @@
               [class.bg-gray-2]="ptfandAccountsDatas[i]['isExpanded']"
             >
               <td
-                class="py-3 px-2 col-md-3 col-lg-2 col-xl-2 border-0 d-flex flex-md-column flex-xl-row flex-xl-row align-items-baseline"
+                class="py-3 px-2 col-md-3 col-lg-2 col-xl-2 border-0 d-flex flex-column flex-sm-column flex-md-column flex-lg-row flex-xl-row align-items-baseline"
               >
                 <span class="d-flex align-items-baseline">
                   {{ ptfandAccountsData.description }}
@@ -59,28 +67,38 @@
                     [class.is-expanded]="ptfandAccountsDatas[i]['isExpanded']"
                   ></i>
                 </span>
-                <span class="d-lg-none d-xl-none">
+                <span class="d-md-block d-lg-none d-xl-none">
                   {{ ptfandAccountsData.account }}
                 </span>
-                <span class="w-75 d-lg-none d-xl-none">
+                <span class="d-lg-none d-xl-none">
                   {{ ptfandAccountsData.holder }}
                 </span>
+                <span class="d-sm-block d-md-none d-lg-none d-xl-none">
+                  {{ ptfandAccountsData.additions.portfolioId }}
+                </span>
               </td>
-              <td class="py-3 px-2 col-md-3 col-lg-2 col-xl-2 border-0">
+              <td
+                class="py-3 px-2 col-md-2 offset-md-1 offset-lg-0 col-lg-2 col-xl-2 border-0 d-none d-sm-none d-md-block d-lg-block d-xl-block"
+              >
                 {{ ptfandAccountsData.additions.portfolioId }}
               </td>
               <td
-                class="py-3 px-2 col-lg-2 border-0 d-md-none d-lg-block d-xl-block"
+                class="py-3 px-2 col-lg-2 border-0 d-none d-sm-none d-md-none d-lg-block d-xl-block"
               >
                 {{ ptfandAccountsData.account }}
               </td>
               <td
-                class="py-3 px-2 col-lg-2 border-0 d-md-none d-lg-block d-xl-block"
+                class="py-3 px-2 col-lg-2 border-0 d-none d-sm-none d-md-none d-lg-block d-xl-block"
               >
                 {{ ptfandAccountsData.holder }}
               </td>
-              <td class="py-3 px-2 col-md-3 col-lg-2 border-0 text-right">
-                {{ ptfandAccountsData.performanceYTDpct }}%
+              <td
+                class="py-3 px-2 col-md-3 col-lg-2 border-0 text-right d-none d-sm-none d-md-block d-lg-block d-xl-block"
+              >
+                <span> {{ ptfandAccountsData.performanceYTDpct }}% </span>
+                <span class="d-block d-sm-block d-md-none d-lg-none d-xl-none">
+                  {{ ptfandAccountsData.holder }}
+                </span>
               </td>
               <td
                 class="py-3 p-2 pr-5 col-md-3 col-lg-2 col-xl-2 text-right border-0"
@@ -97,27 +115,31 @@
               class="outer w-100 d-flex row no-gutters expanded-tr bg-gray-1"
               [class.border-top-grey-3]="ptfandAccountsDatas[i]['isExpanded']"
             >
-              <td class="py-3 px-2 col-md-3 col-lg-2 border-0"></td>
-              <td class="py-3 px-2 col-lg-2 border-0">
+              <td
+                class="py-3 px-2 col-lg-2 border-0 d-none d-md-none d-lg-block d-xl-block"
+              ></td>
+              <td
+                class="py-3 px-2 offset-0 offset-md-0 offset-lg-0 col-lg-2 border-0 d-block d-sm-block d-md-block d-md-block"
+              >
                 {{ item.additions.IBAN }}
               </td>
               <td
-                class="py-3 px-2 col-lg-2 border-0 d-md-none d-lg-block d-xl-block"
+                class="py-3 px-2 col-lg-2 border-0 d-none d-sm-none d-md-none d-lg-block d-xl-block"
               >
                 Cassh account ({{ item.additions.accountCurrency }})
               </td>
               <td
-                class="py-3 px-2 col-lg-2 border-0 d-md-none d-lg-block d-xl-block"
+                class="py-3 px-2 col-lg-2 border-0 d-none d-sm-none d-md-none d-lg-block d-xl-block"
               >
                 {{ item.additions.description }}
               </td>
               <td
-                class="py-3 px-2 col-lg-2 border-0 d-md-none d-lg-block d-xl-block"
+                class="py-3 px-2 col-lg-2 border-0 d-none d-sm-none d-md-none d-lg-block d-xl-block"
               >
                 -
               </td>
               <td
-                class="py-3 px-2 col-lg-2 d-flex flex-column text-right border-0 pr-5"
+                class="py-3 px-2 offset-6 offset-sm-6 offset-md-0 col-md-6 col-lg-2 d-block d-sm-block d-md-flex flex-md-column text-right border-0 pr-5"
               >
                 {{ item.additions.accountCurrency }}
                 {{ item.additions.balance }}

@@ -9,14 +9,14 @@ $grid-breakpoints: (xs:0,
   lg:1024px,
   xl:1280px);
 
-
-
 @import "node_modules/bootstrap/scss/bootstrap";
+
 @import '@fortawesome/fontawesome-free/css/all.css';
 
 body {
   overflow: auto;
 }
+
 //helpers
 .border-bottom-black {
   border-bottom: 1px solid #000000;
@@ -73,15 +73,11 @@ body {
     overflow: hidden;
   }
 
-
   td {
     word-wrap: break-word;
     min-width: 0;
     flex: 1;
     cursor: pointer;
   }
-
-
-
 
 }
