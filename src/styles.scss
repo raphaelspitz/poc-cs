@@ -1,5 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
 
+// tables use csTypeEPBold 14px for clickable tiles
+@font-face {
+  font-family: "csTypeEPBold";
+  src: url("./assets/fonts/CSW07eP-Boldv4.ttf") format("truetype");
+}
+
+// tables use csTypeEPRegular 14px for none clickable titles text
+@font-face {
+  font-family: "csTypeEPRegular";
+  src: url("./assets/fonts/CSW07eP-Romanv4.ttf") format("truetype");
+}
+
+//csTypeEt for numbers
+@font-face {
+  font-family: "csTypeEtRegular";
+  src: url("./assets/fonts/CSW07eT-Romanv4.ttf") format("truetype");
+}
+
 $theme-colors: ("primary": #0074d9,
   "danger": #ff4136);
 
@@ -18,14 +36,15 @@ body {
 }
 
 //helpers
-.border-bottom-black {
-  border-bottom: 1px solid #000000;
-}
 
 .ptf-acc-section {
   overflow: scroll;
   overflow-x: hidden;
   padding: 0 40px;
+}
+
+.border-bottom-black {
+  border-bottom: 1px solid #000000;
 }
 
 .bg-gray-1 {
@@ -47,6 +66,24 @@ body {
 
 .border-bottom-grey-3 {
   border-bottom: 1px solid #DADADA !important;
+}
+
+//clickable table titles
+.csTypeEPBold-14 {
+  font-family: "csTypeEPBold";
+  font-size: 14px;
+}
+
+//non clickable table titles text
+.csTypeEPRegular-14 {
+  font-family: "csTypeEPRegular";
+  font-size: 14px;
+  font-weight: 100;
+}
+
+.csTypeEtRegular {
+  font-family: "csTypeEtRegular";
+  font-size: 14px;
 }
 
 //helpers
