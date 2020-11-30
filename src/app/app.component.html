@@ -2,7 +2,7 @@
 <div class="bg-white">
   <div
     style="width: 1160px; height: 100vh; background: #f1f2f2"
-    class="offset-1 ptf-acc-section bg-gray-1"
+    class="ptf-acc-section bg-gray-1"
   >
     <div>
       <div class="border-bottom-black pb-4">
@@ -50,28 +50,45 @@
               [class.bg-gray-2]="ptfandAccountsDatas[i]['isExpanded']"
             >
               <td
-                class="py-3 px-2 col-lg-2 border-0 d-flex align-items-baseline"
+                class="py-3 px-2 col-md-3 col-lg-2 col-xl-2 border-0 d-flex flex-md-column flex-xl-row flex-xl-row align-items-baseline"
               >
-                {{ ptfandAccountsData.description }}
-                <i
-                  class="fa fa-chevron-down ml-2"
-                  [class.is-expanded]="ptfandAccountsDatas[i]['isExpanded']"
-                ></i>
+                <span class="d-flex align-items-baseline">
+                  {{ ptfandAccountsData.description }}
+                  <i
+                    class="fa fa-chevron-down ml-2"
+                    [class.is-expanded]="ptfandAccountsDatas[i]['isExpanded']"
+                  ></i>
+                </span>
+                <span class="d-lg-none d-xl-none">
+                  {{ ptfandAccountsData.account }}
+                </span>
+                <span class="w-75 d-lg-none d-xl-none">
+                  {{ ptfandAccountsData.holder }}
+                </span>
               </td>
-              <td class="py-3 px-2 col-lg-2 border-0">
+              <td class="py-3 px-2 col-md-3 col-lg-2 col-xl-2 border-0">
                 {{ ptfandAccountsData.additions.portfolioId }}
               </td>
-              <td class="py-3 px-2 col-lg-2 border-0">
+              <td
+                class="py-3 px-2 col-lg-2 border-0 d-md-none d-lg-block d-xl-block"
+              >
                 {{ ptfandAccountsData.account }}
               </td>
-              <td class="py-3 px-2 col-lg-2 border-0">
+              <td
+                class="py-3 px-2 col-lg-2 border-0 d-md-none d-lg-block d-xl-block"
+              >
                 {{ ptfandAccountsData.holder }}
               </td>
-              <td class="py-3 px-2 col-lg-2 border-0 text-right">
+              <td class="py-3 px-2 col-md-3 col-lg-2 border-0 text-right">
                 {{ ptfandAccountsData.performanceYTDpct }}%
               </td>
-              <td class="py-3 p-2 pr-5 col-lg-2 text-right border-0">
-                {{ ptfandAccountsData.valuation.currencyCode }}
+              <td
+                class="py-3 p-2 pr-5 col-md-3 col-lg-2 col-xl-2 text-right border-0"
+              >
+                <span>
+                  {{ ptfandAccountsData.valuation.currencyCode }}
+                  {{ ptfandAccountsData.valuation.amount }}
+                </span>
               </td>
             </tr>
             <tr
@@ -80,17 +97,25 @@
               class="outer w-100 d-flex row no-gutters expanded-tr bg-gray-1"
               [class.border-top-grey-3]="ptfandAccountsDatas[i]['isExpanded']"
             >
-              <td class="py-3 px-2 col-lg-2 border-0"></td>
+              <td class="py-3 px-2 col-md-3 col-lg-2 border-0"></td>
               <td class="py-3 px-2 col-lg-2 border-0">
                 {{ item.additions.IBAN }}
               </td>
-              <td class="py-3 px-2 col-lg-2 border-0">
+              <td
+                class="py-3 px-2 col-lg-2 border-0 d-md-none d-lg-block d-xl-block"
+              >
                 Cassh account ({{ item.additions.accountCurrency }})
               </td>
-              <td class="py-3 px-2 col-lg-2 border-0">
+              <td
+                class="py-3 px-2 col-lg-2 border-0 d-md-none d-lg-block d-xl-block"
+              >
                 {{ item.additions.description }}
               </td>
-              <td class="py-3 px-2 col-lg-2 border-0">-</td>
+              <td
+                class="py-3 px-2 col-lg-2 border-0 d-md-none d-lg-block d-xl-block"
+              >
+                -
+              </td>
               <td
                 class="py-3 px-2 col-lg-2 d-flex flex-column text-right border-0 pr-5"
               >
