@@ -2,9 +2,9 @@
 <div class="bg-white">
   <div
     style="max-width: 1160px; height: 100vh; background: #f1f2f2"
-    class="ptf-acc-section bg-gray-1"
+    class="bg-gray-1"
   >
-    <div>
+    <div class="ptf-acc-section">
       <div class="border-bottom-black pb-4">
         <h4>Portfolios and accounts</h4>
       </div>
@@ -172,6 +172,171 @@
             </tr>
           </tbody>
         </table>
+      </div>
+    </div>
+    <div class="mt-3">
+      <div class="postion-list-section">
+        <div class="border-bottom-black pb-4">
+          <h4>Position List</h4>
+        </div>
+        <div>
+          <table
+            class="table bg-white mt-4 d-flex flex-column position-list-table"
+          >
+            <thead class="d-flex w-100">
+              <tr class="w-100 d-flex row no-gutters border-bottom-black">
+                <th
+                  class="csTypeEPRegular-14 p-2 col-6 col-md-3 col-lg-2 border-0 border-bottom-grey-3"
+                >
+                  Asset Category
+                </th>
+                <th
+                  class="csTypeEPRegular-14 p-2 col-md-1 offset-md-1 offset-lg-0 col-lg-2 border-0 d-none d-sm-none d-md-block d-lg-block d-xl-block text-right"
+                >
+                  Price
+                </th>
+                <th
+                  class="csTypeEPRegular-14 p-2 col-lg-3 border-0 d-none d-sm-none d-md-none d-lg-block d-xl-block text-right"
+                >
+                  Value
+                </th>
+                <th
+                  class="csTypeEPRegular-14 p-2 col-lg-2 border-0 d-none d-sm-none d-md-none d-lg-block d-xl-block text-right"
+                >
+                  Allocation
+                </th>
+                <th
+                  class="csTypeEPRegular-14 p-2 col-6 col-md-3 pr-sm-2 pr-md-5 pr-lg-5 col-lg-3 text-right border-0"
+                >
+                  Performance
+                </th>
+              </tr>
+            </thead>
+            <tbody
+              class="d-flex flex-column border-bottom-grey-3 border-top-0"
+              *ngFor="
+                let ptfandAccountsDatasList of positionListDatas.assetClasses;
+                let i = index
+              "
+            >
+              <tr
+                (click)="collapssePositionList(i)"
+                class="w-100 d-flex row no-gutters"
+                [class.hover-bg-gray-1]="
+                  !positionListDatas.assetClasses[i]['isExpanded']
+                "
+                [class.bg-gray-2]="
+                  positionListDatas.assetClasses[i]['isExpanded']
+                "
+              >
+                <td
+                  class="py-3 px-2 col-md-3 col-lg-2 col-xl-2 border-0 d-flex flex-column flex-sm-column flex-md-column flex-lg-row flex-xl-row align-items-baseline"
+                >
+                  <span class="d-flex align-items-baseline csTypeEPBold-14">
+                    {{ ptfandAccountsDatasList.name }}
+                    <i
+                      class="fa fa-chevron-down ml-2"
+                      [class.is-expanded]="
+                        positionListDatas.assetClasses[i]['isExpanded']
+                      "
+                    ></i>
+                  </span>
+                  <span class="d-md-block d-lg-none d-xl-none"> TEST </span>
+                  <span class="d-lg-none d-xl-none"> TEST </span>
+                  <span class="d-sm-block d-md-none d-lg-none d-xl-none">
+                    TEST
+                  </span>
+                </td>
+                <td
+                  class="py-3 px-2 col-md-2 offset-md-1 offset-lg-0 col-lg-2 col-xl-2 border-0 d-none d-sm-none d-md-block d-lg-block d-xl-block text-right"
+                ></td>
+                <td
+                  class="py-3 px-2 col-lg-1 border-0 d-none d-sm-none d-md-none d-lg-block d-xl-block csTypeEPRegular-14"
+                ></td>
+                <td
+                  class="py-3 px-2 col-lg-2 border-0 d-none d-sm-none d-md-none d-lg-block d-xl-block csTypeEPRegular-14 text-right"
+                >
+                  {{ ptfandAccountsDatasList.additions.currency }}
+                  {{ ptfandAccountsDatasList.additions.amount }}
+                </td>
+                <td
+                  class="py-3 p-2 pr-sm-2 col-md-3 col-lg-2 col-xl-2 text-right border-0 d-flex flex-column text-right"
+                >
+                  <span>
+                    {{
+                      ptfandAccountsDatasList.portfolioPct | number: "1.2-2"
+                    }}%
+                  </span>
+                </td>
+              </tr>
+              <tr
+                *ngFor="let item of positionListDatas.positions"
+                [@animationCollapsePositions]="
+                  positionListDatas.assetClasses[i]['state']
+                "
+                class="outer w-100 d-flex row no-gutters expanded-tr bg-gray-1"
+                [class.border-top-grey-3]="
+                  positionListDatas.assetClasses[i]['isExpanded']
+                "
+              >
+                <td
+                  class="py-3 px-2 col-lg-2 border-0 d-none d-sm-none d-md-none d-lg-block d-xl-block csTypeEPRegular-14 text-right"
+                >
+                  <span>
+                    {{ item.instrumentName }}
+                  </span>
+                  <span
+                    class="d-block d-sm-block d-md-none d-lg-none d-xl-none"
+                  >
+                    TEST
+                  </span>
+                  <span
+                    class="d-block d-sm-block d-md-none d-lg-none d-xl-none"
+                  >
+                    TEST
+                  </span>
+                  <span
+                    class="d-block d-sm-block d-md-none d-lg-none d-xl-none"
+                  >
+                    TEST TEST
+                  </span>
+                  <span class="d-block d-sm-none d-md-none d-lg-none d-xl-none">
+                    <i
+                      class="fas fa-arrow-right position-absolute"
+                      style="right: 16px; top: 50%"
+                    ></i>
+                  </span>
+                </td>
+                <td
+                  class="py-3 px-2 col-lg-2 border-0 d-none d-sm-none d-md-none d-lg-block d-xl-block csTypeEPRegular-14 text-right"
+                >
+                  {{ item.costPrice.amount }} {{ item.costPrice.currencyCode }}
+                </td>
+                <td
+                  class="py-3 px-2 col-lg-3 border-0 d-none d-sm-none d-md-none d-lg-block d-xl-block text-right"
+                >
+                  {{ item.additions.nativeCCY }}
+                  {{ item.additions.marketValue }}
+                </td>
+                <td
+                  class="py-3 px-2 offset-md-0 col-md-6 col-lg-2 d-none d-sm-block d-md-flex flex-md-column text-right border-0"
+                >
+                  {{ item.additions.allocationPct | number: "1.2-2" }}%
+                </td>
+                <td
+                  class="py-3 px-2 offset-md-0 col-md-6 col-lg-3 d-none d-sm-block d-md-flex flex-md-column text-right border-0 pr-5"
+                >
+                  {{ item.additions.unrealizedPL | number: "1.2-2" }}
+
+                  <i
+                    class="fas fa-arrow-right position-absolute"
+                    style="right: 16px; top: 20px"
+                  ></i>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </div>

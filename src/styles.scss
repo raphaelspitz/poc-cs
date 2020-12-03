@@ -37,7 +37,8 @@ body {
 
 //helpers
 
-.ptf-acc-section {
+.ptf-acc-section,
+.postion-list-section {
   overflow: scroll;
   overflow-x: hidden;
   padding: 0 40px;
@@ -97,7 +98,15 @@ body {
   /* Optional: just make scrollbar invisible */
 }
 
-.ptf-acc-table {
+.postion-list-section::-webkit-scrollbar {
+  width: 0px;
+  /* Remove scrollbar space */
+  background: transparent;
+  /* Optional: just make scrollbar invisible */
+}
+
+.ptf-acc-table,
+.position-list-table {
 
   i {
     transition: all 0.25s;
