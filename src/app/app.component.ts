@@ -14,21 +14,20 @@ import {
   styleUrls: ["./app.component.scss"],
   animations: [
     trigger("animationCollapse", [
-      state("small", style({ height: "0px" })),
-      state("large", style({ height: "130px" })),
-      transition("small <=> large", animate("250ms ease-in")),
+      state("false", style({ height: "0px" })),
+      state("true", style({ height: "130px" })),
+      transition("false <=> true", animate("250ms ease-in")),
     ]),
     trigger("animationCollapsePositions", [
-      state("small", style({ height: "0px" })),
-      state("large", style({ height: "190px" })),
-      transition("small <=> large", animate("250ms ease-in")),
+      state("false", style({ height: "0px" })),
+      state("true", style({ height: "190px" })),
+      transition("false <=> true", animate("250ms ease-in")),
     ]),
   ],
 })
 export class AppComponent implements OnInit {
   title = "poc-cs";
   isExpanded = false;
-  state: string = "small";
 
   ptfandAccountsDatas = [
     {
@@ -1849,7 +1848,6 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     for (let index = 0; index < this.ptfandAccountsDatas.length; index++) {
-      this.ptfandAccountsDatas[index]["state"] = "small";
       this.ptfandAccountsDatas[index]["isExpanded"] = false;
     }
     for (
@@ -1857,24 +1855,17 @@ export class AppComponent implements OnInit {
       index < this.positionListDatas.assetClasses.length;
       index++
     ) {
-      this.positionListDatas.assetClasses[index]["state"] = "small";
       this.positionListDatas.assetClasses[index]["isExpanded"] = false;
     }
   }
 
   collapsse(i: number) {
-    this.ptfandAccountsDatas[i]["state"] =
-      this.ptfandAccountsDatas[i]["state"] === "small" ? "large" : "small";
     this.ptfandAccountsDatas[i]["isExpanded"] = !this.ptfandAccountsDatas[i][
       "isExpanded"
     ];
   }
 
   collapssePositionList(i: number) {
-    this.positionListDatas.assetClasses[i]["state"] =
-      this.positionListDatas.assetClasses[i]["state"] === "small"
-        ? "large"
-        : "small";
     this.positionListDatas.assetClasses[i]["isExpanded"] = !this
       .positionListDatas.assetClasses[i]["isExpanded"];
   }

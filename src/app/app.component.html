@@ -111,7 +111,7 @@
             </tr>
             <tr
               *ngFor="let item of ptfandAccountsData.cashAccounts"
-              [@animationCollapse]="ptfandAccountsDatas[i]['state']"
+              [@animationCollapse]="ptfandAccountsDatas[i]['isExpanded']"
               class="outer w-100 d-flex row no-gutters expanded-tr bg-gray-1"
               [class.border-top-grey-3]="ptfandAccountsDatas[i]['isExpanded']"
             >
@@ -264,7 +264,7 @@
               <tr
                 *ngFor="let item of positionListDatas.positions"
                 [@animationCollapsePositions]="
-                  positionListDatas.assetClasses[i]['state']
+                  positionListDatas.assetClasses[i]['isExpanded']
                 "
                 class="outer w-100 d-flex row no-gutters expanded-tr bg-gray-1"
                 [class.border-top-grey-3]="
