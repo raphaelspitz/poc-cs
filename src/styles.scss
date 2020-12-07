@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@import "scss/helpers/variables";
 
 // tables use csTypeEPBold 14px for clickable tiles
 @font-face {
@@ -53,24 +54,24 @@ body {
 }
 
 .bg-gray-1 {
-  background-color: #f1f2f2;
+  background-color: $cs-color-light;
 }
 
 .hover-bg-gray-1:hover {
-  background: #f1f2f2;
+  background: $cs-color-light;
   transition: background-color 0.25s ease-out;
 }
 
 .bg-gray-2 {
-  background-color: #e6e7e8;
+  background-color: $cs-color-grey2;
 }
 
 .border-top-grey-3 {
-  border-top: 1px solid #dadada;
+  border-top: 1px solid $cs-color-grey3;
 }
 
 .border-bottom-grey-3 {
-  border-bottom: 1px solid #dadada !important;
+  border-bottom: 1px solid $cs-color-grey3;
 }
 
 //clickable table titles
