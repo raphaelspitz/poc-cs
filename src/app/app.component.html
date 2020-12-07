@@ -49,7 +49,7 @@
             "
           >
             <tr
-              (click)="collapsse(i)"
+              (click)="collapse(i)"
               class="w-100 d-flex row no-gutters"
               [class.hover-bg-gray-1]="!ptfandAccountsDatas[i]['isExpanded']"
               [class.bg-gray-2]="ptfandAccountsDatas[i]['isExpanded']"
@@ -111,7 +111,7 @@
             </tr>
             <tr
               *ngFor="let item of ptfandAccountsData.cashAccounts"
-              [@animationCollapse]="ptfandAccountsDatas[i]['isExpanded']"
+              [@animationExpand]="ptfandAccountsDatas[i]['isExpanded']"
               class="outer w-100 d-flex row no-gutters expanded-tr bg-gray-1"
               [class.border-top-grey-3]="ptfandAccountsDatas[i]['isExpanded']"
             >
@@ -217,7 +217,7 @@
               "
             >
               <tr
-                (click)="collapssePositionList(i)"
+                (click)="collapsePositionList(i)"
                 class="w-100 d-flex row no-gutters"
                 [class.hover-bg-gray-1]="
                   !positionListDatas.assetClasses[i]['isExpanded']
@@ -263,7 +263,7 @@
               </tr>
               <tr
                 *ngFor="let item of positionListDatas.positions"
-                [@animationCollapsePositions]="
+                [@animationExpandPositions]="
                   positionListDatas.assetClasses[i]['isExpanded']
                 "
                 class="outer w-100 d-flex row no-gutters expanded-tr bg-gray-1"

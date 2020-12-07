@@ -13,12 +13,12 @@ import {
   templateUrl: "./app.component.html",
   styleUrls: ["./app.component.scss"],
   animations: [
-    trigger("animationCollapse", [
+    trigger("animationExpand", [
       state("false", style({ height: "0px" })),
-      state("true", style({ height: "130px" })),
+      state("true", style({ height: "130" })),
       transition("false <=> true", animate("250ms ease-in")),
     ]),
-    trigger("animationCollapsePositions", [
+    trigger("animationExpandPositions", [
       state("false", style({ height: "0px" })),
       state("true", style({ height: "190px" })),
       transition("false <=> true", animate("250ms ease-in")),
@@ -1859,13 +1859,13 @@ export class AppComponent implements OnInit {
     }
   }
 
-  collapsse(i: number) {
+  collapse(i: number) {
     this.ptfandAccountsDatas[i]["isExpanded"] = !this.ptfandAccountsDatas[i][
       "isExpanded"
     ];
   }
 
-  collapssePositionList(i: number) {
+  collapsePositionList(i: number) {
     this.positionListDatas.assetClasses[i]["isExpanded"] = !this
       .positionListDatas.assetClasses[i]["isExpanded"];
   }
