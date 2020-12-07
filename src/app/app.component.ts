@@ -14,13 +14,13 @@ import {
   styleUrls: ["./app.component.scss"],
   animations: [
     trigger("animationExpand", [
-      state("false", style({ height: "0px" })),
-      state("true", style({ height: "130" })),
+      state("false", style({ height: "0px", opacity: 0 })),
+      state("true", style({ height: "*", opacity: 1 })),
       transition("false <=> true", animate("250ms ease-in")),
     ]),
     trigger("animationExpandPositions", [
-      state("false", style({ height: "0px" })),
-      state("true", style({ height: "190px" })),
+      state("false", style({ height: "0px", opacity: 0 })),
+      state("true", style({ height: "*", opacity: 1 })),
       transition("false <=> true", animate("250ms ease-in")),
     ]),
   ],
