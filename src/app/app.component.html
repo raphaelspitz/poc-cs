@@ -277,46 +277,72 @@
                   positionListDatas.assetClasses[i]['isExpanded']
                 "
               >
-                <td
-                  class="py-3 px-2 col-md-2 col-lg-2 border-0 d-block d-sm-block d-md-block d-lg-block d-xl-block csTypeEPRegular-14 text-left"
+                <tr
+                  *ngFor="let item of positionListDatas.positions"
+                  class="outer w-100 d-flex row no-gutters expanded-tr bg-gray-1"
+                  [class.border-top-grey-3]="
+                    positionListDatas.assetClasses[i]['isExpanded']
+                  "
                 >
-                  <span> {{ item.instrumentName }} </span>
-                </td>
-                <td
-                  class="py-3 px-2 col-md-2 col-lg-2 border-0 d-none d-sm-none d-md-block d-lg-block d-xl-block csTypeEPRegular-14 text-right"
-                >
-                  {{ item.costPrice.amount }} {{ item.costPrice.currencyCode }}
-                </td>
-                <td
-                  class="py-3 px-2 col-md-2 offset-md-1 offset-lg-0 col-lg-3 border-0 d-none d-sm-none d-md-block d-lg-block d-xl-block text-right"
-                >
-                  {{ item.additions.nativeCCY }}
-                  {{ item.additions.marketValue }}
-                </td>
-                <td
-                  class="py-3 px-2 col-md-2 col-lg-2 d-none d-sm-none d-md-flex flex-md-column text-right border-0"
-                >
-                  {{ item.additions.allocationPct | number: "1.2-2" }}%
-                </td>
-                <td
-                  class="py-3 px-2 offset-md-0 col-md-6 col-lg-3 d-block d-sm-block d-md-flex flex-md-column text-right border-0 pr-5"
-                >
-                  <span class="d-block d-sm-block d-md-none">
+                  <td
+                    class="py-3 px-2 col-lg-2 border-0 d-none d-sm-none d-md-none d-lg-block d-xl-block csTypeEPRegular-14 text-right"
+                  >
+                    <span>
+                      {{ item.instrumentName }}
+                    </span>
+                    <span
+                      class="d-block d-sm-block d-md-none d-lg-none d-xl-none"
+                    >
+                      TEST
+                    </span>
+                    <span
+                      class="d-block d-sm-block d-md-none d-lg-none d-xl-none"
+                    >
+                      TEST
+                    </span>
+                    <span
+                      class="d-block d-sm-block d-md-none d-lg-none d-xl-none"
+                    >
+                      TEST TEST
+                    </span>
+                    <span
+                      class="d-block d-sm-none d-md-none d-lg-none d-xl-none"
+                    >
+                      <i
+                        class="fas fa-arrow-right position-absolute"
+                        style="right: 16px; top: 50%"
+                      ></i>
+                    </span>
+                  </td>
+                  <td
+                    class="py-3 px-2 col-lg-2 border-0 d-none d-sm-none d-md-none d-lg-block d-xl-block csTypeEPRegular-14 text-right"
+                  >
+                    {{ item.costPrice.amount }}
+                    {{ item.costPrice.currencyCode }}
+                  </td>
+                  <td
+                    class="py-3 px-2 col-lg-3 border-0 d-none d-sm-none d-md-none d-lg-block d-xl-block text-right"
+                  >
                     {{ item.additions.nativeCCY }}
                     {{ item.additions.marketValue }}
-                  </span>
-                  <span>
-                    {{
-                      item.additions.unrealizedPL | number: "1.2-2"
-                    }}
-                    (46.33%)P
-                  </span>
-                  <i
-                    class="fas fa-arrow-right position-absolute"
-                    style="right: 16px; top: 20px"
-                  ></i>
-                </td>
-              </tr>
+                  </td>
+                  <td
+                    class="py-3 px-2 offset-md-0 col-md-6 col-lg-2 d-none d-sm-block d-md-flex flex-md-column text-right border-0"
+                  >
+                    {{ item.additions.allocationPct | number: "1.2-2" }}%
+                  </td>
+                  <td
+                    class="py-3 px-2 offset-md-0 col-md-6 col-lg-3 d-none d-sm-block d-md-flex flex-md-column text-right border-0 pr-5"
+                  >
+                    {{ item.additions.unrealizedPL | number: "1.2-2" }}
+
+                    <i
+                      class="fas fa-arrow-right position-absolute"
+                      style="right: 16px; top: 20px"
+                    ></i>
+                  </td>
+                </tr>
+              </div>
             </tbody>
           </table>
         </div>
