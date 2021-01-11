@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@import "scss/helpers/variables";
 
 // tables use csTypeEPBold 14px for clickable tiles
 @font-face {
@@ -18,18 +19,22 @@
   src: url("./assets/fonts/CSW07eT-Romanv4.ttf") format("truetype");
 }
 
-$theme-colors: ("primary": #0074d9,
-  "danger": #ff4136);
+$theme-colors: (
+  "primary": #0074d9,
+  "danger": #ff4136,
+);
 
-$grid-breakpoints: (xs:0,
-  sm:575px,
-  md:768px,
-  lg:1024px,
-  xl:1280px);
+$grid-breakpoints: (
+  xs: 0,
+  sm: 575px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1280px,
+);
 
 @import "node_modules/bootstrap/scss/bootstrap";
 
-@import '@fortawesome/fontawesome-free/css/all.css';
+@import "@fortawesome/fontawesome-free/css/all.css";
 
 body {
   overflow: auto;
@@ -49,24 +54,24 @@ body {
 }
 
 .bg-gray-1 {
-  background-color: #F1F2F2;
+  background-color: $cs-color-light;
 }
 
 .hover-bg-gray-1:hover {
-  background: #F1F2F2;
+  background: $cs-color-light;
   transition: background-color 0.25s ease-out;
 }
 
 .bg-gray-2 {
-  background-color: #E6E7E8;
+  background-color: $cs-color-grey2;
 }
 
 .border-top-grey-3 {
-  border-top: 1px solid #DADADA;
+  border-top: 1px solid $cs-color-grey3;
 }
 
 .border-bottom-grey-3 {
-  border-bottom: 1px solid #DADADA !important;
+  border-bottom: 1px solid $cs-color-grey3;
 }
 
 //clickable table titles
@@ -86,7 +91,6 @@ body {
   font-family: "csTypeEtRegular";
   font-size: 14px;
   font-weight: 100;
-
 }
 
 //helpers
@@ -107,7 +111,6 @@ body {
 
 .ptf-acc-table,
 .position-list-table {
-
   i {
     transition: all 0.25s;
 
@@ -117,7 +120,6 @@ body {
   }
 
   .outer {
-    height: 0px;
     overflow: hidden;
   }
 
@@ -127,5 +129,4 @@ body {
     flex: 1;
     cursor: pointer;
   }
-
 }
