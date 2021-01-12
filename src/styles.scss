@@ -1,5 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
-@import "scss/helpers/variables";
 
 // tables use csTypeEPBold 14px for clickable tiles
 @font-face {
@@ -19,22 +18,22 @@
   src: url("./assets/fonts/CSW07eT-Romanv4.ttf") format("truetype");
 }
 
-$theme-colors: (
-  "primary": #0074d9,
-  "danger": #ff4136,
-);
+$theme-colors: ("primary": #000000,
+  "secondary": #ffffff,
+  "danger": #ff4136);
 
-$grid-breakpoints: (
-  xs: 0,
-  sm: 575px,
-  md: 768px,
-  lg: 1024px,
-  xl: 1280px,
-);
+$grid-breakpoints: (xs:0,
+  sm:575px,
+  md:768px,
+  lg:1024px,
+  xl:1280px);
+
+$btn-border-radius: 0;
+
 
 @import "node_modules/bootstrap/scss/bootstrap";
 
-@import "@fortawesome/fontawesome-free/css/all.css";
+@import '@fortawesome/fontawesome-free/css/all.css';
 
 body {
   overflow: auto;
@@ -46,32 +45,36 @@ body {
 .postion-list-section {
   overflow: scroll;
   overflow-x: hidden;
-  padding: 0 40px;
+  padding: 0 0px;
 }
 
 .border-bottom-black {
   border-bottom: 1px solid #000000;
 }
 
+.border-black {
+  border: 1px solid #000000;
+}
+
 .bg-gray-1 {
-  background-color: $cs-color-light;
+  background-color: #F1F2F2;
 }
 
 .hover-bg-gray-1:hover {
-  background: $cs-color-light;
+  background: #F1F2F2;
   transition: background-color 0.25s ease-out;
 }
 
 .bg-gray-2 {
-  background-color: $cs-color-grey2;
+  background-color: #E6E7E8;
 }
 
 .border-top-grey-3 {
-  border-top: 1px solid $cs-color-grey3;
+  border-top: 1px solid #DADADA;
 }
 
 .border-bottom-grey-3 {
-  border-bottom: 1px solid $cs-color-grey3;
+  border-bottom: 1px solid #DADADA !important;
 }
 
 //clickable table titles
@@ -84,6 +87,12 @@ body {
 .csTypeEPRegular-14 {
   font-family: "csTypeEPRegular";
   font-size: 14px;
+  font-weight: 100;
+}
+
+.csTypeEPRegular-16 {
+  font-family: "csTypeEPRegular";
+  font-size: 16px;
   font-weight: 100;
 }
 
@@ -111,6 +120,7 @@ body {
 
 .ptf-acc-table,
 .position-list-table {
+
   i {
     transition: all 0.25s;
 
@@ -120,6 +130,7 @@ body {
   }
 
   .outer {
+    height: 0px;
     overflow: hidden;
   }
 
@@ -129,4 +140,30 @@ body {
     flex: 1;
     cursor: pointer;
   }
+
+}
+
+// input from control
+.focus-input-bottom:focus {
+  border-bottom: 2px solid #000000;
+}
+
+
+// buttons
+
+.btn {
+  height: 50px;
+  font-weight: 700;
+}
+
+.btn-primary:hover {
+  color: #fff;
+  background-color: #575756;
+  border: 2px solid #575756;
+}
+
+.btn-secondary:hover {
+  color: #000000;
+  background-color: white;
+  border: 2px solid #000000;
 }
