@@ -50,7 +50,7 @@
             "
           >
             <tr
-              (click)="collapsse(i)"
+              (click)="collapse(i)"
               class="w-100 d-flex row no-gutters"
               [class.hover-bg-gray-1]="!ptfandAccountsDatas[i]['isExpanded']"
               [class.bg-gray-2]="ptfandAccountsDatas[i]['isExpanded']"
@@ -110,64 +110,74 @@
                 </span>
               </td>
             </tr>
-            <tr
-              *ngFor="let item of ptfandAccountsData.cashAccounts"
-              [@animationCollapse]="ptfandAccountsDatas[i]['state']"
-              class="outer w-100 d-flex row no-gutters expanded-tr bg-gray-1"
-              [class.border-top-grey-3]="ptfandAccountsDatas[i]['isExpanded']"
+            <div
+              class="outer"
+              [@animationExpand]="ptfandAccountsDatas[i]['isExpanded']"
             >
-              <td
-                class="py-3 px-2 col-lg-2 border-0 d-none d-md-none d-lg-block d-xl-block"
-              ></td>
-              <td
-                class="py-3 px-2 offset-0 offset-md-0 offset-lg-0 col-lg-2 border-0 d-flex d-sm-flex flex-column flex-sm-column d-md-block csTypeEPRegular-14"
+              <tr
+                *ngFor="let item of ptfandAccountsData.cashAccounts"
+                class="outer w-100 d-flex row no-gutters expanded-tr bg-gray-1"
+                [class.border-top-grey-3]="ptfandAccountsDatas[i]['isExpanded']"
               >
-                <span>
-                  {{ item.additions.IBAN }}
-                </span>
-                <span class="d-block d-sm-block d-md-none d-lg-none d-xl-none">
-                  {{ ptfandAccountsData.account }}
-                </span>
-                <span class="d-block d-sm-block d-md-none d-lg-none d-xl-none">
-                  {{ ptfandAccountsData.holder.split("-")[0] }}
-                </span>
-                <span class="d-block d-sm-block d-md-none d-lg-none d-xl-none">
+                <td
+                  class="py-3 px-2 col-lg-2 border-0 d-none d-md-none d-lg-block d-xl-block"
+                ></td>
+                <td
+                  class="py-3 px-2 offset-0 offset-md-0 offset-lg-0 col-lg-2 border-0 d-flex d-sm-flex flex-column flex-sm-column d-md-block csTypeEPRegular-14"
+                >
+                  <span>
+                    {{ item.additions.IBAN }}
+                  </span>
+                  <span
+                    class="d-block d-sm-block d-md-none d-lg-none d-xl-none"
+                  >
+                    {{ ptfandAccountsData.account }}
+                  </span>
+                  <span
+                    class="d-block d-sm-block d-md-none d-lg-none d-xl-none"
+                  >
+                    {{ ptfandAccountsData.holder.split("-")[0] }}
+                  </span>
+                  <span
+                    class="d-block d-sm-block d-md-none d-lg-none d-xl-none"
+                  >
+                    {{ item.additions.accountCurrency }}
+                    {{ item.additions.balance }}
+                  </span>
+                  <span class="d-block d-sm-none d-md-none d-lg-none d-xl-none">
+                    <i
+                      class="fas fa-arrow-right position-absolute"
+                      style="right: 16px; top: 50%"
+                    ></i>
+                  </span>
+                </td>
+                <td
+                  class="py-3 px-2 col-lg-2 border-0 d-none d-sm-none d-md-none d-lg-block d-xl-block csTypeEPRegular-14"
+                >
+                  Cassh account ({{ item.additions.accountCurrency }})
+                </td>
+                <td
+                  class="py-3 px-2 col-lg-2 border-0 d-none d-sm-none d-md-none d-lg-block d-xl-block csTypeEPRegular-14"
+                >
+                  {{ item.additions.description }}
+                </td>
+                <td
+                  class="py-3 px-2 col-lg-2 border-0 d-none d-sm-none d-md-none d-lg-block d-xl-block text-right"
+                >
+                  -
+                </td>
+                <td
+                  class="py-3 px-2 offset-md-0 col-md-6 col-lg-2 d-none d-sm-block d-md-flex flex-md-column text-right border-0 pr-5"
+                >
                   {{ item.additions.accountCurrency }}
                   {{ item.additions.balance }}
-                </span>
-                <span class="d-block d-sm-none d-md-none d-lg-none d-xl-none">
                   <i
                     class="fas fa-arrow-right position-absolute"
-                    style="right: 16px; top: 50%"
+                    style="right: 16px; top: 20px"
                   ></i>
-                </span>
-              </td>
-              <td
-                class="py-3 px-2 col-lg-2 border-0 d-none d-sm-none d-md-none d-lg-block d-xl-block csTypeEPRegular-14"
-              >
-                Cassh account ({{ item.additions.accountCurrency }})
-              </td>
-              <td
-                class="py-3 px-2 col-lg-2 border-0 d-none d-sm-none d-md-none d-lg-block d-xl-block csTypeEPRegular-14"
-              >
-                {{ item.additions.description }}
-              </td>
-              <td
-                class="py-3 px-2 col-lg-2 border-0 d-none d-sm-none d-md-none d-lg-block d-xl-block text-right"
-              >
-                -
-              </td>
-              <td
-                class="py-3 px-2 offset-md-0 col-md-6 col-lg-2 d-none d-sm-block d-md-flex flex-md-column text-right border-0 pr-5"
-              >
-                {{ item.additions.accountCurrency }}
-                {{ item.additions.balance }}
-                <i
-                  class="fas fa-arrow-right position-absolute"
-                  style="right: 16px; top: 20px"
-                ></i>
-              </td>
-            </tr>
+                </td>
+              </tr>
+            </div>
           </tbody>
         </table>
       </div>
@@ -218,7 +228,7 @@
               "
             >
               <tr
-                (click)="collapssePositionList(i)"
+                (click)="collapsePositionList(i)"
                 class="w-100 d-flex row no-gutters"
                 [class.hover-bg-gray-1]="
                   !positionListDatas.assetClasses[i]['isExpanded']
@@ -262,43 +272,61 @@
                   </span>
                 </td>
               </tr>
-              <tr
-                *ngFor="let item of positionListDatas.positions"
-                [@animationCollapsePositions]="
-                  positionListDatas.assetClasses[i]['state']
-                "
-                class="outer w-100 d-flex row no-gutters expanded-tr bg-gray-1"
-                [class.border-top-grey-3]="
+              <div
+                class="outer"
+                [@animationExpandPositions]="
                   positionListDatas.assetClasses[i]['isExpanded']
                 "
               >
-                <td
-                  class="py-3 px-2 col-md-2 col-lg-2 border-0 d-block d-sm-block d-md-block d-lg-block d-xl-block csTypeEPRegular-14 text-left"
+                <tr
+                  *ngFor="let item of positionListDatas.positions"
+                  class="outer w-100 d-flex row no-gutters expanded-tr bg-gray-1"
+                  [class.border-top-grey-3]="
+                    positionListDatas.assetClasses[i]['isExpanded']
+                  "
                 >
-                  <span> {{ item.instrumentName }} </span>
-                </td>
-                <td
-                  class="py-3 px-2 col-md-2 col-lg-2 border-0 d-none d-sm-none d-md-block d-lg-block d-xl-block csTypeEPRegular-14 text-right"
-                >
-                  {{ item.costPrice.amount }} {{ item.costPrice.currencyCode }}
-                </td>
-                <td
-                  class="py-3 px-2 col-md-2 offset-md-1 offset-lg-0 col-lg-3 border-0 d-none d-sm-none d-md-block d-lg-block d-xl-block text-right"
-                >
-                  {{ item.additions.nativeCCY }}
-                  {{ item.additions.marketValue }}
-                </td>
-                <td
-                  class="py-3 px-2 col-md-2 col-lg-2 d-none d-sm-none d-md-flex flex-md-column text-right border-0"
-                >
-                  {{ item.additions.allocationPct | number: "1.2-2" }}%
-                </td>
-                <td
-                  class="py-3 px-2 offset-md-0 col-md-6 col-lg-3 d-block d-sm-block d-md-flex flex-md-column text-right border-0 pr-5"
-                >
-                  <span class="d-block d-sm-block d-md-none">
+                  <td
+                    class="py-3 px-2 col-lg-2 border-0 d-none d-sm-none d-md-none d-lg-block d-xl-block csTypeEPRegular-14 text-right"
+                  >
+                    <span>
+                      {{ item.instrumentName }}
+                    </span>
+                    <span
+                      class="d-block d-sm-block d-md-none d-lg-none d-xl-none"
+                    >
+                      TEST
+                    </span>
+                    <span
+                      class="d-block d-sm-block d-md-none d-lg-none d-xl-none"
+                    >
+                      TEST
+                    </span>
+                    <span
+                      class="d-block d-sm-block d-md-none d-lg-none d-xl-none"
+                    >
+                      TEST TEST
+                    </span>
+                    <span
+                      class="d-block d-sm-none d-md-none d-lg-none d-xl-none"
+                    >
+                      <i
+                        class="fas fa-arrow-right position-absolute"
+                        style="right: 16px; top: 50%"
+                      ></i>
+                    </span>
+                  </td>
+                  <td
+                    class="py-3 px-2 col-lg-2 border-0 d-none d-sm-none d-md-none d-lg-block d-xl-block csTypeEPRegular-14 text-right"
+                  >
+                    {{ item.costPrice.amount }}
+                    {{ item.costPrice.currencyCode }}
+                  </td>
+                  <td
+                    class="py-3 px-2 col-lg-3 border-0 d-none d-sm-none d-md-none d-lg-block d-xl-block text-right"
+                  >
                     {{ item.additions.nativeCCY }}
                     {{ item.additions.marketValue }}
+<<<<<<< HEAD
                   </span>
                   <span>
                     {{ item.additions.unrealizedPL | number: "1.2-2" }}
@@ -310,6 +338,26 @@
                   ></i>
                 </td>
               </tr>
+=======
+                  </td>
+                  <td
+                    class="py-3 px-2 offset-md-0 col-md-6 col-lg-2 d-none d-sm-block d-md-flex flex-md-column text-right border-0"
+                  >
+                    {{ item.additions.allocationPct | number: "1.2-2" }}%
+                  </td>
+                  <td
+                    class="py-3 px-2 offset-md-0 col-md-6 col-lg-3 d-none d-sm-block d-md-flex flex-md-column text-right border-0 pr-5"
+                  >
+                    {{ item.additions.unrealizedPL | number: "1.2-2" }}
+
+                    <i
+                      class="fas fa-arrow-right position-absolute"
+                      style="right: 16px; top: 20px"
+                    ></i>
+                  </td>
+                </tr>
+              </div>
+>>>>>>> 28b1b5169f59f932e40f35a0d75aafd150401054
             </tbody>
           </table>
         </div>
