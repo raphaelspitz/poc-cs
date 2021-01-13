@@ -1,0 +1,44 @@
+// input from control
+.form-control {
+  position: relative;
+  padding: 0;
+  padding-bottom: 16px;
+  border: 0;
+  border-bottom: 1px solid black;
+  border-radius: 0;
+  color: black;
+  background-color: white;
+  font-family: "csTypeEPRegular";
+  font-size: 16px;
+  height: 40px;
+  line-height: 24px;
+  display: inline-block;
+
+  &:focus {
+    border: 0;
+    border-bottom: 2px solid black;
+    padding-bottom: 15px;
+    box-shadow: none;
+    outline: none;
+  }
+
+  &[disabled] {
+    color: #cccccc;
+    background-color: white;
+    border-width: 1px;
+    border-color: #cccccc;
+    cursor: default;
+  }
+
+  &[disabled]::placeholder {
+    color: #cccccc;
+  }
+}
+
+.form-control-right-icon {
+  // CHECK DEMAIN
+  padding-left: 24px;
+  &:before {
+    content: url("https://www.prospectsoft.com/images/security/shield2.svg");
+  }
+}
