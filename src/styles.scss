@@ -1,20 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
 
-// tables use csTypeEPBold 14px for clickable tiles
+// tables use CSePBold 14px for clickable tiles
 @font-face {
-  font-family: "csTypeEPBold";
+  font-family: "CSePBold";
   src: url("./assets/fonts/CSW07eP-Boldv4.ttf") format("truetype");
 }
 
 // tables use csTypeEPRegular 14px for none clickable titles text
 @font-face {
-  font-family: "csTypeEPRegular";
+  font-family: "CSePRoman";
   src: url("./assets/fonts/CSW07eP-Romanv4.ttf") format("truetype");
 }
 
 //csTypeEt for numbers
 @font-face {
-  font-family: "csTypeEtRegular";
+  font-family: "CSeTRoman";
   src: url("./assets/fonts/CSW07eT-Romanv4.ttf") format("truetype");
 }
 
@@ -81,26 +81,26 @@ body {
 }
 
 //clickable table titles
-.csTypeEPBold-14 {
-  font-family: "csTypeEPBold";
+.CSePBold-14 {
+  font-family: "CSePBold";
   font-size: 14px;
 }
 
 //non clickable table titles text
 .csTypeEPRegular-14 {
-  font-family: "csTypeEPRegular";
+  font-family: "CSePRoman";
   font-size: 14px;
   font-weight: 100;
 }
 
 .csTypeEPRegular-16 {
-  font-family: "csTypeEPRegular";
+  font-family: "CSePRoman";
   font-size: 16px;
   font-weight: 100;
 }
 
 .csTypeEtRegular {
-  font-family: "csTypeEtRegular";
+  font-family: "CSeTRoman";
   font-size: 14px;
   font-weight: 100;
 }

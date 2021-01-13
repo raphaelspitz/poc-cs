@@ -2,32 +2,98 @@
   <h1 class="p-2">Forms</h1>
   <div class="form-group">
     <div style="margin-bottom: 1rem">
-      <label for="regular">Regular input</label>
+      <label for="regular-input">Regular input</label>
       <input
         type="text"
-        name="regular"
+        id="regular-input"
+        name="regular-input"
         class="form-control"
         placeholder="Enter text"
       />
     </div>
+    <!-- -->
     <div style="margin-bottom: 1rem">
-      <label for="disabled">Disabled input</label>
+      <label for="disabled-input">Disabled input</label>
       <input
         type="text"
-        name="disabled"
+        id="disabled-input"
+        name="disabled-input"
         class="form-control"
         placeholder="Enter text"
         disabled
       />
     </div>
+    <!-- -->
     <div style="margin-bottom: 1rem">
-      <label for="regular-icon">Regular input with right Icon</label>
+      <label for="error-input">Error input</label>
       <input
         type="text"
-        name="regular-icon"
-        class="form-control form-control-right-icon"
+        id="error-input"
+        name="disabled-input"
+        class="form-control form-control-error"
         placeholder="Enter text"
       />
+      <div class="form-control-error-message">This is the error message</div>
+    </div>
+    <!-- -->
+    <div style="margin-bottom: 1rem">
+      <label for="regular-input-right-icon"
+        >Regular input with right Icon</label
+      >
+      <div class="form-control-icon">
+        <input
+          type="text"
+          id="regular-input-right-icon"
+          name="regular-input-right-icon"
+          class="form-control"
+          placeholder="Enter text"
+        />
+        <div class="form-control-right-icon">
+          <svg
+            class="svg-icon search-icon"
+            aria-labelledby="title desc"
+            role="img"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 19.9 19.7"
+          >
+            <title id="title">Search Icon</title>
+            <desc id="desc">A magnifying glass icon.</desc>
+            <g class="search-path" fill="none" stroke="#848F91">
+              <path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4" />
+              <circle cx="8" cy="8" r="7" />
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <!-- -->
+    <div style="margin-bottom: 1rem">
+      <label for="regular-input-left-icon">Regular input with left Icon</label>
+      <div class="form-control-icon">
+        <div class="form-control-left-icon">
+          <svg
+            class="svg-icon search-icon"
+            aria-labelledby="title desc"
+            role="img"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 19.9 19.7"
+          >
+            <title id="title">Search Icon</title>
+            <desc id="desc">A magnifying glass icon.</desc>
+            <g class="search-path" fill="none" stroke="#848F91">
+              <path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4" />
+              <circle cx="8" cy="8" r="7" />
+            </g>
+          </svg>
+        </div>
+        <input
+          type="text"
+          id="regular-input-left-icon"
+          name="regular-input-left-icon"
+          class="form-control"
+          placeholder="Enter text"
+        />
+      </div>
     </div>
   </div>
 </div>
