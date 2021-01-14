@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@import "./scss/helpers/variables";
 
 // tables use CSePBold 14px for clickable tiles
 @font-face {
@@ -23,6 +24,15 @@ $theme-colors: (
   "secondary": #ffffff,
   "danger": #ff4136,
 );
+
+$cs-color-primary-black: #000000;
+$cs-color-primary-gray6: #575756;
+$cs-color-primary-gray5: #7c7c7b;
+$cs-color-primary-gray4: #a8a8a7;
+$cs-color-primary-gray3: #dadada;
+$cs-color-primary-gray2: #e6e7e8;
+$cs-color-primary-gray1: #f1f2f2;
+$cs-color-primary-white: #ffffff;
 
 $grid-breakpoints: (
   xs: 0,

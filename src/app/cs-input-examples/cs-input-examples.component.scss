@@ -1,13 +1,15 @@
+@import "../../scss/helpers/variables";
+
 // Input form control basic style
 .form-control {
   position: relative;
   padding: 0;
   padding-bottom: 16px;
   border: 0;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid $cs-color-primary-black;
   border-radius: 0;
-  color: black;
-  background-color: white;
+  color: $cs-color-primary-black;
+  background-color: $cs-color-primary-white;
   font-family: "CSePRoman";
   font-size: 16px;
   height: 40px;
@@ -16,22 +18,22 @@
 
   &:focus {
     border: 0;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid $cs-color-primary-black;
     padding-bottom: 15px;
     box-shadow: none;
     outline: none;
   }
 
   &[disabled] {
-    color: #cccccc;
-    background-color: white;
+    color: $cs-color-primary-gray4;
+    background-color: $cs-color-primary-white;
     border-width: 1px;
-    border-color: #cccccc;
+    border-color: $cs-color-primary-gray4;
     cursor: default;
   }
 
   &[disabled]::placeholder {
-    color: #cccccc;
+    color: $cs-color-primary-gray4;
   }
 }
 
@@ -39,12 +41,12 @@
 .form-control-error {
   padding-bottom: 15px;
   border-width: 2px;
-  border-color: #d91e19;
+  border-color: $cs-color-support-red;
 }
 
 .form-control-error-message {
   margin-top: 8px;
-  color: #d91e19;
+  color: $cs-color-support-red;
   font-family: "CSePBold";
   font-size: 14px;
   height: 18px;
@@ -59,6 +61,9 @@
   .form-control-left-icon {
     z-index: 100;
     position: absolute;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
     height: 24px;
     width: 24px;
     top: 0;
@@ -72,6 +77,9 @@
   // Right icon
   .form-control-right-icon {
     position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
     height: 24px;
     width: 24px;
     top: 0;
