@@ -1,0 +1,19 @@
+@import "../cs-button-examples/cs-button-examples.component.scss";
+
+.tab-container {
+  height: 40px;
+
+  .active {
+    color: #fff;
+    background-color: #000000;
+    border-color: #000000;
+  }
+
+  .btn {
+    &:not(.active) {
+      &:hover {
+        color: #a8a8a7;
+      }
+    }
+  }
+}
