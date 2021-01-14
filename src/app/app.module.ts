@@ -7,9 +7,10 @@ import { CsInputExamplesComponent } from "./cs-input-examples/cs-input-examples.
 import { AppRoutingModule } from "./app-routing.module";
 import { CsTableExamplesComponent } from './cs-table-examples/cs-table-examples.component';
 import { CsButtonExamplesComponent } from './cs-button-examples/cs-button-examples.component';
+import { CsTabExamplesComponent } from './cs-tab-examples/cs-tab-examples.component';
 
 @NgModule({
-  declarations: [AppComponent, CsInputExamplesComponent, CsTableExamplesComponent, CsButtonExamplesComponent],
+  declarations: [AppComponent, CsInputExamplesComponent, CsTableExamplesComponent, CsButtonExamplesComponent, CsTabExamplesComponent],
   imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
