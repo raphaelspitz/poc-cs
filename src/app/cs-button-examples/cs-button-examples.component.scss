@@ -1,0 +1,35 @@
+.btn {
+  height: 50px;
+  font-weight: 700;
+}
+
+.btn-primary:hover {
+  color: #fff;
+  background-color: #575756;
+  border: 2px solid #575756;
+}
+
+.btn-secondary:hover {
+  color: #000000;
+  background-color: white;
+  border: 2px solid #000000;
+}
+
+//tabs
+.tab-container {
+  height: 40px;
+
+  .active {
+    color: #fff;
+    background-color: #000000;
+    border-color: #000000;
+  }
+
+  .btn {
+    &:not(.active) {
+      &:hover {
+        color: #a8a8a7;
+      }
+    }
+  }
+}
