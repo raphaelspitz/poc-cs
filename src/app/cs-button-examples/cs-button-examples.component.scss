@@ -14,8 +14,10 @@
     pointer-events: none;
   }
 
-  &:focus {
-    box-shadow: none !important; // TODO: border-box
+  &:not(:disabled):not(.disabled):focus {
+    box-shadow: none;
+    outline: 1px solid $cs-color-primary-black;
+    outline-offset: 1px;
   }
 
   &:hover,
@@ -36,7 +38,7 @@
 
   &:hover,
   &:focus {
-    background: $cs-color-primary-gray6 !important;
+    background: $cs-color-primary-gray6;
   }
 }
 
