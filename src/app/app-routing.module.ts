@@ -1,3 +1,4 @@
+import { ModalComponent } from "./modal/modal.component";
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { CsButtonExamplesComponent } from "./cs-button-examples/cs-button-examples.component";
@@ -10,6 +11,7 @@ const routes: Routes = [
   { path: "table-examples", component: CsTableExamplesComponent },
   { path: "button-examples", component: CsButtonExamplesComponent },
   { path: "tab-examples", component: CsTabExamplesComponent },
+  { path: "modal-examples", component: ModalComponent },
   { path: "**", component: CsInputExamplesComponent },
 ];
 

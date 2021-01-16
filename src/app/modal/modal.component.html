@@ -1,0 +1,27 @@
+<h1>Modals examples</h1>
+
+<button (click)="isHidden = !isHidden">Show Modal in the center</button>
+
+<div class="modal-container" [class.is-hidden]="isHidden">
+  <div class="modal-header">
+    <h5>{{ title }}</h5>
+    <i class="fas fa-times" (click)="close()"></i>
+  </div>
+
+  <div class="modal-body">
+    <!-- <ng-content></ng-content> -->
+    body part Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse
+    nulla impedit voluptas provident explicabo hic maiores quia obcaecati
+    ratione ullam veniam a fugit facere alias, enim dolores facilis commodi
+    recusandae.
+  </div>
+  <div class="modal-footer">
+    <!-- <ng-content></ng-content> -->
+    footer part Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse
+    nulla impedit voluptas provident explicabo hic maiores quia obcaecati
+    ratione ullam veniam a fugit facere alias, enim dolores facilis commodi
+    recusandae.
+  </div>
+</div>
+
+<div class="modal-overlay" (click)="close()" [class.is-hidden]="isHidden"></div>
