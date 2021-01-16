@@ -1,1 +1,27 @@
-<p>cs-modals-and-overlays-examples works!</p>
+<h1>Modals examples</h1>
+
+<button (click)="isHidden = !isHidden; topPosition = '5%'">
+  Show Modal from the top
+</button>
+<button (click)="isHidden = !isHidden; topPosition = '30%'">
+  Show Modal in the center
+</button>
+
+<app-modal
+  [topPosition]="topPosition"
+  [title]="'Modal title example'"
+  [subTitle]="'Modal subtitle example'"
+  [isHidden]="isHidden"
+  (closeModalEvent)="isHidden = !isHidden"
+>
+  <div body>
+    <app-modal>
+      <div class="modal-body">
+        <ng-content select="[body]"></ng-content>
+      </div>
+      <div class="modal-footer">
+        <ng-content select="[footer]"></ng-content>
+      </div>
+    </app-modal>
+  </div>
+</app-modal>
