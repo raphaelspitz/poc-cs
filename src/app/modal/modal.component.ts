@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 
 @Component({
   selector: "app-modal",
@@ -7,14 +7,22 @@ import { Component, Input, OnInit } from "@angular/core";
 })
 export class ModalComponent implements OnInit {
   @Input() public title = "";
+  @Input() public subTitle = "";
+  @Input() public topPosition = "";
+  @Input() public isHidden = true;
+
+  @Output() closeModalEvent = new EventEmitter<boolean>();
 
   constructor() {}
 
   ngOnInit() {}
-  public isHidden = true;
 
   public close(): void {
     this.isHidden = true;
+    this.closeModalEvent.emit();
+  }
+  public closeOverlay(flag): void {
+    if (flag === true) this.isHidden = true;
   }
 
   public open(): void {
