@@ -22,7 +22,7 @@ export class ModalComponent implements OnInit {
     this.closeModalEvent.emit();
   }
   public closeOverlay(flag): void {
-    if (flag === true) this.isHidden = true;
+    if (flag === true) this.close();
   }
 
   public open(): void {
