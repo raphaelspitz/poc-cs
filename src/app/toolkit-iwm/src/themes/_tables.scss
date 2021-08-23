@@ -1,0 +1,45 @@
+// home and portfoiios tables css code begin
+.ptf-acc-section,
+.postion-list-section {
+  overflow-y: hidden;
+  overflow-x: hidden;
+  padding: 0 8px;
+  background: $cs-color-primary-white;
+  -ms-overflow-style: none; /*For IE and Edge (<79)*/
+}
+.ptf-acc-section::-webkit-scrollbar {
+  width: 0px;
+  /* Remove scrollbar space */
+  background: transparent;
+  /* Optional: just make scrollbar invisible */
+}
+
+.postion-list-section::-webkit-scrollbar {
+  width: 0px;
+  /* Remove scrollbar space */
+  background: transparent;
+  /* Optional: just make scrollbar invisible */
+}
+
+.ptf-acc-table,
+.position-list-table {
+  i {
+    transition: all 0.25s;
+
+    &.is-expanded {
+      transform: rotate(-180deg);
+    }
+  }
+
+  td {
+    word-wrap: break-word;
+    min-width: 0;
+    flex: 1;
+  }
+
+  .clickable-row {
+    td {
+      cursor: pointer;
+    }
+  }
+}

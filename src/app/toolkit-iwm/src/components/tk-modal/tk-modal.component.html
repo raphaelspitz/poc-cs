@@ -1,0 +1,17 @@
+<div class="tk-modal">
+  <div class="tk-modal-background" (click)="close();"></div>
+  <div class="tk-modal-grid {{ grid }}">
+    <div class="row tk-modal-content">
+      <div class="tk-modal-header">
+        <button class="tk-btn tk-btn-icon tk-btn-no-border" (click)="close();">
+          <span class="tk-btn-icon-icon">
+            <i class="icon icon-close"></i>
+          </span>
+        </button>
+      </div>
+      <div class="col-12 tk-modal-body">
+        <ng-content></ng-content>
+      </div>
+    </div>
+  </div>
+</div>

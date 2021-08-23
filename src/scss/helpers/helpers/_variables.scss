@@ -1,0 +1,79 @@
+////
+/// Theme Variables
+/// @group helpers
+////
+
+/// Your new custom sass variables belong here -- which contain common data structure support for css values
+/// This is where the custom theme overrides or extends existing Backbase variables after "base.scss"
+/// Use the base.scss for overriding or setting global sass variables
+/// This file is for creating variable references to existing variables.
+
+$font-family-sans-serif: "CSeP", Arial, sans-serif;
+$font-family-base: $font-family-sans-serif;
+$headings-font-family: "CSHeadline", "CSeP";
+$enable-rounded: false;
+
+$h1-font-size: 60px;
+$h2-font-size: 30px;
+$h3-font-size: 1.1rem;
+$h4-font-size: 1.0rem;
+$h5-font-size: 1.0rem;
+
+// Override bootstrap Grid
+$grid-breakpoints: (
+  xs: 0,
+  sm: 575px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1280px
+);
+
+// variables colors
+// Define here all variables linked to colors
+$nav-tabs-link-active-border-color: $cs-color-primary-black;
+$nav-tabs-link-hover-bg: transparent;
+$container-background: $cs-color-primary-gray1;
+$body-color: $cs-color-primary-black;
+$input-focus-border-color: $cs-color-primary-black;
+$table-border-color: $cs-color-custom-table-border;
+
+// variables sizes
+// Define here all variables linked to sizes
+$border-width: 0.66px;
+$modal-sm: 400px;
+
+$modal-dialog-margin: 0rem;
+$modal-dialog-margin-y-sm-up: 1.75rem;
+$modal-content-border-radius: 0rem;
+
+// variables font sizes
+// Define here all variables linked to font sizes
+$overview-asset-percentage-value-font-size: 0.8rem;
+
+// Override $displays by adding contents at the end 
+$displays: none, inline, inline-block, block, table, table-row, table-cell, flex, inline-flex, contents;
+
+$close-font-size: 1.0rem;
+$modal-header-padding: 2rem;
+$modal-inner-padding: 2rem;
+
+$primary-bright: $cs-color-primary-gray1;
+
+$spinner-width:         2rem;
+$spinner-height:        $spinner-width;
+$spinner-border-width:  .25em;
+
+$spinner-width-sm:        1rem;
+$spinner-height-sm:       $spinner-width-sm;
+$spinner-border-width-sm: .2em;
+
+$zindex-dropdown:                   1000;
+$zindex-sticky:                     1020;
+$zindex-fixed:                      1030;
+$zindex-modal-backdrop:             1040;
+$zindex-modal:                      1050;
+$zindex-popover:                    1060;
+$zindex-tooltip:                    1070;
+
+$custom-checkbox-indicator-border-radius: 0rem;
+$enable-rounded: 0;

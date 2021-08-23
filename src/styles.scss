@@ -1,5 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import "./scss/helpers/variables";
+//@import './scss/helpers/helpers/';
+
 
 // tables use CSePBold 14px for clickable tiles
 @font-face {
@@ -19,8 +21,7 @@
   src: url("./assets/fonts/CSW07eT-Romanv4.ttf") format("truetype");
 }
 
-$theme-colors: (
-  "primary": #000000,
+$theme-colors: ("primary": #000000,
   "secondary": #ffffff,
   "danger": #ff4136,
 );
@@ -34,8 +35,7 @@ $cs-color-primary-gray2: #e6e7e8;
 $cs-color-primary-gray1: #f1f2f2;
 $cs-color-primary-white: #ffffff;
 
-$grid-breakpoints: (
-  xs: 0,
+$grid-breakpoints: (xs: 0,
   sm: 575px,
   md: 768px,
   lg: 1024px,
@@ -43,6 +43,10 @@ $grid-breakpoints: (
 );
 
 $btn-border-radius: 0;
+
+
+//@import './scss/helpers/helpers/variables';
+
 
 @import "node_modules/bootstrap/scss/bootstrap";
 
@@ -52,51 +56,181 @@ body {
   overflow: auto;
 }
 
-//helpers
+// patch for icons problems in general as they are all set to line height 1
+.no-line-height:before {
+  line-height: unset !important;
+}
 
-.ptf-acc-section,
-.postion-list-section {
-  overflow: scroll;
-  overflow-x: hidden;
-  padding: 0 0px;
+tr:focus {
+  outline: none;
+}
+
+//helpers
+.border-black {
+  border: 1px solid $cs-color-primary-black;
 }
 
 .border-bottom-black {
-  border-bottom: 1px solid #000000;
+  border-bottom: 1px solid $cs-color-primary-black;
 }
 
-.border-black {
-  border: 1px solid #000000;
+.border-top-black {
+  border-top: 1px solid $cs-color-primary-black;
 }
 
+.border-bottom-gray-1 {
+  border-bottom: 1px solid $cs-color-primary-gray1;
+}
+
+.border-top-gray-1 {
+  border-top: 1px solid $cs-color-primary-gray1;
+}
+
+.border-bottom-gray-2 {
+  border-bottom: 1px solid $cs-color-primary-gray2;
+}
+
+.border-top-gray-2 {
+  border-top: 1px solid $cs-color-primary-gray2;
+}
+
+.border-top-gray-3 {
+  border-top: 1px solid $cs-color-primary-gray3;
+}
+
+.border-bottom-gray-3 {
+  border-bottom: 1px solid $cs-color-primary-gray3;
+}
+
+.border-top-gray-4 {
+  border-top: 1px solid $cs-color-primary-gray4;
+}
+
+.border-bottom-gray-4 {
+  border-bottom: 1px solid $cs-color-primary-gray4;
+}
+
+.border-top-gray-5 {
+  border-top: 1px solid $cs-color-primary-gray5;
+}
+
+.border-bottom-gray-5 {
+  border-bottom: 1px solid $cs-color-primary-gray5;
+}
+
+.border-top-gray-6 {
+  border-top: 1px solid $cs-color-primary-gray6;
+}
+
+.border-bottom-gray-6 {
+  border-bottom: 1px solid $cs-color-primary-gray6;
+}
+
+//colors
 .bg-gray-1 {
-  background-color: #f1f2f2;
-}
-
-.hover-bg-gray-1:hover {
-  background: #f1f2f2;
-  transition: background-color 0.25s ease-out;
+  background-color: $cs-color-primary-gray1;
 }
 
 .bg-gray-2 {
-  background-color: #e6e7e8;
+  background-color: $cs-color-primary-gray2;
 }
 
-.border-top-grey-3 {
-  border-top: 1px solid #dadada;
+.bg-gray-3 {
+  background-color: $cs-color-primary-gray3;
 }
 
-.border-bottom-grey-3 {
-  border-bottom: 1px solid #dadada !important;
+.bg-gray-4 {
+  background-color: $cs-color-primary-gray4;
 }
 
-//clickable table titles
-.CSePBold-14 {
+.bg-gray-5 {
+  background-color: $cs-color-primary-gray5;
+}
+
+.bg-gray-6 {
+  background-color: $cs-color-primary-gray6;
+}
+
+.bg-black {
+  background-color: $cs-color-primary-black
+}
+
+.hover-bg-gray-1:hover {
+  background: $cs-color-primary-gray1 !important;
+  transition: background-color 0.25s ease-out;
+}
+
+.focus-bg-gray-1:focus {
+  background: $cs-color-primary-gray1 !important;
+  transition: background-color 0.25s ease-out;
+}
+
+.hover-bg-gray-2:hover {
+  background: $cs-color-primary-gray2 !important;
+  transition: background-color 0.25s ease-out;
+}
+
+.hover-bg-gray-3:hover {
+  background: $cs-color-primary-gray3 !important;
+  transition: background-color 0.25s ease-out;
+}
+
+.hover-bg-gray-4:hover {
+  background: $cs-color-primary-gray4 !important;
+  transition: background-color 0.25s ease-out;
+}
+
+.hover-bg-gray-5:hover {
+  background: $cs-color-primary-gray5 !important;
+  transition: background-color 0.25s ease-out;
+}
+
+.hover-bg-gray-6:hover {
+  background: $cs-color-primary-gray6 !important;
+  transition: background-color 0.25s ease-out;
+}
+
+.text-transparent {
+  color: transparent !important;
+}
+
+.primary-link-hover:hover {
+  color: $cs-color-primary-gray5;
+}
+
+// patch for icons problems in general as they are all set to line height 1
+.no-line-height:before {
+  line-height: unset !important;
+}
+
+//only for text
+.csTypeEPBold-14 {
   font-family: "CSePBold";
   font-size: 14px;
 }
 
-//non clickable table titles text
+.csTypeEPBold-24 {
+  font-family: "CSePBold";
+  font-size: 24px;
+}
+
+//only for number
+.csTypeETBold-14 {
+  font-family: "CSeTBold";
+  font-size: 14px;
+}
+
+.csTypeETBold-16 {
+  font-family: "CSeTBold";
+  font-size: 16px;
+}
+
+.csTypeETBold-24 {
+  font-family: "CSeTBold";
+  font-size: 24px;
+}
+
+//only for text
 .csTypeEPRegular-14 {
   font-family: "CSePRoman";
   font-size: 14px;
@@ -109,8 +243,702 @@ body {
   font-weight: 100;
 }
 
-.csTypeEtRegular {
+//only for numbers
+.csTypeETRegular-14 {
   font-family: "CSeTRoman";
   font-size: 14px;
   font-weight: 100;
 }
+
+.csTypeETRegular-24 {
+  font-family: "CSeTRoman";
+  font-size: 24px;
+  font-weight: 100;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.text-primary-gray5 {
+  color: $cs-color-primary-gray5;
+}
+
+.text-primary-gray4 {
+  color: $cs-color-primary-gray4;
+}
+
+.overflow-y-auto {
+  overflow-y: auto;
+}
+
+.overflow-x-hidden {
+  overflow-x: hidden;
+}
+
+//general box shadow used in dropdown and cards
+.tk-box-shadow {
+  box-shadow: 0 3px 20px 10px rgba(0, 0, 0, 0.05);
+}
+
+//helpers
+
+//second navigation flex grid added
+.area-flex-wrapper>bb-area {
+  display: flex;
+  margin-left: 40px;
+  height: 40px;
+  border-bottom: 1px solid $cs-color-primary-gray3;
+}
+
+
+.tk-badge {
+  @extend .badge;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid $cs-color-primary-black;
+  border-radius: 0;
+  padding: 16px 0 16px 0;
+
+  .tk-badge-round-border {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 2px solid;
+    border-radius: 50%;
+    font-size: 15px;
+    width: 32px;
+    height: 32px;
+    padding: 6px;
+  }
+
+  .tk-badge-text {
+    text-align: left;
+    font-weight: normal;
+    margin-left: 16px;
+    font-family: 'CSePRoman';
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+.tk-btn {
+  @extend .btn;
+  font-size: 16px;
+  font-family: 'CSePBold';
+  line-height: 24px;
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 0;
+  cursor: pointer;
+  height: 48px;
+  transition: none;
+  border: 1px solid $cs-color-primary-black;
+
+  &[disabled] {
+    pointer-events: none;
+  }
+
+  &:not(:disabled):not(.disabled):focus-visible,
+  &:not(:disabled):not(.disabled):active:focus-visible {
+    outline: 1px solid $cs-color-primary-black;
+    outline-offset: 1px;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    outline: none;
+    box-shadow: none;
+    padding: 12px 30px; // Needed to override CS styles
+  }
+
+  &:not(:disabled):not(.disabled):active:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  &:hover {
+    border: 1px solid $cs-color-primary-black; // Needed to override CS styles
+  }
+}
+
+.tk-btn-primary {
+  @extend .btn-primary;
+  color: $cs-color-primary-white;
+  background: $cs-color-primary-black;
+
+  &[disabled] {
+    color: $cs-color-primary-white;
+    background: $cs-color-primary-gray3;
+    border-color: $cs-color-primary-gray3;
+  }
+
+  &:hover,
+  &:focus,
+  // override bootstrap style
+  &:not(:disabled):not(.disabled):active {
+    color: $cs-color-primary-white;
+    background: $cs-color-primary-gray6;
+    border: 1px solid $cs-color-primary-black;
+  }
+
+  &:focus {
+    // Needed to override CS styles
+    border: 1px solid $cs-color-primary-black;
+    padding: 12px 30px;
+  }
+}
+
+.tk-btn-secondary {
+  @extend .btn-secondary;
+  color: $cs-color-primary-black;
+  background: $cs-color-primary-white;
+
+  &[disabled] {
+    color: $cs-color-primary-gray4;
+    border-color: $cs-color-primary-gray4;
+    background: $cs-color-primary-white;
+  }
+
+  &:hover,
+  &:focus,
+  &:not(:disabled):not(.disabled):active {
+    color: $cs-color-primary-black;
+    background: $cs-color-primary-white;
+    padding: 11px 29px;
+    border: 2px solid $cs-color-primary-black;
+  }
+}
+
+.tk-btn-primary,
+.tk-btn-secondary {
+
+  // override bootstrap style
+  &:active,
+  &:focus,
+  &:not(:disabled):not(.disabled):active:focus {
+    box-shadow: none;
+  }
+}
+
+.tk-btn-icon {
+  color: $cs-color-primary-black;
+  background: $cs-color-primary-white;
+  display: flex;
+  align-items: center;
+  padding: 12px 14px;
+  width: auto; // Needed to override CS styles
+
+  .tk-btn-icon-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20px;
+    width: 20px;
+    font-size: 20px; // In case user uses font awesome icon
+  }
+
+  .tk-btn-icon-text {
+    margin-left: 10px;
+  }
+
+  &:hover,
+  &:focus {
+    padding: 12px 14px;
+    color: $cs-color-primary-gray6;
+    border: 1px solid $cs-color-primary-black; // Needed to override CS styles
+  }
+
+  &[disabled] {
+    color: $cs-color-primary-gray4;
+  }
+}
+
+.tk-btn-sm {
+  font-size: 14px;
+  line-height: 18px;
+  height: 40px;
+  padding: 10px 20px;
+  width: auto; // Needed to override CS styles
+
+  &:hover,
+  &:focus {
+    padding: 10px 20px;
+  }
+}
+
+.tk-btn-secondary.tk-btn-sm {
+
+  &:hover,
+  &:focus,
+  &:not(:disabled):not(.disabled):active {
+    padding: 9px 19px;
+  }
+}
+
+.tk-btn-icon.tk-btn-sm {
+  height: 40px; // Needed to override CS styles
+  width: auto; // Needed to override CS styles
+  padding: 12px 14px; // Needed to override CS styles
+
+  .tk-btn-icon-icon,
+  .tk-btn-icon-icon * {
+    height: 14px;
+    width: 14px;
+    font-size: 14px; // In case user uses font awesome icon
+  }
+
+  &:hover {
+    padding: 12px 14px;
+  }
+}
+
+.tk-btn-no-border {
+  border: none;
+  background-color: transparent;
+
+  &:hover,
+  &:active,
+  &:focus {
+    border: none;
+  }
+}
+
+// Radio buttons
+.tk-radio-button {
+  input {
+    position: absolute;
+    display: none;
+  }
+
+  label {
+    position: relative;
+    display: block;
+    padding-left: 30px;
+    cursor: pointer;
+    font-family: 'CSEPRoman';
+    font-weight: bolder;
+    font-size: 1rem;
+
+    &:after {
+      display: block;
+      top: 6px;
+      left: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: $cs-color-primary-white;
+      border: 1px solid $cs-color-primary-white;
+      position: absolute;
+      content: '';
+    }
+
+    &:before {
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      content: '';
+      border: 1px solid $cs-color-primary-black;
+      transition: border-color 0.4s ease-in-out;
+      background-color: $cs-color-primary-white;
+    }
+  }
+
+  input:checked+label::before {
+    border-width: 5px;
+  }
+}
+
+// Pagination
+.tk-pagination-dot {
+  margin-left: 16px;
+  width: 10px;
+  height: 10px;
+  border-radius: 100px;
+  display: inline-block;
+  cursor: pointer;
+  transition: 0.3s;
+  background: $cs-color-primary-gray3;
+
+  &+.active {
+    background: $cs-color-primary-black;
+  }
+}
+
+.tk-pagination-buttons {
+  display: flex;
+}
+
+// Checkbox
+.tk-checkbox {
+  display: flex;
+  position: relative;
+  align-items: center;
+  height: 20px;
+  cursor: pointer;
+
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  label {
+    position: relative;
+    display: block;
+    padding-left: 30px;
+    cursor: pointer;
+    font-family: 'CSEPRoman';
+    font-size: 14px;
+    margin-bottom: 0px;
+  }
+
+  input:checked~.checkmark {
+    background-color: $cs-color-primary-black;
+  }
+
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+  /* Show the checkmark when checked */
+  input:checked~.checkmark:after {
+    display: block;
+  }
+
+  /* Style the checkmark/indicator */
+  .checkmark:after {
+    left: 6px;
+    top: 0px;
+    width: 6px;
+    height: 15px;
+    border: solid $cs-color-primary-white;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  .checkmark {
+    position: absolute;
+    top: 0;
+    height: 20px;
+    width: 20px;
+    background-color: $cs-color-primary-white;
+    border: 1px solid $cs-color-primary-black;
+  }
+
+}
+
+
+
+// Input form control basic style
+.tk-form-control {
+  @extend .form-control;
+  position: relative;
+  padding: 0;
+  padding-bottom: 16px;
+  border: 0;
+  border-bottom: 1px solid $cs-color-primary-black;
+  border-radius: 0;
+  color: $cs-color-primary-black;
+  background-color: $cs-color-primary-white;
+  font-family: 'CSePRoman';
+  font-size: 16px;
+  height: 40px;
+  line-height: 24px;
+  display: inline-block;
+
+  &:focus {
+    color: $cs-color-primary-black;
+    border: 0;
+    border-bottom: 2px solid $cs-color-primary-black;
+    padding-bottom: 15px;
+    box-shadow: none;
+    outline: none;
+  }
+
+  &[disabled] {
+    color: $cs-color-primary-gray4;
+    background-color: $cs-color-primary-white;
+    border-width: 1px;
+    border-color: $cs-color-primary-gray4;
+    cursor: default;
+  }
+
+  &[disabled]::placeholder {
+    color: $cs-color-primary-gray4;
+  }
+
+  &[readonly] {
+    background-color: $cs-color-primary-white;
+  }
+}
+
+// Input with error
+.tk-form-control-error {
+  padding-bottom: 15px;
+  border-width: 2px;
+  border-color: $cs-color-support-red;
+}
+
+.tk-form-control-error-message {
+  margin-top: 8px;
+  color: $cs-color-support-red;
+  font-family: 'CSePBold';
+  font-size: 14px;
+  height: 18px;
+  line-height: 18px;
+}
+
+// Input with icons
+.tk-form-control-icon {
+  position: relative;
+
+  // Left icon
+  .tk-form-control-left-icon {
+    z-index: 100;
+    position: absolute;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 24px;
+    width: 24px;
+    font-size: 24px; // In case user uses font awesome icon
+    top: 0;
+  }
+
+  // Specific case for left icon where we need to add a padding-left to .tk-form-control
+  // Note: dom elements order is important => tk-form-control-left-icon then tk-form-control
+  .tk-form-control-left-icon+.tk-form-control {
+    padding-left: 32px;
+  }
+
+  // Right icon
+  .tk-form-control-right-icon {
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 24px;
+    width: 24px;
+    font-size: 24px; // In case user uses font awesome icon
+    top: 0;
+    right: 0;
+  }
+}
+
+.form-group input.tk-form-control:focus {
+  // Needed to override CS style
+  margin: 0px;
+}
+
+
+.tk-link {
+  height: 24px;
+  font-size: 16px;
+  line-height: 24px;
+  text-decoration: none;
+  cursor: pointer;
+  color: $cs-color-primary-black;
+
+  &:visited {
+    color: $cs-color-primary-black;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: none;
+  }
+
+  &:hover,
+  &:focus {
+    color: $cs-color-primary-gray5;
+    outline: none;
+  }
+
+  &[disabled] {
+    color: $cs-color-primary-gray4;
+    pointer-events: none;
+  }
+}
+
+.tk-link-primary {
+  font-family: "CSePBold";
+
+  .tk-link-icon {
+    height: 24px;
+    width: 24px;
+    margin-left: 8px;
+  }
+}
+
+.tk-link-text {
+  font-family: "CSePRoman";
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    height: 1px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: $cs-color-primary-black;
+    left: 0;
+    bottom: -4px;
+  }
+
+  &:hover:after {
+    background-color: $cs-color-primary-gray5;
+  }
+
+  &[disabled]:after {
+    background-color: $cs-color-primary-gray4;
+  }
+}
+
+.tk-link-sm {
+  height: 18px;
+  font-size: 14px;
+  line-height: 18px;
+
+  .tk-link-icon {
+    height: 18px;
+    width: 18px;
+    margin-left: 6px;
+  }
+}
+
+
+// home and portfoiios tables css code begin
+.ptf-acc-section,
+.postion-list-section {
+  overflow-y: hidden;
+  overflow-x: hidden;
+  padding: 0 8px;
+  background: $cs-color-primary-white;
+  -ms-overflow-style: none;
+  /*For IE and Edge (<79)*/
+}
+
+.ptf-acc-section::-webkit-scrollbar {
+  width: 0px;
+  /* Remove scrollbar space */
+  background: transparent;
+  /* Optional: just make scrollbar invisible */
+}
+
+.postion-list-section::-webkit-scrollbar {
+  width: 0px;
+  /* Remove scrollbar space */
+  background: transparent;
+  /* Optional: just make scrollbar invisible */
+}
+
+.ptf-acc-table,
+.position-list-table {
+  i {
+    transition: all 0.25s;
+
+    &.is-expanded {
+      transform: rotate(-180deg);
+    }
+  }
+
+  td {
+    word-wrap: break-word;
+    min-width: 0;
+    flex: 1;
+  }
+
+  .clickable-row {
+    td {
+      cursor: pointer;
+    }
+  }
+}
+
+
+// TabBtn
+
+.tk-btn-tabs {
+  display: flex;
+}
+
+.tk-btn-tab-active {
+  @extend .tk-btn-primary;
+
+  &:focus {
+    background: $cs-color-primary-black;
+  }
+}
+
+.tk-btn-tab-not-active {
+  @extend .tk-btn-secondary;
+  color: $cs-color-primary-gray5;
+
+  &:hover,
+  &:focus,
+  &:not(:disabled):not(.disabled):active {
+    border: 1px solid $cs-color-primary-black;
+    padding: 12px 30px;
+  }
+}
+
+.tk-btn-sm.tk-btn-tab-not-active {
+
+  &:hover,
+  &:focus,
+  &:not(:disabled):not(.disabled):active {
+    padding: 10px 20px;
+  }
+}
+
+// TabLine
+.tk-line-tabs {
+  display: flex;
+
+  .tk-line-tab {
+    font-size: 16px;
+    font-family: "CSePBold";
+    line-height: 24px;
+    padding: 0px 32px 8px 32px;
+    background-color: $cs-color-primary-white;
+    color: $cs-color-primary-black;
+    border: none;
+    border-bottom: 2px solid $cs-color-primary-black;
+  }
+
+  .tk-line-tab-not-active {
+    color: $cs-color-primary-gray5;
+    border-color: $cs-color-primary-gray5;
+
+    &:hover {
+      color: $cs-color-primary-black;
+    }
+  }
+
+  .tk-line-sm {
+    font-size: 14px;
+    line-height: 20px;
+    padding: 0px 20px 6px 20px;
+  }
+}
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';

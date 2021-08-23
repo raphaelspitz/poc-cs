@@ -1,0 +1,32 @@
+@import '../../../../../scss/helpers/helpers/colors';
+
+.toggle-container {
+  position: relative;
+  width: 44px;
+  height: 24px;
+  border-radius: 10.5px;
+  cursor: pointer;
+  border: 2px solid $cs-color-primary-black;
+
+  .toggle-value {
+    position: absolute;
+    height: 19px;
+    width: 19px;
+    background-color: $cs-color-primary-white;
+    border: 2px solid $cs-color-primary-black;
+    border-radius: 50%;
+    top: 49%;
+    bottom: 50%;
+    transform: translateY(-50%);
+    right: 0%;
+    transition: all 0.3s;
+
+    &.is-off {
+      right: 50%;
+    }
+  }
+}
+
+.bg-black {
+  background-color: $cs-color-primary-black;
+}

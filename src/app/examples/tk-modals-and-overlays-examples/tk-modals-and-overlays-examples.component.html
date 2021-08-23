@@ -1,0 +1,333 @@
+<div class="pl-3">
+  <h2>Modals examples</h2>
+  <button (click)="displayModal = !displayModal;">
+    Show Modal
+  </button>
+</div> 
+
+<tk-modal
+  [display]="displayModal"
+  (closeModal)="displayModal = false"
+>
+  there is only a body
+</tk-modal>
+
+<div class="pl-3 mt-4">
+  <h2>Modals with one tab container</h2>
+  <button (click)="displayModal2 = !displayModal2;">
+    Show Modal
+  </button>
+</div> 
+
+<tk-modal
+  [grid]="'col-lg-7'"
+  [display]="displayModal2"
+  (closeModal)="displayModal2 = false"
+>
+  <div class="d-flex justify-content-between align-items-center">
+    <p class="csTypeEPBold-24 m-0">
+        Outward payment
+    </p>
+    <div class="d-flex pt-4">
+      <a href="#" class="tk-link tk-link-primary d-flex align-items-end mr-2">
+        <span class="tk-link-icon mr-2"><i class="icon icon-edit"></i></span>
+          Edit 
+      </a>
+      <a href="#" class="tk-link tk-link-primary d-flex align-items-end">
+        <span class="tk-link-icon mr-2"><i class="icon icon-trash-white"></i></span>
+          Delete 
+      </a>
+    </div>
+  </div>
+  <p class="text-primary-gray5 mb-0 mt-2 csTypeEPRegular-14">
+      Reference: FT2028300017
+  </p>
+  <div class="tk-line-tabs mt-4">
+      <button class="tk-line-tab tk-line-tab-active text-left col-6 col-sm-3 px-0 text-center">Transaction details</button>
+      <button class="tk-line-tab tk-line-tab-not-active col-9 border-bottom-gray-3"></button>
+  </div>
+  <div class="d-flex flex-column flex-sm-column flex-md-row">
+    <div class="d-flex flex-column col-12 col-md-3 border-bottom-gray-3 pb-3 px-0 mx-3 mt-3">
+      <span class="csTypeEPRegular-14">
+          Amount in account ccy
+      </span>
+      <span class="csTypeEPRegular-14">
+          USD 119,479.94
+      </span>
+      <span class="csTypeEPRegular-14 mt-2">
+          Amount in reporting ccy
+      </span>
+      <span class="csTypeEPRegular-14">
+          -
+      </span>
+    </div>
+    <div class="d-flex flex-column col-12 col-md-3 border-bottom-gray-3 pb-3 px-0 mx-3 mt-3">
+      <span class="csTypeEPRegular-14">
+          Amount in account ccy
+      </span>
+      <span class="csTypeEPRegular-14">
+          USD 119,479.94
+      </span>
+      <span class="csTypeEPRegular-14 mt-2">
+          Amount in reporting ccy
+      </span>
+      <span class="csTypeEPRegular-14">
+          -
+      </span>
+    </div>
+    <div class="d-flex flex-column col-md-5 border-bottom-gray-3 pb-3 mt-3">
+      <span class="csTypeEPRegular-14">
+          Description
+      </span>
+
+      <span class="csTypeEPRegular-14">
+          to FT2028300017;1 FT2028300017;1 FT2028300017;1 // SC403214 HSBC UK Bank PLC 17 HIGH ST MELTON MOWBRAY LEICESTER
+      </span>
+    </div>
+  </div>
+  <div class="mt-3 mt-md-0 d-flex">
+    <div class="d-flex flex-column col-12 col-md-3 border-bottom-gray-3 pb-3 px-0 mx-3 mt-3">
+      <span class="csTypeEPRegular-14">
+          Transaction type
+      </span>
+      <span class="csTypeEPRegular-14">
+          Outward payment
+      </span>
+    </div>
+    <div class="d-flex flex-column col-12 col-md-3 border-bottom-gray-3 pb-3 px-0 mx-3 mt-3">
+        <span class="csTypeEPRegular-14">
+            Transaction type
+        </span>
+        <span class="csTypeEPRegular-14">
+            Outward payment
+        </span>
+    </div>
+    <div class="d-flex flex-column col-5 border-bottom-gray-3 pb-3 mt-3">
+        <span class="csTypeEPRegular-14">
+            Transaction type
+        </span>
+        <span class="csTypeEPRegular-14">
+            Outward payment
+        </span>
+    </div>
+  </div>
+  <div class="mt-3 mt-md-0 d-flex">
+    <div class="d-flex flex-column col-12 col-md-3 border-bottom-gray-3 pb-3 px-0 mx-3 mt-3">
+      <span class="csTypeEPRegular-14">
+          Transaction type
+      </span>
+      <span class="csTypeEPRegular-14">
+          Outward payment
+      </span>
+    </div>
+    <div class="d-flex flex-column col-12 col-md-3 border-bottom-gray-3 pb-3 px-0 mx-3 mt-3">
+        <span class="csTypeEPRegular-14">
+            Transaction type
+        </span>
+        <span class="csTypeEPRegular-14">
+            Outward payment
+        </span>
+    </div>
+    <div class="d-flex flex-column col-5 border-bottom-gray-3 pb-3 mt-3">
+        <span class="csTypeEPRegular-14">
+            Transaction type
+        </span>
+        <span class="csTypeEPRegular-14">
+            Outward payment
+        </span>
+    </div>
+  </div>
+  <div class="mt-3 mt-md-0 d-flex">
+    <div class="d-flex flex-column col-12 col-md-3 border-bottom-gray-3 pb-3 px-0 mx-3 mt-3">
+      <span class="csTypeEPRegular-14">
+          Transaction type
+      </span>
+      <span class="csTypeEPRegular-14">
+          Outward payment
+      </span>
+    </div>
+    <div class="d-flex flex-column col-12 col-md-3 border-bottom-gray-3 pb-3 px-0 mx-3 mt-3">
+        <span class="csTypeEPRegular-14">
+            Transaction type
+        </span>
+        <span class="csTypeEPRegular-14">
+            Outward payment
+        </span>
+    </div>
+    <div class="d-flex flex-column col-5 border-bottom-gray-3 pb-3 mt-3">
+        <span class="csTypeEPRegular-14">
+            Transaction type
+        </span>
+        <span class="csTypeEPRegular-14">
+            Outward payment
+        </span>
+    </div>
+  </div>
+  <p class="text-right mt-4 mb-0 text-primary-gray4">
+      A fecha mié., 21 Oct 2020
+  </p>
+</tk-modal>
+
+<div class="pl-3 mt-4">
+  <h2>Modals with two tab container</h2>
+  <button (click)="displayModal3 = !displayModal3;">
+    Show Modal
+  </button>
+</div> 
+
+<tk-modal
+  [grid]="'col-lg-7'"
+  [display]="displayModal3"
+  (closeModal)="displayModal3 = false"
+>
+  <div class="d-flex justify-content-between align-items-center">
+    <p class="csTypeEPBold-24 m-0">
+      Two tabs example
+    </p>
+    <div class="d-flex pt-4">
+      <a href="#" class="tk-link tk-link-primary d-flex align-items-end mr-2">
+        <span class="tk-link-icon mr-2"><i class="icon icon-edit"></i></span>
+          Edit 
+      </a>
+      <a href="#" class="tk-link tk-link-primary d-flex align-items-end">
+        <span class="tk-link-icon mr-2"><i class="icon icon-trash-white"></i></span>
+          Delete 
+      </a>
+    </div>
+  </div>
+  <p class="text-primary-gray5 mb-0 mt-2 csTypeEPRegular-14">
+      Reference: FT2028300017
+  </p>
+  <div class="tk-line-tabs mt-4">
+      <button class="tk-line-tab text-left col-6 col-sm-3 col-md-3 px-0 text-center" [ngClass]="(tabLineActive == 0)? 'tk-line-tab-active':'tk-line-tab-not-active'" (click)="setTabLineActive(0);">Performance</button>
+      <button class="tk-line-tab text-left col-6 col-sm-3 px-0 text-center" [ngClass]="(tabLineActive == 1)? 'tk-line-tab-active':'tk-line-tab-not-active'" (click)="setTabLineActive(1);">Asset allocation</button>
+      <button class="tk-line-tab tk-line-tab-not-active col-md-6 border-bottom-gray-3 d-none d-sm-block"></button>
+  </div>
+  <div *ngIf="tabLineActive == 0">
+    <div class="d-flex flex-column flex-sm-column flex-md-row">
+      <div class="d-flex flex-column col-12 col-md-3 border-bottom-gray-3 pb-3 px-0 mx-3 mt-3">
+        <span class="csTypeEPRegular-14">
+            Amount in account ccy
+        </span>
+        <span class="csTypeEPRegular-14">
+            USD 119,479.94
+        </span>
+        <span class="csTypeEPRegular-14 mt-2">
+            Amount in reporting ccy
+        </span>
+        <span class="csTypeEPRegular-14">
+            -
+        </span>
+      </div>
+      <div class="d-flex flex-column col-12 col-md-3 border-bottom-gray-3 pb-3 px-0 mx-3 mt-3">
+        <span class="csTypeEPRegular-14">
+            Amount in account ccy
+        </span>
+        <span class="csTypeEPRegular-14">
+            USD 119,479.94
+        </span>
+        <span class="csTypeEPRegular-14 mt-2">
+            Amount in reporting ccy
+        </span>
+        <span class="csTypeEPRegular-14">
+            -
+        </span>
+      </div>
+      <div class="d-flex flex-column col-md-5 border-bottom-gray-3 pb-3 mt-3">
+        <span class="csTypeEPRegular-14">
+            Description
+        </span>
+  
+        <span class="csTypeEPRegular-14">
+            to FT2028300017;1 FT2028300017;1 FT2028300017;1 // SC403214 HSBC UK Bank PLC 17 HIGH ST MELTON MOWBRAY LEICESTER
+        </span>
+      </div>
+    </div>
+    <div class="mt-3 mt-md-0 d-flex">
+      <div class="d-flex flex-column col-12 col-md-3 border-bottom-gray-3 pb-3 px-0 mx-3 mt-3">
+        <span class="csTypeEPRegular-14">
+            Transaction type
+        </span>
+        <span class="csTypeEPRegular-14">
+            Outward payment
+        </span>
+      </div>
+      <div class="d-flex flex-column col-12 col-md-3 border-bottom-gray-3 pb-3 px-0 mx-3 mt-3">
+          <span class="csTypeEPRegular-14">
+              Transaction type
+          </span>
+          <span class="csTypeEPRegular-14">
+              Outward payment
+          </span>
+      </div>
+      <div class="d-flex flex-column col-5 border-bottom-gray-3 pb-3 mt-3">
+          <span class="csTypeEPRegular-14">
+              Transaction type
+          </span>
+          <span class="csTypeEPRegular-14">
+              Outward payment
+          </span>
+      </div>
+    </div>
+    <div class="mt-3 mt-md-0 d-flex">
+      <div class="d-flex flex-column col-12 col-md-3 border-bottom-gray-3 pb-3 px-0 mx-3 mt-3">
+        <span class="csTypeEPRegular-14">
+            Transaction type
+        </span>
+        <span class="csTypeEPRegular-14">
+            Outward payment
+        </span>
+      </div>
+      <div class="d-flex flex-column col-12 col-md-3 border-bottom-gray-3 pb-3 px-0 mx-3 mt-3">
+          <span class="csTypeEPRegular-14">
+              Transaction type
+          </span>
+          <span class="csTypeEPRegular-14">
+              Outward payment
+          </span>
+      </div>
+      <div class="d-flex flex-column col-5 border-bottom-gray-3 pb-3 mt-3">
+          <span class="csTypeEPRegular-14">
+              Transaction type
+          </span>
+          <span class="csTypeEPRegular-14">
+              Outward payment
+          </span>
+      </div>
+    </div>
+    <div class="mt-3 mt-md-0 d-flex">
+      <div class="d-flex flex-column col-12 col-md-3 border-bottom-gray-3 pb-3 px-0 mx-3 mt-3">
+        <span class="csTypeEPRegular-14">
+            Transaction type
+        </span>
+        <span class="csTypeEPRegular-14">
+            Outward payment
+        </span>
+      </div>
+      <div class="d-flex flex-column col-12 col-md-3 border-bottom-gray-3 pb-3 px-0 mx-3 mt-3">
+          <span class="csTypeEPRegular-14">
+              Transaction type
+          </span>
+          <span class="csTypeEPRegular-14">
+              Outward payment
+          </span>
+      </div>
+      <div class="d-flex flex-column col-5 border-bottom-gray-3 pb-3 mt-3">
+          <span class="csTypeEPRegular-14">
+              Transaction type
+          </span>
+          <span class="csTypeEPRegular-14">
+              Outward payment
+          </span>
+      </div>
+    </div>
+    <p class="text-right mt-4 mb-0 text-primary-gray4">
+        A fecha mié., 21 Oct 2020
+    </p>
+  </div>
+  <div *ngIf="tabLineActive == 1">
+      <p class="csTypeEPBold-24 m-0">
+          Second Example Body can be replaced here
+      </p>
+  </div>
+</tk-modal>

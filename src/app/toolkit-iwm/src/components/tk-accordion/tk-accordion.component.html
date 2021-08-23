@@ -1,0 +1,16 @@
+ <div tabindex="0" class="accordion-container col-4 tk-btn-tabs row flex-column p-0" (focusout)="isExpanded = false">
+    <div (click)="isExpanded = !isExpanded" class="item border-bottom-black">
+      <div class="header d-flex tk-btn bg-black justify-content-between pl-3">
+          <p  class="m-0 text-white">{{selectedTab}}</p> <i class="icon icon-chevron-down text-white" [class.is-expanded]="isExpanded"
+          ></i>
+      </div>
+  
+      <div *ngFor="let item of items;let i = index" (mousedown)="toggle(item, i)" class="content tk-btn pl-3 text-left border-bottom-0" 
+            [class.is-expanded]="isExpanded"
+            [class.d-none]="selectedTab === item"
+      >
+        <p>{{item}}</p>
+      </div>
+    </div>
+  </div>
+

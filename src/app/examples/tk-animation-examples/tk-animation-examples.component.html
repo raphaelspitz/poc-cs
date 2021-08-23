@@ -1,0 +1,29 @@
+<h2 class="pb-4">Slide Left-Right Animation</h2>
+
+<div class="pb-1">
+  <tk-slide-left-right [totalItems]="items">
+    <div body *ngFor="let item of items; let i = index" class="card border-0 bg-gray-1 p-2 "
+        [ngClass]="[gridColumnDefinition]">
+      <div class="card-body bg-white">
+        <h3 class="mb-5">
+          {{item.title}}{{i}}
+        </h3>
+        <p>
+          {{item.valueOne}}
+        </p>
+        <p>
+          {{item.valueTwo}}
+        </p>
+        <p>
+          {{item.valueThree}}
+        </p>
+        <p class="border-bottom-gray-3">
+          {{item.valueFour}}
+        </p>
+        <p>
+          {{item.valueFive}}
+        </p>
+      </div>
+    </div>
+  </tk-slide-left-right>
+</div>

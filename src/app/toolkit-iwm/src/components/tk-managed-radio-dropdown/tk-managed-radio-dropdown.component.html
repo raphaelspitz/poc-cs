@@ -1,0 +1,22 @@
+<div ngbDropdown autoClose="outside" class="w-100" placement="bottom" #categoryStatusRadio="ngbDropdown">
+    <div ngbDropdownToggle class="tk-form-control-icon cursor-pointer">
+        <input type="text" class="tk-form-control bg-gray-1 focus-bg-gray-1 text-transparent cursor-pointer" placeholder="{{selectedValue}}">
+        <div class="tk-form-control-right-icon">
+            <i class="icon icon-chevron-down"></i>
+        </div>
+    </div>
+    <div ngbDropdownMenu aria-labelledby="selectRadionBtns" class="dropdown-menu dropdown-status-list p-3">
+        <div class="tk-radio-button"
+            *ngFor="let option of filterStatusOptions; let i = index" [ngModel]="selectedValue"
+            (change)="selectStatusValue($event)"
+            ngDefaultControl
+        >
+            <input type="radio" name="status" id="{{'status'+i}}"
+                class="custom-control-input" value="{{option.value}}" [checked]="option.value===selectedValue">
+            <label for="{{'status'+i}}">
+                    {{option.value}}
+            </label>
+        </div>
+    </div>
+</div>
+      

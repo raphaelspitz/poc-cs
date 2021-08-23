@@ -1,0 +1,56 @@
+<h2 class="pb-4">Links</h2>
+
+<div class="pb-1">
+  <div class="col-3">
+    <a class="tk-link tk-link-primary" href="/link-examples">Primary Link 
+      <span class="tk-link-icon"><i class="fa fa-search"></i></span>
+    </a>
+  </div>
+</div>
+<div class="pb-4">
+  <div class="col-3">
+    <a class="tk-link tk-link-primary" href="/link-examples" disabled>Primary Link Disabled 
+      <span class="tk-link-icon"><i class="fa fa-search"></i></span>
+    </a>
+  </div>
+</div>
+
+<!-- -->
+
+<div class="pb-1">
+  <div class="col-3">
+    <a class="tk-link tk-link-text" href="/link-examples">Text Link</a>
+  </div>
+</div>
+<div class="pb-4">
+  <div class="col-3">
+    <a class="tk-link tk-link-text" href="/link-examples" disabled>Text Link Disabled</a>
+  </div>
+</div>
+
+<!-- -->
+
+<div class="pb-1">
+  <div class="col-3">
+    <a class="tk-link tk-link-primary tk-link-sm" href="/link-examples">Primary Link small
+      <span class="tk-link-icon"><i class="fa fa-search"></i></span>
+    </a>
+  </div>
+</div>
+<div class="pb-4">
+  <div class="col-3">
+    <a class="tk-link tk-link-text tk-link-sm" href="/link-examples">Text Link small</a>
+  </div>
+</div>
+
+<!-- -->
+
+<div class="pt-4">
+  <button class="tk-btn tk-btn-secondary" (click)="codePartOne = !codePartOne">Show/Hide source code</button>
+  <code *ngIf="codePartOne">
+    <pre>
+      {{ links }}
+    </pre>
+  </code>
+</div>
+

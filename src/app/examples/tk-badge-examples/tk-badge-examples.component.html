@@ -1,0 +1,65 @@
+<h2>Badge</h2>
+
+<div class="tk-badge col-6">
+  <span class="tk-badge-round-border">1</span>
+  <span class="tk-badge-text">Badge</span>
+</div>
+<div class="tk-badge col-6">
+  <span class="tk-badge-round-border">2</span>
+  <span class="tk-badge-text">Badge</span>
+</div>
+<div class="tk-badge col-6">
+  <span class="tk-badge-round-border">3</span>
+  <span class="tk-badge-text">Badge</span>
+</div>
+<div class="tk-badge col-6">
+  <span class="tk-badge-round-border">4</span>
+  <span class="tk-badge-text">Badge</span>
+</div>
+
+<!-- -->
+
+<div class="pt-4">
+  <button class="tk-btn tk-btn-secondary" (click)="codePartOne = !codePartOne">Show/Hide source code</button>
+  <code *ngIf="codePartOne">
+    <pre>
+      {{ badges }}
+    </pre>
+  </code>
+</div>
+
+<!-- -->
+
+<h2 class="pt-4">Badge payment case</h2>
+
+<div class="tk-badge align-items-start py-4">
+  <span class="tk-badge-round-border">1</span>
+  <div class="badge-text-container">
+    <span class="tk-badge-text col-1 px-0">From</span>
+    <div class="badge-complement pl-3">
+      <span class="tk-badge-text">
+        Advisory Account<br/>
+        CH52 1235 4235 5278 3234 C
+      </span>
+      <span class="tk-badge-text"><b>CHF 300,922.54</b></span>
+    </div>
+  </div>
+</div>
+
+<div class="tk-badge align-items-start py-4">
+  <span class="tk-badge-round-border">2</span>
+  <div class="badge-text-container">
+    <span class="tk-badge-text col-1 px-0">To</span>
+    <div class="badge-complement pl-3">
+      <span class="tk-badge-text">
+        Frank Jeremiah Miller<br/>
+        IT 60 X054 2811 1010 0000 0123 456
+      </span>
+    </div>
+  </div>
+</div>
+
+<div class="tk-badge py-4">
+  <span class="tk-badge-round-border">3</span>
+  <span class="tk-badge-text">Payment details</span>
+</div>

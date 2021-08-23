@@ -1,0 +1,62 @@
+// TabBtn
+
+.tk-btn-tabs {
+  display: flex;
+}
+
+.tk-btn-tab-active {
+  @extend .tk-btn-primary;
+  &:focus {
+    background: $cs-color-primary-black;
+  }
+}
+
+.tk-btn-tab-not-active {
+  @extend .tk-btn-secondary;
+  color: $cs-color-primary-gray5;
+  &:hover,
+  &:focus,
+  &:not(:disabled):not(.disabled):active {
+    border: 1px solid $cs-color-primary-black;
+    padding: 12px 30px;
+  }
+}
+
+.tk-btn-sm.tk-btn-tab-not-active {
+  &:hover,
+  &:focus,
+  &:not(:disabled):not(.disabled):active {
+    padding: 10px 20px;
+  }
+}
+
+// TabLine
+.tk-line-tabs {
+  display: flex;
+
+  .tk-line-tab {
+    font-size: 16px;
+    font-family: "CSePBold";
+    line-height: 24px;
+    padding: 0px 32px 8px 32px;
+    background-color: $cs-color-primary-white;
+    color: $cs-color-primary-black;
+    border: none;
+    border-bottom: 2px solid $cs-color-primary-black;
+  }
+
+  .tk-line-tab-not-active {
+    color: $cs-color-primary-gray5;
+    border-color: $cs-color-primary-gray5;
+
+    &:hover {
+      color: $cs-color-primary-black;
+    }
+  }
+
+  .tk-line-sm {
+    font-size: 14px;
+    line-height: 20px;
+    padding: 0px 20px 6px 20px;
+  }
+}

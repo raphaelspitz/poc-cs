@@ -1,0 +1,7 @@
+<div class="toggle-container" 
+    (click)="toggle()"
+    [class.bg-white]="!isOn"
+    [class.bg-black]="isOn"
+>
+  <div class="toggle-value" [class.is-off]="!isOn"></div>
+</div>

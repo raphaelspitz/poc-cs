@@ -1,0 +1,344 @@
+@import '../../../scss/helpers/helpers/colors';
+
+.color-item {
+  padding: 2px 0px 2px 0px;
+
+  .square {
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+  }
+
+  &::after {
+    margin-left: 10px;
+  }
+}
+
+// Primary colors
+.cs-color-primary-black {
+  .square {
+    background-color: $cs-color-primary-black;
+  }
+
+  &:after {
+    content: "(#{$cs-color-primary-black})";
+  }
+}
+
+.cs-color-primary-gray6 {
+  .square {
+    background-color: $cs-color-primary-gray6;
+  }
+
+  &:after {
+    content: "(#{$cs-color-primary-gray6})";
+  }
+}
+
+.cs-color-primary-gray5 {
+  .square {
+    background-color: $cs-color-primary-gray5;
+  }
+
+  &:after {
+    content: "(#{$cs-color-primary-gray5})";
+  }
+}
+
+.cs-color-primary-gray4 {
+  .square {
+    background-color: $cs-color-primary-gray4;
+  }
+
+  &:after {
+    content: "(#{$cs-color-primary-gray4})";
+  }
+}
+
+.cs-color-primary-gray3 {
+  .square {
+    background-color: $cs-color-primary-gray3;
+  }
+
+  &:after {
+    content: "(#{$cs-color-primary-gray3})";
+  }
+}
+
+.cs-color-primary-gray2 {
+  .square {
+    background-color: $cs-color-primary-gray2;
+  }
+
+  &:after {
+    content: "(#{$cs-color-primary-gray2})";
+  }
+}
+
+.cs-color-primary-gray1 {
+  .square {
+    background-color: $cs-color-primary-gray1;
+  }
+
+  &:after {
+    content: "(#{$cs-color-primary-gray1})";
+  }
+}
+
+.cs-color-primary-white {
+  .square {
+    background-color: $cs-color-primary-white;
+  }
+
+  &:after {
+    content: "(#{$cs-color-primary-white})";
+  }
+}
+
+// Secondary colors
+// Green
+.cs-color-secondary-green-dark {
+  .square {
+    background-color: $cs-color-secondary-green-dark;
+  }
+
+  &:after {
+    content: "(#{$cs-color-secondary-green-dark})";
+  }
+}
+
+.cs-color-secondary-green-mid {
+  .square {
+    background-color: $cs-color-secondary-green-mid;
+  }
+
+  &:after {
+    content: "(#{$cs-color-secondary-green-mid})";
+  }
+}
+
+.cs-color-secondary-green-bright {
+  .square {
+    background-color: $cs-color-secondary-green-bright;
+  }
+
+  &:after {
+    content: "(#{$cs-color-secondary-green-bright})";
+  }
+}
+
+.cs-color-secondary-green-light {
+  .square {
+    background-color: $cs-color-secondary-green-light;
+  }
+
+  &:after {
+    content: "(#{$cs-color-secondary-green-light})";
+  }
+}
+
+// Magenta
+.cs-color-secondary-magenta-dark {
+  .square {
+    background-color: $cs-color-secondary-magenta-dark;
+  }
+
+  &:after {
+    content: "(#{$cs-color-secondary-magenta-dark})";
+  }
+}
+
+.cs-color-secondary-magenta-mid {
+  .square {
+    background-color: $cs-color-secondary-magenta-mid;
+  }
+
+  &:after {
+    content: "(#{$cs-color-secondary-magenta-mid})";
+  }
+}
+
+.cs-color-secondary-magenta-bright {
+  .square {
+    background-color: $cs-color-secondary-magenta-bright;
+  }
+
+  &:after {
+    content: "(#{$cs-color-secondary-magenta-bright})";
+  }
+}
+
+.cs-color-secondary-magenta-light {
+  .square {
+    background-color: $cs-color-secondary-magenta-light;
+  }
+
+  &:after {
+    content: "(#{$cs-color-secondary-magenta-light})";
+  }
+}
+
+// Purple
+.cs-color-secondary-purple-dark {
+  .square {
+    background-color: $cs-color-secondary-purple-dark;
+  }
+
+  &:after {
+    content: "(#{$cs-color-secondary-purple-dark})";
+  }
+}
+
+.cs-color-secondary-purple-mid {
+  .square {
+    background-color: $cs-color-secondary-purple-mid;
+  }
+
+  &:after {
+    content: "(#{$cs-color-secondary-purple-mid})";
+  }
+}
+
+.cs-color-secondary-purple-bright {
+  .square {
+    background-color: $cs-color-secondary-purple-bright;
+  }
+
+  &:after {
+    content: "(#{$cs-color-secondary-purple-bright})";
+  }
+}
+
+.cs-color-secondary-purple-light {
+  .square {
+    background-color: $cs-color-secondary-purple-light;
+  }
+
+  &:after {
+    content: "(#{$cs-color-secondary-purple-light})";
+  }
+}
+
+// Turquoise
+.cs-color-secondary-turquoise-dark {
+  .square {
+    background-color: $cs-color-secondary-turquoise-dark;
+  }
+
+  &:after {
+    content: "(#{$cs-color-secondary-turquoise-dark})";
+  }
+}
+
+.cs-color-secondary-turquoise-mid {
+  .square {
+    background-color: $cs-color-secondary-turquoise-mid;
+  }
+
+  &:after {
+    content: "(#{$cs-color-secondary-turquoise-mid})";
+  }
+}
+
+.cs-color-secondary-turquoise-bright {
+  .square {
+    background-color: $cs-color-secondary-turquoise-bright;
+  }
+
+  &:after {
+    content: "(#{$cs-color-secondary-turquoise-bright})";
+  }
+}
+
+.cs-color-secondary-turquoise-light {
+  .square {
+    background-color: $cs-color-secondary-turquoise-light;
+  }
+
+  &:after {
+    content: "(#{$cs-color-secondary-turquoise-light})";
+  }
+}
+
+// Blue
+.cs-color-secondary-blue-dark {
+  .square {
+    background-color: $cs-color-secondary-blue-dark;
+  }
+
+  &:after {
+    content: "(#{$cs-color-secondary-blue-dark})";
+  }
+}
+
+.cs-color-secondary-blue-mid {
+  .square {
+    background-color: $cs-color-secondary-blue-mid;
+  }
+
+  &:after {
+    content: "(#{$cs-color-secondary-blue-mid})";
+  }
+}
+
+.cs-color-secondary-blue-bright {
+  .square {
+    background-color: $cs-color-secondary-blue-bright;
+  }
+
+  &:after {
+    content: "(#{$cs-color-secondary-blue-bright})";
+  }
+}
+
+.cs-color-secondary-blue-light {
+  .square {
+    background-color: $cs-color-secondary-blue-light;
+  }
+
+  &:after {
+    content: "(#{$cs-color-secondary-blue-light})";
+  }
+}
+
+// Support colors
+.cs-color-support-green {
+  .square {
+    background-color: $cs-color-support-green;
+  }
+
+  &:after {
+    content: "(#{$cs-color-support-green})";
+  }
+}
+
+.cs-color-support-amber {
+  .square {
+    background-color: $cs-color-support-amber;
+  }
+
+  &:after {
+    content: "(#{$cs-color-support-amber})";
+  }
+}
+
+.cs-color-support-red {
+  .square {
+    background-color: $cs-color-support-red;
+  }
+
+  &:after {
+    content: "(#{$cs-color-support-red})";
+  }
+}
+
+// Custom
+.cs-color-custom-table-border {
+  .square {
+    background-color: $cs-color-custom-table-border;
+  }
+
+  &:after {
+    content: "(#{$cs-color-custom-table-border})";
+  }
+}

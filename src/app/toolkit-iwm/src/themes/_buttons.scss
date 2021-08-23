@@ -1,0 +1,312 @@
+.tk-btn {
+  @extend .btn;
+  font-size: 16px;
+  font-family: 'CSePBold';
+  line-height: 24px;
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 0;
+  cursor: pointer;
+  height: 48px;
+  transition: none;
+  border: 1px solid $cs-color-primary-black;
+
+  &[disabled] {
+    pointer-events: none;
+  }
+
+  &:not(:disabled):not(.disabled):focus-visible,
+  &:not(:disabled):not(.disabled):active:focus-visible {
+    outline: 1px solid $cs-color-primary-black;
+    outline-offset: 1px;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    outline: none;
+    box-shadow: none;
+    padding: 12px 30px; // Needed to override CS styles
+  }
+
+  &:not(:disabled):not(.disabled):active:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  &:hover {
+    border: 1px solid $cs-color-primary-black; // Needed to override CS styles
+  }
+}
+
+.tk-btn-primary {
+  @extend .btn-primary;
+  color: $cs-color-primary-white;
+  background: $cs-color-primary-black;
+
+  &[disabled] {
+    color: $cs-color-primary-white;
+    background: $cs-color-primary-gray3;
+    border-color: $cs-color-primary-gray3;
+  }
+
+  &:hover,
+    &:focus,
+    // override bootstrap style
+    &:not(:disabled):not(.disabled):active {
+    color: $cs-color-primary-white;
+    background: $cs-color-primary-gray6;
+    border: 1px solid $cs-color-primary-black;
+  }
+
+  &:focus {
+    // Needed to override CS styles
+    border: 1px solid $cs-color-primary-black;
+    padding: 12px 30px;
+  }
+}
+
+.tk-btn-secondary {
+  @extend .btn-secondary;
+  color: $cs-color-primary-black;
+  background: $cs-color-primary-white;
+
+  &[disabled] {
+    color: $cs-color-primary-gray4;
+    border-color: $cs-color-primary-gray4;
+    background: $cs-color-primary-white;
+  }
+
+  &:hover,
+  &:focus,
+  &:not(:disabled):not(.disabled):active {
+    color: $cs-color-primary-black;
+    background: $cs-color-primary-white;
+    padding: 11px 29px;
+    border: 2px solid $cs-color-primary-black;
+  }
+}
+
+.tk-btn-primary,
+.tk-btn-secondary {
+  // override bootstrap style
+  &:active,
+  &:focus,
+  &:not(:disabled):not(.disabled):active:focus {
+    box-shadow: none;
+  }
+}
+
+.tk-btn-icon {
+  color: $cs-color-primary-black;
+  background: $cs-color-primary-white;
+  display: flex;
+  align-items: center;
+  padding: 12px 14px;
+  width: auto; // Needed to override CS styles
+
+  .tk-btn-icon-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20px;
+    width: 20px;
+    font-size: 20px; // In case user uses font awesome icon
+  }
+
+  .tk-btn-icon-text {
+    margin-left: 10px;
+  }
+
+  &:hover,
+  &:focus {
+    padding: 12px 14px;
+    color: $cs-color-primary-gray6;
+    border: 1px solid $cs-color-primary-black; // Needed to override CS styles
+  }
+
+  &[disabled] {
+    color: $cs-color-primary-gray4;
+  }
+}
+
+.tk-btn-sm {
+  font-size: 14px;
+  line-height: 18px;
+  height: 40px;
+  padding: 10px 20px;
+  width: auto; // Needed to override CS styles
+
+  &:hover,
+  &:focus {
+    padding: 10px 20px;
+  }
+}
+
+.tk-btn-secondary.tk-btn-sm {
+  &:hover,
+  &:focus,
+  &:not(:disabled):not(.disabled):active {
+    padding: 9px 19px;
+  }
+}
+
+.tk-btn-icon.tk-btn-sm {
+  height: 40px; // Needed to override CS styles
+  width: auto; // Needed to override CS styles
+  padding: 12px 14px; // Needed to override CS styles
+  .tk-btn-icon-icon, .tk-btn-icon-icon * {
+    height: 14px;
+    width: 14px;
+    font-size: 14px; // In case user uses font awesome icon
+  }
+  &:hover {
+    padding: 12px 14px;
+  }
+}
+
+.tk-btn-no-border {
+  border: none;
+  background-color: transparent;
+  &:hover,
+  &:active,
+  &:focus {
+    border: none;
+  }
+}
+
+// Radio buttons
+.tk-radio-button {
+  input {
+    position: absolute;
+    display: none;
+  }
+  label {
+    position: relative;
+    display: block;
+    padding-left: 30px;
+    cursor: pointer;
+    font-family: 'CSEPRoman';
+    font-weight: bolder;
+    font-size: 1rem;
+
+    &:after {
+      display: block;
+      top: 6px;
+      left: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: $cs-color-primary-white;
+      border: 1px solid $cs-color-primary-white;
+      position: absolute;
+      content: '';
+    }
+
+    &:before {
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      content: '';
+      border: 1px solid $cs-color-primary-black;
+      transition: border-color 0.4s ease-in-out;
+      background-color: $cs-color-primary-white;
+    }
+  }
+
+  input:checked + label::before {
+    border-width: 5px;
+  }
+}
+
+// Pagination
+.tk-pagination-dot {
+  margin-left: 16px;
+  width: 10px;
+  height: 10px;
+  border-radius: 100px;
+  display: inline-block;
+  cursor: pointer;
+  transition: 0.3s;
+  background: $cs-color-primary-gray3;
+
+  & + .active {
+    background: $cs-color-primary-black;
+  }
+}
+
+.tk-pagination-buttons {
+  display: flex;
+}
+
+// Checkbox
+.tk-checkbox {
+  display: flex;
+  position: relative;
+  align-items: center;
+  height: 20px;
+  cursor: pointer;
+
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  label {
+    position: relative;
+    display: block;
+    padding-left: 30px;
+    cursor: pointer;
+    font-family: 'CSEPRoman';
+    font-size: 14px;
+    margin-bottom: 0px;
+  }
+  
+  input:checked ~ .checkmark {
+    background-color: $cs-color-primary-black;
+  }
+
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+  /* Show the checkmark when checked */
+  input:checked ~ .checkmark:after {
+    display: block;
+  }
+
+  /* Style the checkmark/indicator */
+  .checkmark:after {
+    left: 6px;
+    top: 0px;
+    width: 6px;
+    height: 15px;
+    border: solid $cs-color-primary-white;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  .checkmark {
+    position: absolute;
+    top: 0;
+    height: 20px;
+    width: 20px;
+    background-color: $cs-color-primary-white;
+    border: 1px solid $cs-color-primary-black;
+  }
+  
+}
+
+

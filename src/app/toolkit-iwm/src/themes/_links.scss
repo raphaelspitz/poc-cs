@@ -1,0 +1,77 @@
+.tk-link {
+    height: 24px;
+    font-size: 16px;
+    line-height: 24px;
+    text-decoration: none;
+    cursor: pointer;
+    color: $cs-color-primary-black;
+  
+    &:visited {
+      color:$cs-color-primary-black;
+    }
+  
+    &:hover,
+    &:focus,
+    &:active {
+      text-decoration: none;
+    }
+
+    &:hover,
+    &:focus {
+      color: $cs-color-primary-gray5;
+      outline: none;
+    }
+  
+    &[disabled] {
+      color: $cs-color-primary-gray4;
+      pointer-events: none;
+    }
+  }
+  
+  .tk-link-primary {
+    font-family: "CSePBold";
+  
+    .tk-link-icon {
+      height: 24px;
+      width: 24px;
+      margin-left: 8px;
+    }
+  }
+  
+  .tk-link-text {
+    font-family: "CSePRoman";
+    position: relative;
+  
+    &:after {
+      content: '';
+      position: absolute;
+      height: 1px;
+      margin: 0 auto;
+      left: 0;
+      right: 0;
+      width: 100%;
+      background-color: $cs-color-primary-black;
+      left: 0;
+      bottom: -4px;
+    }
+  
+    &:hover:after {
+      background-color: $cs-color-primary-gray5;
+    }
+  
+    &[disabled]:after {
+      background-color: $cs-color-primary-gray4;
+    }
+  }
+  
+  .tk-link-sm {
+    height: 18px;
+    font-size: 14px;
+    line-height: 18px;
+  
+    .tk-link-icon {
+      height: 18px;
+      width: 18px;
+      margin-left: 6px;
+    }
+  }

@@ -1,0 +1,13 @@
+<div class="d-flex">
+  <div class="col-1 p-0">
+      <div class="tk-line-tabs" *ngFor="let tab of tabs; let i = index;" (click)="selectTab(tab, i)">
+        <h6 class="tk-line-tab border-bottom-0 pointer py-0"
+        [class.tk-line-tab-not-active]="!tab.active"
+        [class.tk-line-tab-active]="tab.active"
+        >{{tab.title}}</h6>
+      </div>
+    </div>
+    
+    <ng-content></ng-content> 
+
+</div>

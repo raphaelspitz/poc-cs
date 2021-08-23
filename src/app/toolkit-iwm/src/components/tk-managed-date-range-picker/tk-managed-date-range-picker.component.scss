@@ -1,0 +1,64 @@
+@import '../../../../../scss/helpers/helpers/colors';
+
+#customdate {
+  color: $cs-color-primary-black;
+}
+
+#customdate:hover {
+  color: $cs-color-primary-white;
+}
+
+#customdate.enabled {
+  color: $cs-color-primary-white;
+}
+
+.mt16px {
+  margin-top: 8px;
+}
+
+.blackText {
+  color: $cs-color-primary-black;
+}
+
+.blackText:hover {
+  color: $cs-color-primary-white;
+}
+
+.blackText.enabled {
+  color: $cs-color-primary-white;
+}
+
+.cs-document-filter.btn-tabs.enabled {
+  color: $cs-color-primary-white;
+}
+
+.datePicker ::ng-deep .ngb-dp-header {
+
+  .btn:hover,
+  .btn:active,
+  .btn:focus,
+  .btn:visited {
+    padding: 0px 8px;
+    margin: 0px 4px;
+  }
+
+  .ngb-dp-arrow-btn {
+    &:focus {
+      outline-width: 0px;
+      outline-style: none;
+    }
+  }
+
+  .ngb-dp-navigation-chevron {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+.datePicker ::ng-deep .ngb-dp-month {
+  width: 100%;
+}
+
+.datePicker ::ng-deep .ngb-dp-week {
+  justify-content: space-between;
+}

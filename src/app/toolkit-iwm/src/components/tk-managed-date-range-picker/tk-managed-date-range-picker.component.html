@@ -1,0 +1,55 @@
+<
+<form [formGroup]="dateForm" autocomplete="off">
+        <div ngbDropdown #categoryDate="ngbDropdown"
+        class="d-inline-block filter-inputs date-range-picker" #d="ngbDropdown"
+          autoClose="outside" placement="bottom"
+          (openChange)="openDatePicker($event)"
+          >
+          <div class="input-with-icon">
+            <input readonly type="text" id="dropdownDateRange" ngbDropdownToggle class="btn-custom-select-dropdown"
+              formControlName="date" maxlength="23" placeholder="{{ 'EDOCSCLIENTVIEW.FILTERS.FILTERDATEFORMAT' | translate }}" value="{{ datesToDisplay.indexOf('null') !== -1 ? '' : datesToDisplay}}">
+            <div (click)="categoryDate.isOpen() ? categoryDate.close():categoryDate.open()" class="cursor-pointer">
+              <i class="icon icon-calendar"></i></div>
+          </div>
+          <p *ngIf="isInValid" class="errorMessage">
+            {{"EDOCSCLIENTVIEW.FILTERS.INVALIDDATEFORMAT" | translate: {Default: "Invalid date format. Please use this 'DD/MM/YYYY - DD/MM/YYYY' format"} }}
+          </p>
+          <div ngbDropdownMenu aria-labelledby="dropdownDateRange" autoClose="false" style="margin-top:3px"
+            class="dropdown-menu dropdown-date-range-list">
+            <div class="flex-date-container mt16px">
+              <div class="flex-today">
+                <button  class="btn-tabs CSEPBold-14 blackText" [class.enabled]="dateMode===0" id="todaydate"
+                  (click)="setTodaysDate();">{{"EDOCSCLIENTVIEW.FILTERS.TODAY" | translate: {Default: "Today"} }}</button>
+              </div>
+              <div class="flex-last7-days">
+                <button class="btn-tabs CSEPBold-14 blackText" id="last7days" [class.enabled]="dateMode===1"
+                  (click)="setLast7Days();">{{"EDOCSCLIENTVIEW.FILTERS.LAST7DAYS" | translate: {Default: "Last 7 days"} }}</button>
+              </div>
+              <div class="break-mobile"></div> 
+              <div class="flex-last-30days">
+                <button class="btn-tabs CSEPBold-14 blackText" id="last30days" [class.enabled]="dateMode===2"
+                  (click)="setLast30Days();">{{"EDOCSCLIENTVIEW.FILTERS.LAST30DAYS" | translate: {Default: "Last 30 days"} }}</button>
+              </div>
+              <div class="break-non-mobile"></div> 
+              <div class="flex-custom-date">
+                <button class="btn-tabs CSEPBold-14 blackText" id="customdate" [class.enabled]="dateMode===3"
+                  (click)="onCustomDate();">{{"EDOCSCLIENTVIEW.FILTERS.CUSTOM" | translate: {Default: "Custom"} }}</button>
+              </div>
+            </div>
+            <div class="row">
+              <ngb-datepicker #dp class="datePicker" formControlName="date" navigation="enable" [displayMonths]="1"
+                [dayTemplate]="t" outsideDays="hidden" [maxDate]="maxDate" (select)="onDateSelection($event)"
+                >
+              </ngb-datepicker>
+              <ng-template #t let-date let-focused="focused">
+                <span class="custom-day justify-content-between" [class.focused]="focused" [class.range]="isRange(date)"
+                  [class.faded]="isHovered(date) || isInside(date)" (mouseenter)="hoveredDate = date"
+                  (mouseleave)="hoveredDate = null">
+                  {{ date.day }}
+                </span>
+              </ng-template>
+            </div>
+          </div>
+        </div>
+      </form>
+      

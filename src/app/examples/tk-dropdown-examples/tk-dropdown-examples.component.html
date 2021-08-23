@@ -1,0 +1,267 @@
+<h2 class="pb-4">Accordion</h2>
+
+<tk-accordion
+  [items]="accordionItems.content"
+  (selectedTabIndex)="selectedTabIndex($event)"
+></tk-accordion>
+
+<p>Index clicked : {{ indexClicked }}</p>
+
+<div class="my-4">
+  <ul>
+    <li>
+      bb-cs-managed-multiSelect-ui module : from the document tab on iwm
+      improvment change
+    </li>
+    <li>
+      module has been changed into a component in the toolkit leaving it as a
+      module will create interdepencies problems and performance and also will
+      force the developer to all re import the translate module, formsmodule,
+      common moudle, http module. It is better to transform it as component
+    </li>
+    <li>
+      inline style removed, css for hover links and checkboxes and input replace
+      with the ones from the toolkit
+    </li>
+    <li>
+      html refactored : click event 2 times added in this module on open close
+      so one was removed, convention kebab case corrected, buttons keyword
+      removed as we have checkbox and not buttons inside ...
+    </li>
+    <li>
+      components can be replace in the document tab just by changing the name of
+      the selector to tk-cs-managed-multi-select-ui and
+      tk-managed-radio-dropdown, date picker has to be tested
+    </li>
+  </ul>
+</div>
+
+<div class="container cs-document-filter mBot-20">
+  <div class="innerdocumentFilterBox">
+    <div class="row">
+      <div
+        class="col-md-6 col-lg-4 col-xs-12 label-spacing filter-category-index"
+      >
+        <label class="CSEPBold-14">{{
+          "EDOCSCLIENTVIEW.PERSONALDOCUMENTS.CATEGORIES"
+            | translate: { Default: "Categories" }
+        }}</label>
+        <tk-managed-multi-select-ui
+          [categories]="filteredCategories"
+          (emitSelectedCategories)="selectedCategories($event)"
+        >
+        </tk-managed-multi-select-ui>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container cs-document-filter mBot-20">
+  <div class="col-md-6 col-lg-4 col-xs-12 label-spacing filter-status-index">
+    <label class="CSEPBold-14">{{
+      "EDOCSCLIENTVIEW.PERSONALDOCUMENTS.STATUS"
+        | translate: { Default: "Status" }
+    }}</label>
+    <tk-managed-radio-dropdown
+      [filterStatusOptions]="filterStatusOptions"
+      (updateFilterStatus)="updateFilterStatus($event)"
+    >
+    </tk-managed-radio-dropdown>
+  </div>
+</div>
+
+<div class="mt-5">
+  <div class="container cs-document-filter mBot-20">
+    <div class="col-md-6 col-lg-4 col-xs-12 label-spacing filter-status-index">
+      <label class="CSEPBold-14">{{
+        "EDOCSCLIENTVIEW.PERSONALDOCUMENTS.DOCUMENTDATE"
+          | translate: { Default: "Date Range" }
+      }}</label>
+      <tk-managed-date-range-picker></tk-managed-date-range-picker>
+    </div>
+  </div>
+</div>
+
+<h2 class="pb-4">white Drop down examples with exmpty content</h2>
+
+<div class="flex-column flex-sm-row col-lg-4 col-md-6 p-0">
+  <div
+    tabindex="0"
+    class="dropdown w-100"
+    (focusout)="showDropdownWithEmptyContent = false"
+  >
+    <div
+      (click)="showDropdownWithEmptyContent = !showDropdownWithEmptyContent"
+      class="card border-black w-100 mt-2 card align-self-center cursor-pointer"
+    >
+      <div
+        class="card-body d-flex justify-content-between w-100 align-items-center"
+      >
+        <div class="d-flex flex-column">
+          <span class="CSEPRoman-14">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          </span>
+        </div>
+        <div class="align-self-end">
+          <i
+            class="icon"
+            [class.icon-chevron-down]="!showDropdownWithEmptyContent"
+            [class.icon-chevron-up]="showDropdownWithEmptyContent"
+          >
+          </i>
+        </div>
+      </div>
+    </div>
+    <ul
+      *ngIf="showDropdownWithEmptyContent"
+      class="dropdown-scroll mt-0 ml-0 w-100 drop-down-box-shadow z-index-3"
+    >
+      <li
+        class="card align-self-center border-left-0 border-right-0 border-top-0"
+      >
+        <!-- removed the p tag and replace it with a new content -->
+        <p style="height: 400px">Replacable content here</p>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<h2 class="pb-4 mt-4">white Drop down examples with content example</h2>
+
+<div class="flex-column flex-sm-row col-lg-4 col-md-6 p-0">
+  <div tabindex="0" class="dropdown w-100" (focusout)="showDropdown = false">
+    <div
+      (click)="showDropdown = !showDropdown"
+      class="card border-black w-100 mt-2 card align-self-center cursor-pointer"
+    >
+      <div
+        class="card-body d-flex justify-content-between w-100 align-items-center"
+      >
+        <div class="d-flex flex-column">
+          <span class="CSEPRoman-14">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          </span>
+        </div>
+        <div class="align-self-end">
+          <i
+            class="icon"
+            [class.icon-chevron-down]="!showDropdown"
+            [class.icon-chevron-up]="showDropdown"
+          >
+          </i>
+        </div>
+      </div>
+    </div>
+    <ul
+      *ngIf="showDropdown"
+      class="dropdown-scroll mt-0 ml-0 w-100 drop-down-box-shadow z-index-3"
+    >
+      <li
+        class="card align-self-center hover-bg-gray-1 border-left-0 border-right-0 border-top-0"
+        *ngFor="let person of people; let i = index"
+      >
+        <a class="card-body d-flex justify-content-between align-items-center">
+          <div class="d-flex flex-column">
+            <span class="CSEPRoman-14"> {{ i + 1 }} - {{ person.name }} </span>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<h2 class="pb-4 mt-4">input Drop down examples with exmpty content</h2>
+
+<div class="flex-column flex-sm-row col-lg-4 col-md-6 p-0">
+  <div
+    tabindex="0"
+    class="dropdown w-100"
+    (focusout)="showInputDropdownWithEmptyContent = false"
+  >
+    <div
+      class="tk-form-control-icon"
+      (click)="
+        showInputDropdownWithEmptyContent = !showInputDropdownWithEmptyContent
+      "
+    >
+      <input
+        type="text"
+        id="regular-input-right-icon"
+        name="regular-input-right-icon"
+        class="tk-form-control text-transparent cursor-pointer"
+        placeholder="Enter text"
+      />
+      <div class="tk-form-control-right-icon">
+        <i
+          class="icon"
+          [class.icon-chevron-down]="!showInputDropdownWithEmptyContent"
+          [class.icon-chevron-up]="showInputDropdownWithEmptyContent"
+        >
+        </i>
+      </div>
+    </div>
+    <ul
+      *ngIf="showInputDropdownWithEmptyContent"
+      class="dropdown-scroll mt-0 ml-0 w-100 drop-down-box-shadow z-index-3"
+    >
+      <li
+        class="card align-self-center border-left-0 border-right-0 border-top-0"
+      >
+        <!-- removed the p tag and replace it with a new content -->
+        <p style="height: 400px">
+          Replacable content here you can also remove the div that contains the
+          chevron if not needed it will work also
+        </p>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<h2 class="pb-4 mt-4">input Drop down examples with simple content</h2>
+
+<div class="flex-column flex-sm-row col-lg-4 col-md-6 p-0">
+  <div
+    tabindex="0"
+    class="dropdown w-100"
+    (focusout)="showInputDropdownWithSimpleContent = false"
+  >
+    <div
+      class="tk-form-control-icon"
+      (click)="
+        showInputDropdownWithSimpleContent = !showInputDropdownWithSimpleContent
+      "
+    >
+      <input
+        type="text"
+        id="regular-input-right-icon"
+        name="regular-input-right-icon"
+        class="tk-form-control text-transparent cursor-pointer"
+        placeholder="Enter text"
+      />
+      <div class="tk-form-control-right-icon">
+        <i
+          class="icon"
+          [class.icon-chevron-down]="!showInputDropdownWithSimpleContent"
+          [class.icon-chevron-up]="showInputDropdownWithSimpleContent"
+        >
+        </i>
+      </div>
+    </div>
+    <ul
+      *ngIf="showInputDropdownWithSimpleContent"
+      class="dropdown-scroll mt-0 ml-0 w-100 drop-down-box-shadow z-index-3"
+    >
+      <li
+        class="card align-self-center hover-bg-gray-1 border-left-0 border-right-0 border-top-0"
+        *ngFor="let person of people; let i = index"
+      >
+        <a class="card-body d-flex justify-content-between align-items-center">
+          <div class="d-flex flex-column">
+            <span class="CSEPRoman-14"> {{ i + 1 }} - {{ person.name }} </span>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />

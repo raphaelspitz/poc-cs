@@ -1,0 +1,246 @@
+<div class="bg-white">
+  <h2 class="p-2">Tables</h2>
+  <div style="max-width: 1160px; background: #f1f2f2" class="bg-gray-1 p-3">
+    <div *ngIf="true" class="ptf-acc-section p-2">
+      <div class="border-bottom-black pb-4">
+        <h4>Portfolios and accounts</h4>
+      </div>
+      <div>
+        <table class="table bg-white mt-4 d-flex flex-column ptf-acc-table">
+          <thead class="d-flex w-100">
+            <tr class="w-100 d-flex row no-gutters border-bottom-black">
+              <th class="csTypeEPRegular-14 p-2 col-6 col-md-3 col-lg-2 border-0 border-bottom-grey-3">
+                Description
+              </th>
+              <th
+                class="csTypeEPRegular-14 p-2 col-md-2 offset-md-1 offset-lg-0 col-lg-2 border-0 d-none d-sm-none d-md-block d-lg-block d-xl-block">
+                Account number
+              </th>
+              <th class="csTypeEPRegular-14 p-2 col-lg-2 border-0 d-none d-sm-none d-md-none d-lg-block d-xl-block">
+                Account type
+              </th>
+              <th class="csTypeEPRegular-14 p-2 col-lg-2 border-0 d-none d-sm-none d-md-none d-lg-block d-xl-block">
+                Holder
+              </th>
+              <th
+                class="csTypeEPRegular-14 p-2 col-md-3 col-lg-2 border-0 text-right d-none d-sm-none d-md-block d-lg-block d-xl-block">
+                YTD Performance
+              </th>
+              <th class="csTypeEPRegular-14 p-2 col-6 col-md-3 pr-sm-2 pr-md-5 pr-lg-5 col-lg-2 text-right border-0">
+                Amount
+              </th>
+            </tr>
+          </thead>
+          <tbody class="d-flex flex-column border-bottom-gray-3 border-top-0" *ngFor="
+              let ptfandAccountsData of ptfandAccountsDatas;
+              let i = index
+            ">
+            <tr (click)="collapse(i)" class="w-100 d-flex row no-gutters"
+              [class.hover-bg-gray-1]="!ptfandAccountsDatas[i]['isExpanded']"
+              [class.bg-gray-2]="ptfandAccountsDatas[i]['isExpanded']">
+              <td
+                class="py-3 px-2 col-md-3 col-lg-2 col-xl-2 border-0 d-flex flex-column flex-sm-column flex-md-column flex-lg-row flex-xl-row align-items-baseline">
+                <span class="d-flex align-items-center CSePBold-14 ">
+                  {{ ptfandAccountsData.description }}
+                  <i class="fa fa-chevron-down no-line-height ml-2"
+                    [class.is-expanded]="ptfandAccountsDatas[i]['isExpanded']">
+                  </i>
+                </span>
+                <span class="d-md-block d-lg-none d-xl-none">
+                  {{ ptfandAccountsData.account }}
+                </span>
+                <span class="d-lg-none d-xl-none">
+                  {{ ptfandAccountsData.holder }}
+                </span>
+                <span class="d-sm-block d-md-none d-lg-none d-xl-none">
+                  {{ ptfandAccountsData.additions.portfolioId }}
+                </span>
+              </td>
+              <td
+                class="py-3 px-2 col-md-2 offset-md-1 offset-lg-0 col-lg-2 col-xl-2 border-0 d-none d-sm-none d-md-block d-lg-block d-xl-block">
+                {{ ptfandAccountsData.additions.portfolioId }}
+              </td>
+              <td
+                class="py-3 px-2 col-lg-2 border-0 d-none d-sm-none d-md-none d-lg-block d-xl-block csTypeEPRegular-14">
+                {{ ptfandAccountsData.account }}
+              </td>
+              <td
+                class="py-3 px-2 col-lg-2 border-0 d-none d-sm-none d-md-none d-lg-block d-xl-block csTypeEPRegular-14">
+                {{ ptfandAccountsData.holder }}
+              </td>
+              <td
+                class="py-3 px-2 col-md-3 col-lg-2 border-0 text-right d-none d-sm-none d-md-block d-lg-block d-xl-block">
+                <span> {{ ptfandAccountsData.performanceYTDpct }}% </span>
+                <span class="d-block d-sm-block d-md-none d-lg-none d-xl-none">
+                  {{ ptfandAccountsData.holder }}
+                </span>
+              </td>
+              <td class="py-3 p-2 pr-sm-2 pr-md-5 col-md-3 col-lg-2 col-xl-2 text-right border-0 d-flex flex-column">
+                <span>
+                  {{ ptfandAccountsData.valuation.currencyCode }}
+                  {{ ptfandAccountsData.valuation.amount }}
+                </span>
+                <span class="d-sm-block d-md-none d-lg-none d-xl-none">
+                  {{ ptfandAccountsData.performanceYTDpct }}%
+                </span>
+              </td>
+            </tr>
+            <div class="outer" [@animationExpand]="ptfandAccountsDatas[i]['isExpanded']">
+              <tr *ngFor="let item of ptfandAccountsData.cashAccounts"
+                class="outer w-100 d-flex row no-gutters expanded-tr bg-gray-1"
+                [class.border-top-gray-3]="ptfandAccountsDatas[i]['isExpanded']">
+                <td class="py-3 px-2 col-lg-2 border-0 d-none d-md-none d-lg-block d-xl-block"></td>
+                <td
+                  class="py-3 px-2 offset-0 offset-md-0 offset-lg-0 col-lg-2 border-0 d-flex d-sm-flex flex-column flex-sm-column d-md-block csTypeEPRegular-14">
+                  <span>
+                    {{ item.additions.IBAN }}
+                  </span>
+                  <span class="d-block d-sm-block d-md-none d-lg-none d-xl-none">
+                    {{ ptfandAccountsData.account }}
+                  </span>
+                  <span class="d-block d-sm-block d-md-none d-lg-none d-xl-none">
+                    {{ ptfandAccountsData.holder.split("-")[0] }}
+                  </span>
+                  <span class="d-block d-sm-block d-md-none d-lg-none d-xl-none">
+                    {{ item.additions.accountCurrency }}
+                    {{ item.additions.balance }}
+                  </span>
+                  <span class="d-block d-sm-none d-md-none d-lg-none d-xl-none">
+                    <i class="fas fa-arrow-right position-absolute" style="right: 16px; top: 50%"></i>
+                  </span>
+                </td>
+                <td
+                  class="py-3 px-2 col-lg-2 border-0 d-none d-sm-none d-md-none d-lg-block d-xl-block csTypeEPRegular-14">
+                  Cash account ({{ item.additions.accountCurrency }})
+                </td>
+                <td
+                  class="py-3 px-2 col-lg-2 border-0 d-none d-sm-none d-md-none d-lg-block d-xl-block csTypeEPRegular-14">
+                  {{ item.additions.description }}
+                </td>
+                <td class="py-3 px-2 col-lg-2 border-0 d-none d-sm-none d-md-none d-lg-block d-xl-block text-right">
+                  -
+                </td>
+                <td
+                  class="py-3 px-2 offset-md-0 col-md-6 col-lg-2 d-none d-sm-block d-md-flex flex-md-column text-right border-0 pr-5">
+                  {{ item.additions.accountCurrency }}
+                  {{ item.additions.balance }}
+                  <i class="fas fa-arrow-right position-absolute" style="right: 16px; top: 20px"></i>
+                </td>
+              </tr>
+            </div>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="pt-4" style="max-width: 1160px;">
+  <h2 class="p-2">Sortable table</h2>
+  <table class="table mt-4">
+    <thead>
+      <tr>
+        <th scope="col" (click)="sortTableString('cifNumber')">
+          <span>
+            <span>Account</span>
+            <i *ngIf="currentSortKey != 'cifNumber'" class="icon icon-trend-up sorting-icon"></i>
+            <i *ngIf="currentSortKey == 'cifNumber' && currentSortOrder"
+              class="icon icon-trend-up sorting-icon sorting-icon-active"></i>
+            <i *ngIf="currentSortKey == 'cifNumber' && !currentSortOrder"
+              class="icon icon-trend-down sorting-icon sorting-icon-active"></i>
+          </span>
+        </th>
+        <th scope="col" (click)="sortTableString('legalRelationshipName')">
+          <span>
+            <span>Account owner</span>
+            <i *ngIf="currentSortKey != 'legalRelationshipName'" class="icon icon-trend-up sorting-icon"></i>
+            <i *ngIf="currentSortKey == 'legalRelationshipName' && currentSortOrder"
+              class="icon icon-trend-up sorting-icon sorting-icon-active"></i>
+            <i *ngIf="currentSortKey == 'legalRelationshipName' && !currentSortOrder"
+              class="icon icon-trend-down sorting-icon sorting-icon-active"></i>
+          </span>
+        </th>
+        <th scope="col" (click)="sortTableString('cifRole')">
+          <span>
+            <span>Role</span>
+            <i *ngIf="currentSortKey != 'cifRole'" class="icon icon-trend-up sorting-icon"></i>
+            <i *ngIf="currentSortKey == 'cifRole' && currentSortOrder"
+              class="icon icon-trend-up sorting-icon sorting-icon-active"></i>
+            <i *ngIf="currentSortKey == 'cifRole' && !currentSortOrder"
+              class="icon icon-trend-down sorting-icon sorting-icon-active"></i>
+          </span>
+        </th>
+        <th scope="col" (click)="sortTableNum('investmentTotal')">
+          <span>
+            <span>Total assets</span>
+            <i *ngIf="currentSortKey != 'investmentTotal'" class="icon icon-trend-up sorting-icon"></i>
+            <i *ngIf="currentSortKey == 'investmentTotal' && currentSortOrder"
+              class="icon icon-trend-up sorting-icon sorting-icon-active"></i>
+            <i *ngIf="currentSortKey == 'investmentTotal' && !currentSortOrder"
+              class="icon icon-trend-down sorting-icon sorting-icon-active"></i>
+          </span>
+        </th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr [class.hover-bg-gray-1]="cifListData" *ngFor="let row of cifListData">
+        <td>
+          <span>{{row.bu}}-{{row.cifNumber}}</span>
+          <span>{{row.currency}}
+            {{row.investmentTotal}}</span>
+          <div>{{row.legalRelationshipName}}</div>
+          <div>{{row.cifRole}}</div>
+        </td>
+        <td>{{row.legalRelationshipName}}</td>
+        <td>{{row.cifRole}}</td>
+        <td>
+          <span>{{row.currency}} {{row.investmentTotal}}</span>
+        </td>
+        <td>
+          <span>
+            <i class="icon icon-arrow-right"></i>
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2 class="p-2">Load More functionnality with a large spinner if you want to use a small spinner  replace the large keywork with default in the html</h2>
+
+<div class="cs-portfolio-cash-activities-widget">
+  <!-- sm md lg xl table -->
+  <div *ngIf="isReloadedTableInformation; else loadingState">
+    <table class="d-sm-table table border-0">
+      <thead>
+        <tr>
+          <th scope="col" class="border-top-0">Fecha</th>
+          <th scope="col" class="border-top-0">Transacción</th>
+          <th scope="col" class="border-top-0">Referencia</th>
+          <th class="text-right border-top-0">Valor</th>
+          <th class="text-right border-top-0" scope="col">Saldo corriente</th>
+          <th>&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="filteredData.length > 0">
+        <tr class="clickable-row" *ngFor="let accountActivity of filteredData; let i = index">
+          <td>{{accountActivity.tradeDate}}</td>
+          <td>{{accountActivity.description}}</td>
+          <td>{{accountActivity.formattedTransactionRefNo}}</td>
+          <td class="text-right">{{accountActivity.amount }}</td>
+          <td class="text-right">{{accountActivity.currency}} {{accountActivity.runningCashBalance }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="d-flex d-sm-flex d-md-flex d-lg-flex d-xl-flex justify-content-center mt-32">
+      <tk-load-more [showMoreData]="this.filteredData.length < 6"  (loadMore)="loadMoreAccountActivity()"></tk-load-more>
+    </div>
+  </div>
+
+  <ng-template #loadingState>
+        <tk-spinner [size]="'large'">
+            <p>The data is loading...</p>
+        </tk-spinner>
+  </ng-template>
+</div>

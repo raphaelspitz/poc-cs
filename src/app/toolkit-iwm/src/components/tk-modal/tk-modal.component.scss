@@ -1,0 +1,65 @@
+@import '../../../../../scss/helpers/helpers/colors';
+@import '../../../../../scss/helpers/helpers/variables';
+
+/* MODAL STYLES
+-------------------------------*/
+tk-modal {
+  /* modals are hidden by default */
+  display: none;
+
+  .tk-modal {
+    /* modal container fixed across whole screen */
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10; // in order to pass over header
+    overflow: auto;
+
+    .tk-modal-grid {
+      position: relative;
+      background: $cs-color-primary-white;
+      min-height: 100px;
+      margin: auto;
+      margin-top: 30px;
+      margin-bottom: 30px;
+
+      .tk-modal-content {
+
+        .tk-modal-header {
+          position: absolute;
+          right: 0;
+          padding: 6px 6px 0px 0px;
+          z-index: 1;
+        }
+
+        .tk-modal-body {
+          padding: 22px;
+        }
+      }
+    }
+
+    @media (max-width: map_get($grid-breakpoints, md)) {
+      .tk-modal-grid {
+        width: 100%;
+        margin: auto;
+      }
+    }
+  }
+
+  .tk-modal-background {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: $cs-color-primary-black;
+    opacity: 0.75;
+    cursor: pointer;
+  }
+}
+
+body.tk-modal-open {
+  overflow: hidden;
+}

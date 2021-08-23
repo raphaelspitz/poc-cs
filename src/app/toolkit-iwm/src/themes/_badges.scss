@@ -1,0 +1,28 @@
+.tk-badge {
+  @extend .badge;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid $cs-color-primary-black;
+  border-radius: 0;
+  padding: 16px 0 16px 0;
+
+  .tk-badge-round-border {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 2px solid;
+    border-radius: 50%;
+    font-size: 15px;
+    width: 32px;
+    height: 32px;
+    padding: 6px;
+  }
+
+  .tk-badge-text {
+    text-align: left;
+    font-weight: normal;
+    margin-left: 16px;
+    font-family: 'CSePRoman';
+    font-size: 16px;
+    line-height: 24px;
+  }
+}

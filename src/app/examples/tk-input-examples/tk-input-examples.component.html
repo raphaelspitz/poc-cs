@@ -1,0 +1,99 @@
+<h2 class="pb-4">Inputs</h2>
+<div>
+  <div class="col-6 pb-4">
+    <label for="regular-input">Regular input</label>
+    <input
+      type="text"
+      id="regular-input"
+      name="regular-input"
+      class="tk-form-control"
+      placeholder="Enter text"
+    />
+  </div>
+
+  <!-- -->
+
+  <div class="col-6 pb-4">
+    <label for="disabled-input">Disabled input</label>
+    <input
+      type="text"
+      id="disabled-input"
+      name="disabled-input"
+      class="tk-form-control"
+      placeholder="Enter text"
+      disabled
+    />
+  </div>
+
+  <!-- -->
+
+  <div class="col-6 pb-4">
+    <label for="error-input">Error input</label>
+    <input
+      type="text"
+      id="error-input"
+      name="disabled-input"
+      class="tk-form-control tk-form-control-error"
+      placeholder="Enter text"
+    />
+    <div class="tk-form-control-error-message">This is the error message</div>
+  </div>
+
+  <!-- -->
+
+  <div class="col-6 pb-4">
+    <label for="regular-input-right-icon">Regular input with right Icon</label>
+    <div class="tk-form-control-icon">
+      <input
+        type="text"
+        id="regular-input-right-icon"
+        name="regular-input-right-icon"
+        class="tk-form-control"
+        placeholder="Enter text"
+      />
+      <div class="tk-form-control-right-icon">
+        <i class="icon icon-search"></i>
+      </div>
+    </div>
+  </div>
+
+  <!-- -->
+
+  <div class="col-6 pb-4">
+    <label for="regular-input-left-icon">Regular input with left Icon</label>
+    <div class="tk-form-control-icon">
+      <div class="tk-form-control-left-icon">
+        <i class="icon icon-search"></i>
+      </div>
+      <input
+        type="text"
+        id="regular-input-left-icon"
+        name="regular-input-left-icon"
+        class="tk-form-control"
+        placeholder="Enter text"
+      />
+    </div>
+  </div>
+</div>
+
+<!-- -->
+
+<div class="mt-5">
+  <h2 class="pb-4">Switch toggler</h2>
+  <tk-switch-toggle></tk-switch-toggle>
+</div>
+
+<div class="pt-4">
+  <button class="tk-btn tk-btn-secondary" (click)="codePartOne = !codePartOne">
+    Show/Hide source code
+  </button>
+  <code *ngIf="codePartOne">
+    <pre>
+      {{ inputs }}
+    </pre>
+  </code>
+</div>
+
+<div class="test mb-5"></div>
+
+<tk-date-picker></tk-date-picker>

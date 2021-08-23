@@ -1,0 +1,35 @@
+@import '../../../../../scss/helpers/helpers/colors';
+
+.three-dots.dropdown {
+
+  .dropdown-menu {
+    margin: 0px;
+    position: absolute;
+    left: auto;
+    right: -2%;
+    bottom: auto;
+    top: 0px;
+    transform: translate(0px, 38px);
+    background: $cs-color-primary-white;
+  }
+
+  .dropdown-item {
+    background: $cs-color-primary-white;
+  }
+
+  .border-bottom-gray-3 {
+    border-bottom: 1px solid $cs-color-primary-gray3;
+  }
+
+  .dropdown-item:hover,
+  .dropdown-item:focus {
+    color: unset;
+    text-decoration: none;
+    background: $cs-color-primary-gray1;
+    transition: background-color 0.25s ease-out;
+  }
+}
+
+.dropdown-active {
+  z-index: 1;
+}

@@ -1,0 +1,47 @@
+@import '../../../scss/helpers/helpers/colors';
+
+.color-item {
+  padding: 2px 0px 2px 0px;
+
+  .square {
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+  }
+
+  .square-donugth-exaple {
+    width: 96px;
+    height: 96px;
+  }
+
+  &::after {
+    margin-left: 10px;
+  }
+}
+
+// Primary colors
+.cs-color-primary-black {
+  .square {
+    background-color: $cs-color-primary-black;
+  }
+
+  .square-donugth-exaple {
+    background-color: $cs-color-primary-black;
+  }
+}
+
+.cs-color-secondary-turquoise-dark {
+  .square {
+    background-color: $cs-color-secondary-turquoise-dark;
+  }
+}
+
+.cs-color-secondary-turquoise-mid {
+  .square {
+    background-color: $cs-color-secondary-turquoise-mid;
+  }
+}
+
+.card-box-shadow {
+  box-shadow: 0 3px 20px 10px rgba(0, 0, 0, 0.05);
+}

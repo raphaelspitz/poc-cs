@@ -1,0 +1,12 @@
+<div class="three-dots dropdown" [class.dropdown-active]="isDropDownHidden">
+    <span>
+        <i class="icon icon-more"></i>
+    </span>
+    <div class="dropdown-menu p-0" [class.show]="isDropDownHidden">
+        <div *ngFor="let item of items; let i = index" (mousedown)="onClickItem(i)" ><span
+                class="dropdown-item p-0 CSePBold-16 border-bottom-gray-3 hover-bg-gray-1 p-3">{{item}}</span>
+        </div>
+    </div>
+</div> 
+
+ 

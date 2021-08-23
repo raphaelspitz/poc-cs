@@ -1,0 +1,34 @@
+// main.scss is used to import all sass files needed 
+// to make toolkit IWM lib works: bootstrap, colors, icons etc.
+// This file must only contains import! No style definitions here
+
+// Needed by the toolkit-iwm
+@import '../../../../themes/csd-iwm3/scss/helpers/colors';
+
+// Optional imports.
+// Needed by the library to be "independant" but already imported 
+// by theme-rework-poc project
+@import "../../../../themes/credit-suisse/scss/vendor/bootstrap/bootstrap.scss";
+$fonts-path: "../../../../themes/csd-iwm3/assets/fonts/" !default;
+@import "../../../../themes/csd-iwm3/scss/fonts/fonts";
+
+// import themes
+@import './badges';
+@import './buttons';
+@import './inputs';
+@import './links';
+@import './tables';
+@import './tabs';
+@import './helpers';
+
+// import specific component styles
+@import '../components/tk-accordion/tk-accordion.component.scss';
+@import '../components/tk-managed-date-range-picker/tk-managed-date-range-picker.component.scss';
+@import '../components/tk-managed-multi-select-ui/tk-managed-multi-select-ui.component.scss';
+@import '../components/tk-managed-radio-dropdown/tk-managed-radio-dropdown.component.scss';
+@import '../components/tk-modal/tk-modal.component.scss';
+@import '../components/tk-pagination/tk-pagination.component.scss';
+@import '../components/tk-slide-left-right/tk-slide-left-right.component.scss';
+@import '../components/tk-switch-toggle/tk-switch-toggle.component.scss';
+@import '../components/tk-three-dots-drop-down/tk-three-dots-dop-down.component.scss';
+@import '../components/tk-vertical-navbar/tk-vertical-navbar.component.scss';

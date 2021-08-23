@@ -1,0 +1,294 @@
+<h2 class="pb-4">Buttons</h2>
+
+<div class="pb-1">
+  <div class="col-3">
+    <button class="tk-btn tk-btn-primary">Primary</button>
+  </div>
+</div>
+<div class="pb-4">
+  <div class="col-3">
+    <button class="tk-btn tk-btn-primary" disabled>Primary disabled</button>
+  </div>
+</div>
+
+<!-- -->
+
+<div class="pb-1">
+  <div class="col-3">
+    <button class="tk-btn tk-btn-secondary">Secondary</button>
+  </div>
+</div>
+<div class="pb-4">
+  <div class="col-3">
+    <button class="tk-btn tk-btn-secondary" disabled>Secondary disabled</button>
+  </div>
+</div>
+
+<!-- -->
+
+<div class="pb-1">
+  <div class="col-3">
+    <button class="tk-btn tk-btn-primary tk-btn-sm">Primary small</button>
+  </div>
+</div>
+<div class="pb-4">
+  <div class="col-3">
+    <button class="tk-btn tk-btn-secondary tk-btn-sm">Secondary small</button>
+  </div>
+</div>
+
+<!-- -->
+
+<div class="mt-3 border-bottom-black pb-3">
+  <button class="tk-btn tk-btn-secondary" (click)="codePartOne = !codePartOne">Show/Hide source code</button>
+  <code *ngIf="codePartOne">
+        <pre>
+          {{ buttons }}
+        </pre>
+    </code>
+</div>
+
+<!-- -->
+
+<h2 class="pt-4 pb-4">Button Icons</h2>
+
+<div class="pb-1">
+  <div class="col-3">
+    <button class="tk-btn tk-btn-icon">
+      <span class="tk-btn-icon-icon">
+        <i class="icon icon-search"></i>
+      </span>
+      <span class="tk-btn-icon-text">Button Icon Text</span>
+    </button>
+  </div>
+</div>
+<div class="pb-4">
+  <div class="col-3">
+    <button class="tk-btn tk-btn-icon" disabled>
+      <span class="tk-btn-icon-icon">
+        <i class="icon icon-search"></i>
+      </span>
+      <span class="tk-btn-icon-text">Button Icon Text disabled</span>
+    </button>
+  </div>
+</div>
+
+<!-- -->
+
+<div class="pb-1">
+  <div class="col-3">
+    <button class="tk-btn tk-btn-icon">
+      <span class="tk-btn-icon-icon">
+        <i class="icon icon-search"></i>
+      </span>
+    </button>
+  </div>
+</div>
+<div class="pb-4">
+  <div class="col-3">
+    <button class="tk-btn tk-btn-icon" disabled>
+      <span class="tk-btn-icon-icon">
+        <i class="icon icon-search"></i>
+      </span>
+    </button>
+  </div>
+</div>
+
+<!-- -->
+
+<div class="pb-1">
+  <div class="col-3">
+    <button class="tk-btn tk-btn-icon tk-btn-sm">
+      <span class="tk-btn-icon-icon">
+        <i class="icon icon-search"></i>
+      </span>
+      <span class="tk-btn-icon-text">Button Icon Text small</span>
+    </button>
+  </div>
+</div>
+<div class="pb-4">
+  <div class="col-3">
+    <button class="tk-btn tk-btn-icon tk-btn-sm">
+      <span class="tk-btn-icon-icon">
+        <i class="icon icon-search"></i>
+      </span>
+    </button>
+  </div>
+</div>
+
+<!-- -->
+
+<div class="pb-1">
+  <div class="col-3">
+    <button class="tk-btn tk-btn-icon tk-btn-no-border">
+      <span class="tk-btn-icon-icon">
+        <i class="icon icon-search"></i>
+      </span>
+      <span class="tk-btn-icon-text">Button Icon Text No Border</span>
+    </button>
+  </div>
+</div>
+<div class="pb-4">
+  <div class="col-3">
+    <button class="tk-btn tk-btn-icon tk-btn-no-border">
+      <span class="tk-btn-icon-icon">
+        <i class="icon icon-search"></i>
+      </span>
+    </button>
+  </div>
+</div>
+
+<!-- -->
+
+<div class="pb-1">
+  <div class="col-3">
+    <button class="tk-btn tk-btn-icon tk-btn-sm tk-btn-no-border">
+      <span class="tk-btn-icon-icon">
+        <i class="icon icon-search"></i>
+      </span>
+      <span class="tk-btn-icon-text">Button Icon Text small No Border</span>
+    </button>
+  </div>
+</div>
+<div class="pb-4">
+  <div class="col-3">
+    <button class="tk-btn tk-btn-icon tk-btn-sm tk-btn-no-border">
+      <span class="tk-btn-icon-icon">
+        <i class="icon icon-search"></i>
+      </span>
+    </button>
+  </div>
+</div>
+
+<!-- -->
+
+<div class="mt-3 border-bottom-black pb-3">
+    <button class="tk-btn tk-btn-secondary" (click)="codePartTwo = !codePartTwo">Show/Hide source code</button>
+    <code *ngIf="codePartTwo">
+          <pre>
+            {{ buttonsIcons }}
+          </pre>
+      </code>
+</div>
+
+<!-- -->
+
+<h2 class="pt-4 pb-4">Radio Button</h2>
+<div class="tk-radio-button">
+  <input type="radio" id="1" [checked]="true">
+  <label for="1">
+    Checked
+  </label>
+</div>
+<div class="mt-2 tk-radio-button">
+  <input type="radio" id="2" [checked]="false">
+  <label for="2">
+    Not Checked
+  </label>
+</div>
+
+<!-- -->
+
+<div class="mt-3 border-bottom-black pb-3">
+  <button class="tk-btn tk-btn-secondary" (click)="codePartThree = !codePartThree">Show/Hide source code</button>
+  <code *ngIf="codePartThree">
+        <pre>
+          {{ radioButtons }}
+        </pre>
+    </code>
+</div>
+
+<!-- -->
+
+<h2 class="pt-4 pb-4">Pagination Dots</h2>
+<div>
+  <div class="tk-pagination-dot"></div>
+  <div class="tk-pagination-dot"></div>
+  <div class="tk-pagination-dot active"></div>
+</div>
+
+<!-- -->
+
+<div class="mt-3 border-bottom-black pb-3">
+  <button class="tk-btn tk-btn-secondary" (click)="codePartFour = !codePartFour">Show/Hide source code</button>
+  <code *ngIf="codePartFour">
+    <pre>
+      {{ paginationDots }}
+    </pre>
+  </code>
+</div>
+
+<!-- -->
+
+<h2 class="pt-4 pb-4">Pagination buttons</h2>
+<div class="tk-pagination-buttons">
+  <div>
+    <button class="tk-btn tk-btn tk-btn-secondary tk-btn-sm">
+      <span class="tk-btn-icon-icon">
+        <i class="fa fa-chevron-left"></i>
+      </span>
+    </button>
+  </div>
+  <div class="ml-2">
+    <button class="tk-btn tk-btn tk-btn-secondary tk-btn-sm">
+      <span class="tk-btn-icon-icon">
+        <i class="fa fa-chevron-right"></i>
+      </span>
+    </button>
+  </div>
+</div>
+
+<!-- -->
+
+<div class="mt-3 border-bottom-black pb-3">
+  <button class="tk-btn tk-btn-secondary" (click)="codePartFive = !codePartFive">Show/Hide source code</button>
+  <code *ngIf="codePartFive">
+    <pre>
+      {{ paginationButtons }}
+    </pre>
+  </code>
+</div>
+
+<!-- -->
+
+<h2 class="pt-4 pb-4">Pagination</h2>
+<tk-pagination [totalItems]="5"></tk-pagination>
+
+<!-- -->
+
+<div class="mt-3 border-bottom-black pb-3">
+  <button class="tk-btn tk-btn-secondary" (click)="codePartSix = !codePartSix">Show/Hide source code</button>
+  <code *ngIf="codePartSix">
+    <pre>
+      {{ pagination }}
+    </pre>
+  </code>
+</div>
+
+<!-- -->
+
+<h2 class="pt-4 pb-4">Checkbox</h2>
+<div class="tk-checkbox">
+  <input type="checkbox" [checked]="true">
+  <span class="checkmark"></span>
+  <label>One</label>
+</div>
+<div class="tk-checkbox">
+  <input type="checkbox" [checked]="false">
+  <span class="checkmark"></span>
+  <label>Two</label>
+</div>
+
+
+<!-- -->
+
+<div class="mt-3 border-bottom-black pb-3">
+  <button class="tk-btn tk-btn-secondary" (click)="codePartSeven = !codePartSeven">Show/Hide source code</button>
+  <code *ngIf="codePartSeven">
+        <pre>
+          {{ checkBox }}
+        </pre>
+    </code>
+</div>
+
+<!-- -->

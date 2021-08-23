@@ -1,0 +1,183 @@
+<div class="p-4">
+    <h3>
+        Welcome to Toolkit IWM
+    </h3>
+
+    <p>
+        The goal of this project is to standardize a UI library reusable in terms of components and sass.
+    </p>
+
+    <p>
+        We are creating this library to avoid using too many external libraries and problems of accessibility in case if
+        it is needed to be used with a custom specific design asked to developed on our project.
+    </p>
+    <p>
+        Also, we are centralizing the css to match with the design guidelines so that it has a close naming convention
+        associated to it and to prevent using inline css. Therefore we will be able to reduce the amount of css.
+    </p>
+    <p>
+        This project is a separate project created under the IWM folder, we did it to avoid creating conflicts with the
+        existing one, however we have created modules that can be added inside the project and it works.
+    </p>
+    <p>
+        The purpose is too only standardize the code and to only add components that has be customized if it is not
+        available in out of the box widgets or if it doesn't match with the requirements.
+    </p>
+    <p>
+        And as last purpose it will give the possibility to create knowledge sharing with documentations available
+        between developers and other participants. This project is available on git and can be run with npm run
+        proxy-demo on port 4202.
+    </p>
+    <p>
+        Every devs can create pull request on it if needed and participate :)
+    </p>
+</div>
+
+<div class="p-4">
+    <h3>
+        About brandings fonts, colors, animations, icons
+    </h3>
+    <p>
+        this project has the original EP and ET fonts, a part of the colors from the design guidelines are also there,
+        icons are available as well
+    </p>
+    <p>
+        borders, backgrounds, hover effects transitions are presents with css naming conventions that matches on design
+        guidelines for examples : border-bottom-gray-3, bg-gray-2, bg-gray-1, hover-bg-gray-1
+    </p>
+    <p>
+        here under you'll find some example of the guidelines all ready implemented but for more example please go to
+        the <a href="/color-examples">Color</a> section page.
+    </p>
+    <div class="mt-4 d-flex around">
+        <div class="bg-gray-1" style="height: 60px;">bg-gray-1</div>
+        <div class="bg-gray-2 ml-1" style="height: 60px;">bg-gray-2</div>
+        <div class="hover-bg-gray-1 border ml-1" style="height: 60px;">hover-bg-gray-1</div>
+        <div class="border-bottom-black ml-1" style="height: 60px;">border-bottom-black</div>
+        <div class="border-bottom-gray-3 ml-1" style="height: 60px;">border-bottom-gray-3</div>
+        <div class="border-top-gray-3 ml-1" style="height: 60px;">border-top-gray-3</div>
+        <div class="border-bottom-gray-1 ml-1" style="height: 60px;">border-bottom-gray-1</div>
+    </div>
+</div>
+
+<div class="pl-4 mb-5">
+    <h3>
+        What is available already
+    </h3>
+
+    <p>
+        In this section we have inserted some components already available but to see all the examples you can click on
+        the nav bar on top, we have divided the components per sections.
+    </p>
+    <p>
+        We have already put in place in the button section the code to copy paste if a developer needs to instanciate a
+        new button. We will add the same logic in all the sections soon.
+    </p>
+    <p>
+        To access the code just click on the button show hide code on the section associated to it.
+    </p>
+
+    <tk-table-examples></tk-table-examples>
+    <div class="p-2">
+        <div class="border-top-black pb-4">
+            <h1>Button</h1>
+            <div class="row mt-4">
+                <div class="col-3">
+                    <button class="btn btn-primary">Primary</button>
+                </div>
+                <div class="col-3">
+                    <button class="btn btn-primary" disabled>Primary disabled</button>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-3">
+                    <button class="btn btn-secondary">Secondary</button>
+                </div>
+                <div class="col-3">
+                    <button class="btn btn-secondary" disabled>Secondary disabled</button>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-3">
+                    <button class="btn btn-primary btn-sm">Primary small</button>
+                </div>
+                <div class="col-3">
+                    <button class="btn btn-primary btn-sm" disabled>
+                        Primary small disabled
+                    </button>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-3">
+                    <button class="btn btn-secondary btn-sm">Secondary small</button>
+                </div>
+                <div class="col-3">
+                    <button class="btn btn-secondary btn-sm" disabled>
+                        Secondary small disabled
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-3 border-bottom-black pb-3">
+            <button class="btn btn-secondary" (click)="codePartOne = !codePartOne">show/hide source code</button>
+
+            <code *ngIf="codePartOne">
+                    <pre style="font-size: 1rem">
+                      {{ butons }}
+                    </pre>
+                </code>
+        </div>
+        <div>
+
+        </div>
+    </div>
+    <tk-tab-examples></tk-tab-examples>
+    <tk-modals-and-overlays-examples></tk-modals-and-overlays-examples>
+    <tk-link-examples></tk-link-examples>
+    <tk-badge-examples></tk-badge-examples>
+</div>
+
+<div class="pl-4 mb-5">
+    <h3>Update</h3>
+    <p>
+        components implemented but more will come depending on requirements
+    </p>
+    <p>
+        poc available on git
+    </p>
+    <p>
+        branding utilities partially implemented
+    </p>
+    <p>
+        navigation section added inside the poc
+    </p>
+    <p>
+        Main page recap done
+    </p>
+    <p>
+        coopy paste code for the button secions done
+    </p>
+    <p>
+        3 dots drop down finished
+    </p>
+</div>
+
+<div class="pl-4 mb-5">
+    <h3>To do</h3>
+    <p>
+        adding copy paste code on all sections
+    </p>
+    <p>
+        identifying new components to addd in the poc
+    </p>
+    <p>
+        creating a general guidelines on how to use the poc
+    </p>
+    <p>
+        creating a section with the grid system to explain how it works
+    </p>
+    <p>
+        deploy the poc ( we have tried but faced an issue but we will resolve that soon )
+    </p>
+</div>

@@ -1,0 +1,25 @@
+@import '../../../../../scss/helpers/helpers/colors';
+
+.dropdown-toggle::after {
+  display: none;
+}
+
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: $cs-color-primary-black;
+}
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: $cs-color-primary-black;
+}
+
+:-ms-input-placeholder {
+  /* IE 10+ */
+  color: $cs-color-primary-black;
+}
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: $cs-color-primary-black;
+}

@@ -1,0 +1,57 @@
+<div *ngIf="!isRadioButtonClicked">
+  <span *ngIf="!flag"> 
+    DD/MM/YYYY - DD/MM/YYYY
+  </span>
+  <span *ngIf="isFromDateSelected">
+    <!-- {{firstdDaySelected ? firstdDaySelected : prevLastDay }}/{{previousMonthSelected ? previousMonthSelected : currentMonthSelected }}/2021- -->
+    {{fromDate}} -
+  </span>
+  <span *ngIf="isTodateSelected && flag">
+    <!-- {{secondDaySelected}}/{{currentMonthSelected ? currentMonthSelected : previousMonthSelected }}/{{year}} -->
+    {{toDate}}
+  </span>
+</div>
+<div *ngIf="isRadioButtonClicked">
+  {{fromDate}} - {{toDate}}
+</div>
+
+<div class="date-picker-wrapper mb-5">
+  <div class="calendar p-3">
+    <div>
+      <button class="tk-btn tk-btn-primary p-2" style="font-size: 14px;" (click)="todaySelected()">Today</button>
+      <button class="tk-btn tk-btn-primary p-2 ml-2" style="font-size: 14px;" (click)="lastSeventDaysSelected()">Last 7 days</button>
+      <button class="tk-btn tk-btn-primary p-2 ml-2" style="font-size: 14px;" (click)="last30DaysSelected()">Last 30 days</button>
+      <button class="tk-btn tk-btn-primary p-2 mt-2" style="font-size: 14px;">Custom</button>
+    </div>
+    <div class="month px-0">
+      <i (click)="setCalendarToPreviousMonth()" class="fas fa-angle-left prev"></i>
+      <div class="date">
+        <h1>{{months[date.getMonth()]}} {{date.getFullYear()}}</h1>
+      </div>
+      <i (click)="setCalendarToNextMonth()" class="fas fa-angle-right next"></i>
+    </div>
+    <div class="weekdays px-0">
+      <div>Mo</div>
+      <div>Tu</div>
+      <div>We</div>
+      <div>Th</div>
+      <div>Fr</div>
+      <div>Sa</div>
+      <div>Su</div>
+    </div>
+    <div class="days px-0" (mouseleave)="leavePicker()">
+      <div (mouseenter)="getSelectedDay(day, $event)" (click)="getSelectedDay(day, $event)"  *ngFor='let day of days;let i = index'>
+        <div 
+          [style.background-color]="(day > firstdDaySelected ) && (day < secondDaySelected ) ? '#575756' : ''"
+          [style.background-color]="(day == firstdDaySelected ) || (day == secondDaySelected ) && !isDatePickerClicked  ? 'black' : ''"
+          [style.color]="(day == firstdDaySelected ) || (day == secondDaySelected ) || ( (day > firstdDaySelected ) && (day < secondDaySelected ) )  ? 'white' : ''"
+           *ngIf="day > 0">
+          {{day}}
+        </div>
+      </div>
+      <div class="outline-next-day" *ngFor='let nextDays of nextDaysArray;let i = index'>
+        {{nextDays}}
+      </div>
+    </div>
+  </div>
+</div>

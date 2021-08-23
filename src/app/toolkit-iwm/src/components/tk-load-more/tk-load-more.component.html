@@ -1,0 +1,8 @@
+<button  *ngIf="showMoreData"
+    class="btn btn-secondary mb-5" (click)="loadMoreData()">
+    Load More
+</button>
+
+<p *ngIf="!showMoreData">
+    There are no more cash activities to display       
+</p>

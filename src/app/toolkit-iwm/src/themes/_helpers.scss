@@ -1,0 +1,224 @@
+// patch for icons problems in general as they are all set to line height 1
+.no-line-height:before {
+  line-height: unset!important;
+}
+
+tr:focus{
+  outline: none;
+}
+
+//helpers
+.border-black {
+  border: 1px solid $cs-color-primary-black;
+}
+
+.border-bottom-black {
+  border-bottom: 1px solid $cs-color-primary-black;
+}
+
+.border-top-black {
+  border-top: 1px solid $cs-color-primary-black;
+}
+
+.border-bottom-gray-1 {
+  border-bottom: 1px solid $cs-color-primary-gray1;
+}
+
+.border-top-gray-1 {
+  border-top: 1px solid $cs-color-primary-gray1;
+}
+
+.border-bottom-gray-2 {
+  border-bottom: 1px solid $cs-color-primary-gray2;
+}
+
+.border-top-gray-2 {
+  border-top: 1px solid $cs-color-primary-gray2;
+}
+
+.border-top-gray-3 {
+  border-top: 1px solid $cs-color-primary-gray3;
+}
+
+.border-bottom-gray-3 {
+  border-bottom: 1px solid $cs-color-primary-gray3;
+}
+
+.border-top-gray-4 {
+  border-top: 1px solid $cs-color-primary-gray4;
+}
+
+.border-bottom-gray-4 {
+  border-bottom: 1px solid $cs-color-primary-gray4;
+}
+
+.border-top-gray-5 {
+  border-top: 1px solid $cs-color-primary-gray5;
+}
+
+.border-bottom-gray-5 {
+  border-bottom: 1px solid $cs-color-primary-gray5;
+}
+
+.border-top-gray-6 {
+  border-top: 1px solid $cs-color-primary-gray6;
+}
+
+.border-bottom-gray-6 {
+  border-bottom: 1px solid $cs-color-primary-gray6;
+}
+
+//colors
+.bg-gray-1 {
+  background-color: $cs-color-primary-gray1;
+}
+
+.bg-gray-2 {
+  background-color: $cs-color-primary-gray2;
+}
+
+.bg-gray-3 {
+  background-color: $cs-color-primary-gray3;
+}
+
+.bg-gray-4 {
+  background-color: $cs-color-primary-gray4;
+}
+
+.bg-gray-5 {
+  background-color: $cs-color-primary-gray5;
+}
+
+.bg-gray-6 {
+  background-color: $cs-color-primary-gray6;
+}
+
+.bg-black {
+ background-color: $cs-color-primary-black
+}
+
+.hover-bg-gray-1:hover {
+  background: $cs-color-primary-gray1!important;
+  transition: background-color 0.25s ease-out;
+}
+.focus-bg-gray-1:focus {
+  background: $cs-color-primary-gray1!important;
+  transition: background-color 0.25s ease-out;
+}
+
+.hover-bg-gray-2:hover {
+  background: $cs-color-primary-gray2!important;
+  transition: background-color 0.25s ease-out;
+}
+
+.hover-bg-gray-3:hover {
+  background: $cs-color-primary-gray3!important;
+  transition: background-color 0.25s ease-out;
+}
+
+.hover-bg-gray-4:hover {
+  background: $cs-color-primary-gray4!important;
+  transition: background-color 0.25s ease-out;
+}
+
+.hover-bg-gray-5:hover {
+  background: $cs-color-primary-gray5!important;
+  transition: background-color 0.25s ease-out;
+}
+
+.hover-bg-gray-6:hover {
+  background: $cs-color-primary-gray6!important;
+  transition: background-color 0.25s ease-out;
+}
+
+.text-transparent {
+  color: transparent!important;
+}
+
+.primary-link-hover:hover {
+  color:$cs-color-primary-gray5;
+}
+
+// patch for icons problems in general as they are all set to line height 1
+.no-line-height:before {
+  line-height: unset!important;
+}
+
+//only for text
+.csTypeEPBold-14 {
+  font-family: "CSePBold";
+  font-size: 14px;
+}
+.csTypeEPBold-24 {
+  font-family: "CSePBold";
+  font-size: 24px;
+}
+//only for number
+.csTypeETBold-14 {
+  font-family: "CSeTBold";
+  font-size: 14px;
+}
+.csTypeETBold-16 {
+  font-family: "CSeTBold";
+  font-size: 16px;
+}
+.csTypeETBold-24 {
+  font-family: "CSeTBold";
+  font-size: 24px;
+}
+
+//only for text
+.csTypeEPRegular-14 {
+  font-family: "CSePRoman";
+  font-size: 14px;
+  font-weight: 100;
+}
+.csTypeEPRegular-16 {
+  font-family: "CSePRoman";
+  font-size: 16px;
+  font-weight: 100;
+} 
+
+//only for numbers
+.csTypeETRegular-14 {
+  font-family: "CSeTRoman";
+  font-size: 14px;
+  font-weight: 100;
+}
+.csTypeETRegular-24 {
+  font-family: "CSeTRoman";
+  font-size: 24px;
+  font-weight: 100;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.text-primary-gray5 {
+ color: $cs-color-primary-gray5;
+}
+.text-primary-gray4 {
+ color: $cs-color-primary-gray4;
+}
+
+.overflow-y-auto {
+  overflow-y: auto;
+}
+.overflow-x-hidden {
+  overflow-x: hidden;
+}
+
+//general box shadow used in dropdown and cards
+.tk-box-shadow {
+  box-shadow: 0 3px 20px 10px rgba(0,0,0,0.05);
+}
+//helpers
+
+//second navigation flex grid added
+.area-flex-wrapper > bb-area {
+  display: flex;
+  margin-left: 40px;
+  height: 40px;
+  border-bottom: 1px solid $cs-color-primary-gray3;
+}

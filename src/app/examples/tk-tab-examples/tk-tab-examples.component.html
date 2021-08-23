@@ -1,0 +1,59 @@
+<h2 class="pb-4">Tabs Button</h2>
+
+<div class="tk-btn-tabs">
+  <button class="tk-btn" [ngClass]="(tabBtnActive == 0)? 'tk-btn-tab-active':'tk-btn-tab-not-active'" (click)="setTabBtnActive(0);">Performance</button>
+  <button class="tk-btn" [ngClass]="(tabBtnActive == 1)? 'tk-btn-tab-active':'tk-btn-tab-not-active'" (click)="setTabBtnActive(1);">Asset allocation</button>
+  <button class="tk-btn" [ngClass]="(tabBtnActive == 2)? 'tk-btn-tab-active':'tk-btn-tab-not-active'" (click)="setTabBtnActive(2);">Currency allocation</button>
+</div>
+
+<div class="tk-btn-tabs py-4">
+  <button class="tk-btn tk-btn-sm" [ngClass]="(tabBtnActiveSm == 0)? 'tk-btn-tab-active':'tk-btn-tab-not-active'" (click)="setTabBtnActiveSm(0);">Performance</button>
+  <button class="tk-btn tk-btn-sm" [ngClass]="(tabBtnActiveSm == 1)? 'tk-btn-tab-active':'tk-btn-tab-not-active'" (click)="setTabBtnActiveSm(1);">Asset allocation</button>
+  <button class="tk-btn tk-btn-sm" [ngClass]="(tabBtnActiveSm == 2)? 'tk-btn-tab-active':'tk-btn-tab-not-active'" (click)="setTabBtnActiveSm(2);">Currency allocation</button>
+</div>
+
+<!-- -->
+
+<div class="mt-3 border-bottom-black pb-3">
+  <button class="tk-btn tk-btn-secondary" (click)="codePartOne = !codePartOne">Show/Hide source code</button>
+  <code *ngIf="codePartOne">
+    <pre>
+      {{ tabsButton }}
+    </pre>
+  </code>
+</div>
+
+<!-- -->
+
+<h2 class="py-4">Tabs Line</h2>
+
+<div class="tk-line-tabs">
+  <button class="tk-line-tab" [ngClass]="(tabLineActive == 0)? 'tk-line-tab-active':'tk-line-tab-not-active'" (click)="setTabLineActive(0);">Performance</button>
+  <button class="tk-line-tab" [ngClass]="(tabLineActive == 1)? 'tk-line-tab-active':'tk-line-tab-not-active'" (click)="setTabLineActive(1);">Asset allocation</button>
+  <button class="tk-line-tab" [ngClass]="(tabLineActive == 2)? 'tk-line-tab-active':'tk-line-tab-not-active'" (click)="setTabLineActive(2);">Currency allocation</button>
+</div>
+
+<div class="tk-line-tabs py-4">
+  <button class="tk-line-tab tk-line-sm" [ngClass]="(tabLineActiveSm == 0)? 'tk-line-tab-active':'tk-line-tab-not-active'" (click)="setTabLineActiveSm(0);">Performance</button>
+  <button class="tk-line-tab tk-line-sm" [ngClass]="(tabLineActiveSm == 1)? 'tk-line-tab-active':'tk-line-tab-not-active'" (click)="setTabLineActiveSm(1);">Asset allocation</button>
+  <button class="tk-line-tab tk-line-sm" [ngClass]="(tabLineActiveSm == 2)? 'tk-line-tab-active':'tk-line-tab-not-active'" (click)="setTabLineActiveSm(2);">Currency allocation</button>
+</div>
+
+<!-- -->
+
+<div class="mt-3 pb-3 border-bottom-black">
+  <button class="tk-btn tk-btn-secondary" (click)="codePartTwo = !codePartTwo">Show/Hide source code</button>
+  <code *ngIf="codePartTwo">
+    <pre>
+      {{ tabsLine }}
+    </pre>
+  </code>
+</div>
+
+<h2 class="py-4">Vertical Navbar</h2>
+
+<tk-vertical-navbar body [tabs]="tabs" (selectedTabIndex)="selectedTab = $event;">
+    <div *ngIf="selectedTab === 0">tab 1 content can be modified from here</div>
+    <div *ngIf="selectedTab === 1">tab 2 content can be modified from here</div>
+</tk-vertical-navbar>
+

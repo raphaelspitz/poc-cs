@@ -1,0 +1,38 @@
+<div ngbDropdown autoClose="outside" class="w-100" placement="bottom" #categoryDD="ngbDropdown">
+    <div ngbDropdownToggle class="tk-form-control-icon cursor-pointer">
+        <input type="text" name="regular-input-right-icon"
+                class="tk-form-control bg-gray-1 focus-bg-gray-1 text-transparent cursor-pointer"
+                placeholder="{{selectedCount ? (categories?.length === selectedCount ? all : selectedCount+ selected):'0' + selected}}"
+        />
+        <div class="tk-form-control-right-icon">
+            <i class="icon icon-chevron-down"></i>
+        </div>
+    </div>
+    <div ngbDropdownMenu aria-labelledby="dropdownMultiSelect"
+        class="dropdown-category-list border-top-0 p-2 w-100 bg-white">
+        <div class="row border-bottom-gray-2 px-2 pb-2">
+            <div class="col-6">
+                <span (click)="selectAllCategories()"
+                    class="tk-link tk-link-primary"
+                >
+                    {{"EDOCSCLIENTVIEW.FILTERS.SELECTALL" | translate: {Default: "Select All"} }}
+                </span>
+            </div>
+            <div class="col-6 text-right">
+                <span (click)="clearAllCategories()" 
+                    class="tk-link tk-link-primary"
+                >
+                    {{"EDOCSCLIENTVIEW.FILTERS.CLEARALL" | translate: {Default: "Clear All"} }}
+                </span>
+            </div>
+        </div>
+        <div class="flex-collumn dropdownScroll pl-2" id="style-3">
+            <div class="tk-checkbox my-3" *ngFor="let option of categories; let i = index"
+                (click)="selectDeselectCategoryList(option)">
+                <input type="checkbox" name="option" [(ngModel)]="option.checked">
+                <span class="checkmark"></span>
+                <label for="{{'category'+i}}">{{option.categoryName}}</label>
+            </div>
+        </div>
+    </div>
+</div>
